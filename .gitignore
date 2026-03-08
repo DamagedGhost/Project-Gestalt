@@ -1,0 +1,16 @@
+# Archivos de entorno y credenciales (Confidencial)
+.env
+.env.local
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales de Python (si usas venv en el futuro)
+venv/
+env/
+.venv/
+
+# Logs y bases de datos locales
+*.log
+*.sqlite3
