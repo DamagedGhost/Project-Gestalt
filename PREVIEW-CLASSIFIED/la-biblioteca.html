@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA BIBLIOTECA // PROTOCOLO GESTALT</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --fg: #e8e0d0;
+    --fg-dim: #8a8070;
+    --accent: #c8b89a;
+    --accent2: #d4c4a0;
+    --red: #cc4444;
+    --border: #2a2820;
+    --border-light: #3a3830;
+    --scan: rgba(200,184,154,0.03);
+    --glow: rgba(200,184,154,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* SCANLINES */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--scan) 2px,
+      var(--scan) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* VIGNETTE */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  /* NOISE TEXTURE */
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px;
+    pointer-events: none;
+    z-index: 9997;
+  }
+
+  /* HEADER */
+  .sys-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 12px 32px;
+    border-bottom: 1px solid var(--border-light);
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sys-header .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .sys-header .logo-main {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 6px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .sys-header .logo-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+  }
+
+  .sys-header .sys-info {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .sys-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .sys-info-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+  }
+
+  .sys-info-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+  }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #4a8;
+    display: inline-block;
+    margin-right: 6px;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* MAIN LAYOUT */
+  .main {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr 260px;
+    min-height: 100vh;
+  }
+
+  /* LEFT PANEL */
+  .panel-left {
+    border-right: 1px solid var(--border);
+    padding: 32px 0;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .panel-section {
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+
+  .panel-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-label::before {
+    content: '//';
+    color: var(--accent);
+    opacity: 0.5;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 4px;
+    position: relative;
+  }
+
+  .nav-item:hover, .nav-item.active {
+    border-color: var(--border-light);
+    background: rgba(200,184,154,0.04);
+  }
+
+  .nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+  }
+
+  .nav-item-icon {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    width: 20px;
+    text-align: center;
+  }
+
+  .nav-item-text {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .nav-item-count {
+    margin-left: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--fg-dim);
+    background: var(--border);
+    padding: 2px 6px;
+  }
+
+  /* VERIFICATION BAR */
+  .verif-bar {
+    margin: 16px 0 8px;
+  }
+
+  .verif-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--fg-dim);
+  }
+
+  .verif-track {
+    height: 3px;
+    background: var(--border);
+    position: relative;
+  }
+
+  .verif-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #a8d8a8);
+    width: 0;
+    animation: fill-bar 1.5s 0.5s forwards ease-out;
+  }
+
+  @keyframes fill-bar {
+    to { width: 87%; }
+  }
+
+  /* CENTER CONTENT */
+  .content {
+    padding: 32px 48px;
+    max-width: 800px;
+  }
+
+  /* ARTICLE HEADER */
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.4s ease;
+  }
+
+  .article-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .article-date {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--fg-dim);
+    letter-spacing: 1px;
+  }
+
+  .article-proto {
+    margin-left: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--fg-dim);
+    opacity: 0.5;
+  }
+
+  /* HEADLINE */
+  .headline {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    color: var(--fg);
+    margin-bottom: 8px;
+    animation: fadeIn 0.4s 0.1s ease both;
+  }
+
+  .headline-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--fg-dim);
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    animation: fadeIn 0.4s 0.15s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ALERT BOX */
+  .alert-box {
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--accent);
+    background: rgba(200,184,154,0.03);
+    padding: 14px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    animation: fadeIn 0.4s 0.2s ease both;
+  }
+
+  .alert-icon {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .alert-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--fg-dim);
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .alert-text strong {
+    color: var(--accent2);
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    font-size: 15px;
+    line-height: 1.85;
+    color: rgba(232,224,208,0.88);
+    animation: fadeIn 0.4s 0.25s ease both;
+  }
+
+  .article-body p {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .cite-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 1px 5px;
+    margin-left: 2px;
+    vertical-align: super;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+
+  .cite-link:hover {
+    background: var(--accent2);
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 36px 0 28px;
+  }
+
+  .section-divider-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .section-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* DATA CARDS */
+  .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+    animation: fadeIn 0.4s 0.3s ease both;
+  }
+
+  .data-card {
+    border: 1px solid var(--border);
+    padding: 16px;
+    background: var(--bg2);
+    position: relative;
+    transition: border-color 0.15s;
+  }
+
+  .data-card:hover {
+    border-color: var(--border-light);
+  }
+
+  .data-card::before {
+    content: attr(data-index);
+    position: absolute;
+    top: -8px; left: 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    color: var(--accent);
+    background: var(--bg2);
+    padding: 0 6px;
+    letter-spacing: 1px;
+  }
+
+  .data-card-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .data-card-value {
+    font-size: 13px;
+    color: var(--fg);
+    line-height: 1.5;
+  }
+
+  .data-card-source {
+    margin-top: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding-left: 20px;
+    border-left: 1px solid var(--border-light);
+    animation: fadeIn 0.4s 0.35s ease both;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 6px;
+    width: 8px; height: 8px;
+    border: 1px solid var(--accent);
+    background: var(--bg);
+    transform: rotate(45deg);
+  }
+
+  .timeline-date {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-text {
+    font-size: 13px;
+    color: var(--fg-dim);
+    line-height: 1.5;
+  }
+
+  .timeline-src {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    color: var(--fg-dim);
+    opacity: 0.5;
+    margin-top: 4px;
+  }
+
+  /* CONTRADICTION */
+  .contradiction-box {
+    border: 1px solid rgba(204,68,68,0.3);
+    background: rgba(204,68,68,0.04);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    animation: fadeIn 0.4s 0.4s ease both;
+  }
+
+  .contradiction-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--red);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contradiction-label::before {
+    content: '⚠';
+    font-size: 10px;
+  }
+
+  .contradiction-versions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contradiction-version {
+    padding: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+
+  .contradiction-source {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    color: var(--fg-dim);
+    margin-bottom: 6px;
+  }
+
+  .contradiction-text {
+    font-size: 12px;
+    color: var(--fg);
+    line-height: 1.5;
+  }
+
+  /* SOURCES */
+  .source-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.4s 0.45s ease both;
+  }
+
+  .source-index {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--bg);
+    background: var(--accent);
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .source-info { flex: 1; }
+
+  .source-medium {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .source-fragment {
+    font-size: 12px;
+    color: var(--fg-dim);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .source-url {
+    display: block;
+    margin-top: 6px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    opacity: 0.6;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+  }
+
+  .source-url:hover { opacity: 1; }
+
+  /* RIGHT PANEL */
+  .panel-right {
+    border-left: 1px solid var(--border);
+    padding: 32px 20px;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .eval-box {
+    border: 1px solid var(--border-light);
+    padding: 16px;
+    background: var(--bg2);
+    margin-bottom: 20px;
+  }
+
+  .eval-level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .eval-level-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--fg-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .eval-level-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #4a8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .eval-justification {
+    font-size: 12px;
+    color: var(--fg-dim);
+    line-height: 1.6;
+  }
+
+  /* DEVOLA PANEL */
+  .devola-panel {
+    border: 1px solid var(--border-light);
+    border-top: 2px solid var(--accent);
+    padding: 16px;
+    background: var(--bg2);
+    margin-bottom: 20px;
+  }
+
+  .devola-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .devola-title::after {
+    content: 'DEVOLA';
+    font-size: 8px;
+    color: var(--fg-dim);
+    opacity: 0.5;
+    margin-left: auto;
+  }
+
+  .devola-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--fg);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 8px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .devola-btn:hover { background: rgba(200,184,154,0.06); border-color: var(--accent); }
+
+  .devola-btn.approve { border-color: rgba(74,170,100,0.4); color: #4a8; }
+  .devola-btn.approve:hover { background: rgba(74,170,100,0.06); }
+
+  .devola-btn.reject { border-color: rgba(204,68,68,0.4); color: var(--red); }
+  .devola-btn.reject:hover { background: rgba(204,68,68,0.06); }
+
+  .devola-btn-icon {
+    font-size: 12px;
+    width: 16px;
+    text-align: center;
+  }
+
+  /* METADATA */
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .meta-key {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+  }
+
+  .meta-val {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+  }
+
+  /* GLITCH EFFECT ON HOVER */
+  .headline:hover {
+    animation: glitch 0.3s ease;
+  }
+
+  @keyframes glitch {
+    0% { transform: none; }
+    20% { transform: skewX(-1deg) translateX(2px); filter: hue-rotate(90deg); }
+    40% { transform: skewX(1deg) translateX(-2px); }
+    60% { transform: none; filter: none; }
+    80% { transform: translateX(1px); }
+    100% { transform: none; }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border-light); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  /* BOOT ANIMATION */
+  .boot-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    animation: boot-out 0.5s 1.8s forwards ease-in;
+  }
+
+  .boot-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    animation: type-in 1s 0.2s forwards;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .boot-bar-track {
+    width: 200px;
+    height: 2px;
+    background: var(--border);
+    opacity: 0;
+    animation: fadeIn 0.3s 0.4s forwards;
+  }
+
+  .boot-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0;
+    animation: fill-boot 1.2s 0.5s forwards ease-out;
+  }
+
+  @keyframes fill-boot { to { width: 100%; } }
+  @keyframes type-in { to { opacity: 1; } }
+  @keyframes boot-out {
+    to { opacity: 0; pointer-events: none; }
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border: 1px solid var(--border-light);
+    color: var(--fg-dim);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .tags-row {
+    margin-bottom: 24px;
+    animation: fadeIn 0.4s 0.2s ease both;
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<!-- BOOT OVERLAY -->
+<div class="boot-overlay">
+  <div class="boot-text">PROTOCOLO GESTALT // INICIALIZANDO...</div>
+  <div class="boot-bar-track"><div class="boot-bar-fill"></div></div>
+</div>
+
+<!-- HEADER -->
+<header class="sys-header">
+  <div class="logo">
+    <div class="logo-main">La Biblioteca</div>
+    <div class="logo-sub">Sistema de información verificada // Protocolo Gestalt</div>
+  </div>
+  <div class="sys-info">
+    <div class="sys-info-item">
+      <div class="sys-info-label">Agente</div>
+      <div class="sys-info-value">POPOLA v0.1.0</div>
+    </div>
+    <div class="sys-info-item">
+      <div class="sys-info-label">Estado</div>
+      <div class="sys-info-value"><span class="status-dot"></span>OPERATIVA</div>
+    </div>
+    <div class="sys-info-item">
+      <div class="sys-info-label">Fecha</div>
+      <div class="sys-info-value" id="clock">2026-03-09</div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT PANEL -->
+  <nav class="panel-left">
+    <div class="panel-section">
+      <div class="panel-label">Navegación</div>
+      <div class="nav-item active">
+        <div class="nav-item-icon">◈</div>
+        <div class="nav-item-text">Política</div>
+        <div class="nav-item-count">01</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-item-icon">◇</div>
+        <div class="nav-item-text">Economía</div>
+        <div class="nav-item-count">00</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-item-icon">◇</div>
+        <div class="nav-item-text">Internacional</div>
+        <div class="nav-item-count">00</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-item-icon">◇</div>
+        <div class="nav-item-text">Sociedad</div>
+        <div class="nav-item-count">00</div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-label">Índice de verificación</div>
+      <div class="verif-bar">
+        <div class="verif-label">
+          <span>EXACTITUD</span>
+          <span id="pct">0%</span>
+        </div>
+        <div class="verif-track"><div class="verif-fill"></div></div>
+      </div>
+      <div style="margin-top:14px;">
+        <div class="meta-row">
+          <div class="meta-key">Fuentes</div>
+          <div class="meta-val">2</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-key">Verificados</div>
+          <div class="meta-val">3</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-key">Contradicciones</div>
+          <div class="meta-val">1</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-key">Búsquedas extra</div>
+          <div class="meta-val">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-label">Sistema</div>
+      <div style="padding: 8px 0;">
+        <div class="meta-row">
+          <div class="meta-key">Protocolo</div>
+          <div class="meta-val">GESTALT v0.1.0</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-key">Modelo</div>
+          <div class="meta-val">2.5-FLASH</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-key">Aprobación</div>
+          <div class="meta-val" style="color:#e8a;">PENDIENTE</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="article-meta">
+      <div class="article-badge">Política Nacional</div>
+      <div class="article-date">2026-03-09 // 00:00 CLST</div>
+      <div class="article-proto">GESTALT://noticia-001</div>
+    </div>
+
+    <h1 class="headline">Kast y Boric se reúnen en La Moneda previo a cambio de mando</h1>
+    <div class="headline-jp">カストとボリッチ、政権移譲前に会談</div>
+
+    <div class="tags-row">
+      <span class="tag">Kast</span>
+      <span class="tag">Boric</span>
+      <span class="tag">Cambio de mando</span>
+      <span class="tag">Cable submarino</span>
+      <span class="tag">Traspaso de poder</span>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-icon">[POPOLA]<br>ANÁLISIS</div>
+      <div class="alert-text">
+        Verificación: <strong>ALTO</strong> — Alta coincidencia en hechos centrales entre ambas fuentes.
+        La única diferencia significativa refiere al nivel de detalle en comunicación previa,
+        sin afectar veracidad de eventos centrales.
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>
+        José Antonio Kast se reunió con Gabriel Boric en el Palacio de La Moneda el 8 de marzo de 2026
+        <a class="cite-link" href="#cite-2" title="La Tercera">[2]</a>
+        <a class="cite-link" href="#cite-1" title="ADN Radio">[1]</a>.
+        Este encuentro ocurrió días antes del cambio de mando presidencial programado para el 11 de marzo de 2026
+        <a class="cite-link" href="#cite-2">[2]</a>
+        <a class="cite-link" href="#cite-1">[1]</a>.
+        La reunión comenzó cerca de las 11:50 horas
+        <a class="cite-link" href="#cite-2">[2]</a>.
+      </p>
+      <p>
+        Previamente, el 18 de febrero, Gabriel Boric había sostenido una llamada con José Antonio Kast sobre
+        el proyecto del cable submarino, advirtiéndole sobre presiones de Estados Unidos, según el Mandatario
+        <a class="cite-link" href="#cite-2">[2]</a>.
+        Sin embargo, Kast y su equipo afirmaron que la información sobre el cable submarino no fue entregada
+        con el detalle señalado por el gobierno
+        <a class="cite-link" href="#cite-2">[2]</a>.
+        Un martes previo al 8 de marzo, Boric y Kast se reunieron por menos de 15 minutos, siendo el cable
+        submarino chino el principal punto de discordia
+        <a class="cite-link" href="#cite-1">[1]</a>.
+        Tras este encuentro, el equipo de Kast anunció la suspensión de reuniones bilaterales de traspaso de
+        mando, acusando falta de confianza en la información
+        <a class="cite-link" href="#cite-2">[2]</a>.
+      </p>
+      <p>
+        José Antonio Kast regresó a Chile el 8 de marzo de 2026 tras un encuentro con Donald Trump en la
+        cumbre "Escudo de las Américas" en Miami
+        <a class="cite-link" href="#cite-1">[1]</a>.
+        Antes de su viaje, Kast había afirmado que "se dio vuelta la página" tras el quiebre con la
+        administración actual y que "todo el traspaso se hizo correctamente"
+        <a class="cite-link" href="#cite-1">[1]</a>.
+      </p>
+      <p>
+        Tras la reunión del 8 de marzo, Kast agradeció la entrega de antecedentes de distintas materias de
+        interés para el país por parte de Boric, para análisis posterior y toma de decisiones
+        <a class="cite-link" href="#cite-2">[2]</a>.
+        El encuentro también permitió coordinar actividades oficiales previas al traspaso de poder,
+        incluyendo la ceremonia de cambio de la comandancia en jefe del Ejército programada para el lunes
+        <a class="cite-link" href="#cite-2">[2]</a>.
+      </p>
+    </div>
+
+    <!-- CONTRADICTIONS -->
+    <div class="section-divider">
+      <div class="section-divider-label">Contradicciones detectadas</div>
+      <div class="section-divider-line"></div>
+    </div>
+
+    <div class="contradiction-box">
+      <div class="contradiction-label">DISPUTA DE VERSIONES // CABLE SUBMARINO</div>
+      <div class="contradiction-versions">
+        <div class="contradiction-version">
+          <div class="contradiction-source">// GABRIEL BORIC (vía La Tercera)</div>
+          <div class="contradiction-text">Habría advertido a Kast sobre presiones de Estados Unidos en la llamada del 18 de febrero.</div>
+        </div>
+        <div class="contradiction-version">
+          <div class="contradiction-source">// EQUIPO KAST (vía La Tercera)</div>
+          <div class="contradiction-text">La información sobre el cable submarino no fue entregada con el detalle señalado por el gobierno.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-divider">
+      <div class="section-divider-label">Línea de tiempo</div>
+      <div class="section-divider-line"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2026-02-18</div>
+        <div class="timeline-text">Gabriel Boric sostiene llamada con Kast sobre el proyecto de cable submarino.</div>
+        <div class="timeline-src">// La Tercera</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026-03-XX (martes previo)</div>
+        <div class="timeline-text">Reunión de menos de 15 minutos entre Boric y Kast. Cable submarino chino como punto de discordia.</div>
+        <div class="timeline-src">// ADN Radio</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026-03-08 ~11:50</div>
+        <div class="timeline-text">José Antonio Kast regresa a Chile y se reúne con Boric en La Moneda. Inicio: 11:50 hrs.</div>
+        <div class="timeline-src">// ADN Radio, La Tercera</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026-03-09 (lunes)</div>
+        <div class="timeline-text">Ceremonia de cambio de la comandancia en jefe del Ejército.</div>
+        <div class="timeline-src">// La Tercera</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026-03-11</div>
+        <div class="timeline-text">Cambio de mando presidencial.</div>
+        <div class="timeline-src">// La Tercera, ADN Radio</div>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="section-divider">
+      <div class="section-divider-label">Fuentes verificadas</div>
+      <div class="section-divider-line"></div>
+    </div>
+
+    <div id="cite-1" class="source-item">
+      <div class="source-index">1</div>
+      <div class="source-info">
+        <div class="source-medium">ADN Radio</div>
+        <div class="source-fragment">Tras su encuentro con Donald Trump: José Antonio Kast vuelve a Chile para nueva reunión con Gabriel Boric</div>
+        <a class="source-url" href="https://www.adnradio.cl/2026/03/08/tras-su-encuentro-con-donald-trump-jose-antonio-kast-vuelve-a-chile-para-nueva-reunion-con-gabriel-boric/" target="_blank">adnradio.cl/2026/03/08/tras-su-encuentro-con-donald-trump...</a>
+      </div>
+    </div>
+
+    <div id="cite-2" class="source-item">
+      <div class="source-index">2</div>
+      <div class="source-info">
+        <div class="source-medium">La Tercera</div>
+        <div class="source-fragment">Kast se reúne con Boric en La Moneda y agradece entrega de antecedentes a días del cambio de mando</div>
+        <a class="source-url" href="https://www.latercera.com/politica/noticia/kast-se-reune-con-boric-en-la-moneda-y-agradece-entrega-de-antecedentes-a-dias-del-cambio-de-mando/" target="_blank">latercera.com/politica/noticia/kast-se-reune-con-boric...</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="panel-right">
+
+    <div class="panel-label">Panel Devola</div>
+    <div class="devola-panel">
+      <div class="devola-title">Aprobación requerida</div>
+      <button class="devola-btn approve">
+        <span class="devola-btn-icon">✓</span>
+        Aprobar y publicar
+      </button>
+      <button class="devola-btn reject">
+        <span class="devola-btn-icon">✕</span>
+        Rechazar
+      </button>
+      <button class="devola-btn">
+        <span class="devola-btn-icon">✎</span>
+        Editar noticia
+      </button>
+      <button class="devola-btn">
+        <span class="devola-btn-icon">⟳</span>
+        Re-analizar fuentes
+      </button>
+    </div>
+
+    <div class="panel-label" style="margin-top:8px;">Evaluación Popola</div>
+    <div class="eval-box">
+      <div class="eval-level">
+        <div class="eval-level-label">Nivel</div>
+        <div class="eval-level-value">ALTO</div>
+      </div>
+      <div class="eval-justification">
+        Alta coincidencia en hechos centrales. Diferencias en detalles complementarios, no en eventos fundamentales.
+      </div>
+    </div>
+
+    <div class="panel-label" style="margin-top:8px;">Metadata</div>
+    <div class="meta-row">
+      <div class="meta-key">Protocolo</div>
+      <div class="meta-val">GESTALT v0.1.0</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-key">Fuentes</div>
+      <div class="meta-val">2 / 2 leídas</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-key">Búsquedas</div>
+      <div class="meta-val">0 adicionales</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-key">Agentes</div>
+      <div class="meta-val">2 (pipeline)</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-key">Estado</div>
+      <div class="meta-val" style="color:#e8a;">BORRADOR</div>
+    </div>
+  </aside>
+
+</div>
+
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    const pad = n => String(n).padStart(2,'0');
+    document.getElementById('clock').textContent =
+      `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Percentage counter
+  let pct = 0;
+  const pctEl = document.getElementById('pct');
+  const timer = setInterval(() => {
+    pct += 2;
+    if (pct >= 87) { pct = 87; clearInterval(timer); }
+    pctEl.textContent = pct + '%';
+  }, 30);
+
+  // Devola buttons
+  document.querySelectorAll('.devola-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.textContent.trim();
+      if (text.includes('Aprobar')) {
+        document.querySelector('.meta-val[style*="e8a"]').textContent = 'PUBLICADO';
+        document.querySelector('.meta-val[style*="e8a"]').style.color = '#4a8';
+        btn.style.opacity = '0.4';
+        btn.style.pointerEvents = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>

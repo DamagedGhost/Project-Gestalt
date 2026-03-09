@@ -1,0 +1,138 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-02-18 - Gabriel Boric sostuvo una llamada con José Antonio Kast sobre el proyecto de cable submarino (Fuente: La Tercera)",
+    "2026-03-XX (Martes previo al 8 de marzo) - Gabriel Boric y José Antonio Kast se reunieron por menos de 15 minutos, con el cable submarino chino como punto principal de discordia (Fuente: ADN Radio)",
+    "2026-03-08 (antes de las 12:44 h CLST) - José Antonio Kast regresa a Chile tras encuentro con Donald Trump en Miami (Fuente: ADN Radio)",
+    "2026-03-08 11:50 aproximadamente - Reunión entre José Antonio Kast y Gabriel Boric en el Palacio de La Moneda (Fuente: La Tercera)",
+    "2026-03-08 (después de las 11:50) - José Antonio Kast entrega declaraciones en el Patio de Las Camelias del Palacio La Moneda (Fuente: La Tercera)",
+    "2026-03-09 (Lunes) - Ceremonia de cambio de la comandancia en jefe del Ejército (Fuente: La Tercera)",
+    "2026-03-11 - Cambio de mando presidencial (Fuente: La Tercera, ADN Radio)"
+  ],
+  "hechos_verificados": [
+    "El 8 de marzo de 2026, José Antonio Kast se reunió con Gabriel Boric en el Palacio de La Moneda [1][2].",
+    "La reunión ocurrió días antes del cambio de mando programado para el 11 de marzo de 2026 [1][2].",
+    "Hubo una controversia previa relacionada con el proyecto del cable submarino que involucra a China y Estados Unidos [1][2]."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "José Antonio Kast regresó a Chile el 8 de marzo de 2026 tras un encuentro con Donald Trump en la cumbre 'Escudo de las Américas' en Miami.",
+      "fuente": "ADN Radio"
+    },
+    {
+      "hecho": "La reunión del 8 de marzo comenzó cerca de las 11:50 horas.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "Kast agradeció la entrega de antecedentes de distintas materias de interés para el país por parte de Boric, para 'análisis posterior y para toma de decisiones cuando ya corresponda'.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "La reunión permitió coordinar actividades oficiales previas al traspaso de poder, incluyendo la ceremonia de cambio de la comandancia en jefe del Ejército programada para el lunes.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "Boric había advertido a Kast sobre presiones de Estados Unidos en una llamada el 18 de febrero, según el Mandatario.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "Kast y su equipo afirmaron que la información sobre el cable submarino no fue entregada con el detalle señalado por el gobierno.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "El equipo de Kast anunció la suspensión de reuniones bilaterales de traspaso de mando, acusando falta de confianza en la información.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "Antes de su viaje, Kast afirmó que 'se dio vuelta la página' tras el quiebre con la administración actual y que 'todo el traspaso se hizo correctamente'.",
+      "fuente": "ADN Radio"
+    },
+    {
+      "hecho": "La polémica del 'pasado martes' (anterior al 8 de marzo) fue una reunión de menos de 15 minutos donde el principal punto de discordia fue el cable submarino chino.",
+      "fuente": "ADN Radio"
+    }
+  ],
+  "rumores_confirmados": [
+    {
+      "declaracion": "Ya en viaje recibí la solicitud del Presidente Gabriel Boric para tener una reunión y conversar sobre varios temas que él considera relevantes y que estimaba necesario informarme antes de que procedamos a lo que va a ser el cambio de mando",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Los temas versan sobre distintas materias, me entregó los antecedentes, cosas que agradezco y que tendré para análisis posterior y para toma de decisiones cuando ya corresponda, una vez habiendo jurado como presidente de la República",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "También pudimos conversar sobre las actividades oficiales que vienen en estos días",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Mañana viene una ceremonia muy relevante para nuestra patria que es el cambio de la superioridad del Ejército",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Concordamos que haríamos todo lo necesario para que este sea un acto republicano de cambio de mando que revele la importancia que le entregamos a las instituciones de la República",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Esperan que la ceremonia del próximo 11 de marzo sea 'un acto simbólico con todas las características que se merece nuestra nación para un cambio de mando ejemplar'",
+      "quien": "José Antonio Kast",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Habría advertido al presidente electo sobre presiones de Estados Unidos en torno a la iniciativa",
+      "quien": "Gabriel Boric (según La Tercera)",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "Se dio vuelta la página tras el quiebre con la administración actual.",
+      "quien": "José Antonio Kast",
+      "medio": "ADN Radio"
+    },
+    {
+      "declaracion": "Todo el traspaso se hizo correctamente y hoy estamos trabajando para que el 11 de marzo demos una señal clara de que las cosas van a cambiar",
+      "quien": "José Antonio Kast",
+      "medio": "ADN Radio"
+    }
+  ],
+  "contradicciones": [
+    {
+      "punto": "Detalle de la información entregada por Boric a Kast sobre el cable submarino el 18 de febrero",
+      "version_a": "Gabriel Boric habría advertido a Kast sobre presiones de Estados Unidos (La Tercera)",
+      "version_b": "Kast y su equipo han afirmado que esa información no fue entregada con el detalle señalado por el gobierno (La Tercera)"
+    }
+  ],
+  "sesgo_por_fuente": [],
+  "noticia_final": "José Antonio Kast se reunió con Gabriel Boric en el Palacio de La Moneda el 8 de marzo de 2026 [1][2]. Este encuentro ocurrió días antes del cambio de mando presidencial programado para el 11 de marzo de 2026 [1][2]. La reunión comenzó cerca de las 11:50 horas [1].\n\nPreviamente, el 18 de febrero, Gabriel Boric había sostenido una llamada con José Antonio Kast sobre el proyecto del cable submarino, advirtiéndole sobre presiones de Estados Unidos, según el Mandatario [1]. Sin embargo, Kast y su equipo afirmaron que la información sobre el cable submarino no fue entregada con el detalle señalado por el gobierno [1]. Un martes previo al 8 de marzo, Boric y Kast se reunieron por menos de 15 minutos, siendo el cable submarino chino el principal punto de discordia [2]. Tras este encuentro, el equipo de Kast anunció la suspensión de reuniones bilaterales de traspaso de mando, acusando falta de confianza en la información [1].\n\nJosé Antonio Kast regresó a Chile el 8 de marzo de 2026 tras un encuentro con Donald Trump en la cumbre 'Escudo de las Américas' en Miami [2]. Antes de su viaje, Kast había afirmado que \"se dio vuelta la página\" tras el quiebre con la administración actual y que \"todo el traspaso se hizo correctamente\" [2].\n\nTras la reunión del 8 de marzo, Kast agradeció la entrega de antecedentes de distintas materias de interés para el país por parte de Boric, para \"análisis posterior y para toma de decisiones cuando ya corresponda\" [1]. El encuentro también permitió coordinar actividades oficiales previas al traspaso de poder, incluyendo la ceremonia de cambio de la comandancia en jefe del Ejército programada para el lunes [1].",
+  "titular_sugerido": "Kast y Boric se reúnen en La Moneda previo a cambio de mando",
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/politica/noticia/kast-se-reune-con-boric-en-la-moneda-y-agradece-entrega-de-antecedentes-a-dias-del-cambio-de-mando/",
+      "fragmento_relevante": "Kast se reúne con Boric en La Moneda y agradece entrega de antecedentes a días del cambio de mando"
+    },
+    {
+      "indice": 2,
+      "medio": "ADN Radio",
+      "url": "https://www.adnradio.cl/2026/03/08/tras-su-encuentro-con-donald-trump-jose-antonio-kast-vuelve-a-chile-para-nueva-reunion-con-gabriel-boric/",
+      "fragmento_relevante": "Tras su encuentro con Donald Trump: José Antonio Kast vuelve a Chile para nueva reunión con Gabriel Boric"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe una alta coincidencia en los hechos centrales (reunión Kast-Boric, fecha 8 de marzo, lugar La Moneda, contexto cambio de mando, polémica cable submarino) entre ambas fuentes. La única diferencia significativa se refiere al nivel de detalle en una comunicación previa, no afectando la veracidad de los eventos centrales."
+  },
+  "metadata": {
+    "fuentes_analizadas": 2,
+    "urls": [
+      "https://www.latercera.com/politica/noticia/kast-se-reune-con-boric-en-la-moneda-y-agradece-entrega-de-antecedentes-a-dias-del-cambio-de-mando/",
+      "https://www.adnradio.cl/2026/03/08/tras-su-encuentro-con-donald-trump-jose-antonio-kast-vuelve-a-chile-para-nueva-reunion-con-gabriel-boric/"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.1.0"
+  }
+}
