@@ -1,0 +1,37 @@
+{
+  "name": "proyect-gestalt",
+  "version": "1.0.0",
+  "description": "Agente de extracción de datos geopolíticos y arquitectura de microservicios.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-db": "node test-db.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamagedGhost/Project-Gestalt.git"
+  },
+  "keywords": [
+    "data-extraction",
+    "geopolitical-analysis",
+    "microservices",
+    "nodejs"
+  ],
+  "author": "DamagedGhost",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamagedGhost/Project-Gestalt/issues"
+  },
+  "homepage": "https://github.com/DamagedGhost/Project-Gestalt#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.3.1"
+  }
+}

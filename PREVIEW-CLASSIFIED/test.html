@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devola Terminal // Gestalt Protocol</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+    :root {
+      --green:      #00ff88;
+      --green-dim:  #00cc66;
+      --green-dark: #003322;
+      --bg:         #0a0f0a;
+      --panel:      #0d140d;
+      --border:     #1a3a1a;
+      --text:       #88bb88;
+      --text-dim:   #446644;
+      --error:      #ff4444;
+      --warn:       #ffaa00;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 32px;
+      /* scanline overlay */
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,255,136,0.015) 2px,
+        rgba(0,255,136,0.015) 4px
+      );
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+    }
+
+    .unit-id {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 42px;
+      color: var(--green);
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px rgba(0,255,136,0.4);
+    }
+
+    h1 span {
+      color: var(--text-dim);
+      font-size: 28px;
+    }
+
+    /* ── Panel ── */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .panel-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    /* ── Input ── */
+    textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--green);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 13px;
+      padding: 12px;
+      resize: vertical;
+      min-height: 80px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      border-color: var(--green-dim);
+      box-shadow: 0 0 8px rgba(0,255,136,0.1);
+    }
+
+    .url-hint {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    /* ── Button ── */
+    button {
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 12px 32px;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: all 0.15s;
+    }
+
+    button:hover:not(:disabled) {
+      background: var(--green);
+      color: var(--bg);
+      box-shadow: 0 0 20px rgba(0,255,136,0.3);
+    }
+
+    button:disabled {
+      border-color: var(--text-dim);
+      color: var(--text-dim);
+      cursor: not-allowed;
+    }
+
+    /* ── Progress ── */
+    .progress-wrapper {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    progress {
+      width: 100%;
+      height: 6px;
+      appearance: none;
+      border: none;
+    }
+
+    progress::-webkit-progress-bar   { background: var(--border); }
+    progress::-webkit-progress-value { background: var(--green); transition: width 0.4s; }
+    progress::-moz-progress-bar      { background: var(--green); }
+
+    /* ── Logs ── */
+    #logs-panel {
+      display: none;
+    }
+
+    #logs {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-dim);
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 260px;
+      overflow-y: auto;
+      line-height: 1.7;
+    }
+
+    #logs .log-ok    { color: var(--green-dim); }
+    #logs .log-error { color: var(--error); }
+    #logs .log-warn  { color: var(--warn); }
+
+    /* ── JSON output ── */
+    #resultado-panel {
+      display: none;
+    }
+
+    #json-final {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      font-size: 11px;
+      color: #668866;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 400px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      padding: 2px 8px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      margin-left: 12px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .status-badge.done {
+      animation: none;
+      border-color: var(--green-dim);
+    }
+
+    .status-badge.error {
+      border-color: var(--error);
+      color: var(--error);
+      animation: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="unit-id">UNIT: DEVOLA // GESTALT PROTOCOL // INGESTIÓN DE DATOS</div>
+    <h1>LA BIBLIOTECA <span>// ANÁLISIS</span></h1>
+  </header>
+
+  <!-- Input panel -->
+  <div class="panel">
+    <div class="panel-label">» COORDENADAS DE FUENTES CONTAMINADAS</div>
+    <textarea id="urls" placeholder="https://fuente1.com&#10;https://fuente2.com&#10;https://fuente3.com"></textarea>
+    <div class="url-hint">Una URL por línea. Mínimo 2, recomendado 5.</div>
+    <button type="button" id="btn-analizar" onclick="iniciarAnalisis()">» INICIAR PROTOCOLO GESTALT</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrapper" id="progress-wrapper">
+    <div class="progress-header">
+      <span>PROCESANDO<span class="status-badge" id="status-badge">ACTIVO</span></span>
+      <span id="porcentaje">0%</span>
+    </div>
+    <progress id="progreso" value="0" max="100"></progress>
+  </div>
+
+  <!-- Logs panel -->
+  <div class="panel" id="logs-panel">
+    <div class="panel-label">» TELEMETRÍA EN TIEMPO REAL</div>
+    <div id="logs"></div>
+  </div>
+
+  <!-- Resultado -->
+  <div class="panel" id="resultado-panel">
+    <div class="panel-label">» OUTPUT POPOLA — PENDIENTE DE REVISIÓN DEVOLA</div>
+    <pre id="json-final"></pre>
+  </div>
+
+  <script>
+    function iniciarAnalisis() {
+      const rawUrls = document.getElementById('urls').value.trim();
+
+      if (!rawUrls) {
+        appendLog('[ERROR] No se ingresaron URLs.', 'error');
+        return;
+      }
+
+      // Parsear: una por línea o separadas por coma
+      const urls = rawUrls
+        .split(/[\n,]+/)
+        .map(u => u.trim())
+        .filter(u => u.length > 0);
+
+      if (urls.length < 1) {
+        appendLog('[ERROR] No se encontraron URLs válidas.', 'error');
+        return;
+      }
+
+      // Reset UI
+      document.getElementById('btn-analizar').disabled = true;
+      document.getElementById('urls').disabled = true;
+      document.getElementById('progreso').value = 0;
+      document.getElementById('porcentaje').innerText = '0%';
+      document.getElementById('resultado-panel').style.display = 'none';
+      document.getElementById('json-final').innerText = '';
+      document.getElementById('logs').innerHTML = '';
+
+      document.getElementById('progress-wrapper').style.display = 'block';
+      document.getElementById('logs-panel').style.display = 'block';
+
+      const badge = document.getElementById('status-badge');
+      badge.textContent = 'ACTIVO';
+      badge.className = 'status-badge';
+
+      appendLog(`[SISTEMA] Enviando ${urls.length} fuente(s) a Popola...`);
+
+      // 1. POST para iniciar el job
+      fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ urls })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.error) {
+          appendLog(`[ERROR] ${data.error}`, 'error');
+          resetBtn();
+          return;
+        }
+
+        appendLog(`[SISTEMA] Task ID: ${data.taskId}`);
+
+        // 2. Conectar SSE
+        const eventSource = new EventSource(`/api/stream/${data.taskId}`);
+
+        eventSource.onmessage = function(event) {
+          const msg = JSON.parse(event.data);
+
+          // Actualizar barra
+          if (msg.progreso !== undefined) {
+            document.getElementById('progreso').value = msg.progreso;
+            document.getElementById('porcentaje').innerText = msg.progreso + '%';
+          }
+
+          // Mostrar log
+          if (msg.log) appendLog(msg.log);
+
+          // Error
+          if (msg.error) {
+            appendLog(`[ERROR] ${msg.error}`, 'error');
+            badge.textContent = 'ERROR';
+            badge.className = 'status-badge error';
+            eventSource.close();
+            resetBtn();
+            return;
+          }
+
+          // Completado
+          if (msg.progreso === 100 && msg.status === 'COMPLETADO') {
+            eventSource.close();
+
+            try {
+              const resultado = JSON.parse(msg.resultado);
+              document.getElementById('resultado-panel').style.display = 'block';
+              document.getElementById('json-final').innerText = JSON.stringify(resultado, null, 2);
+              appendLog('[SISTEMA] Protocolo completado. Datos listos para revisión Devola.', 'ok');
+            } catch(e) {
+              appendLog('[ERROR] No se pudo parsear el resultado final.', 'error');
+            }
+
+            badge.textContent = 'COMPLETADO';
+            badge.className = 'status-badge done';
+            resetBtn();
+          }
+        };
+
+        eventSource.onerror = function() {
+          appendLog('[ERROR] Conexión SSE interrumpida.', 'error');
+          badge.textContent = 'ERROR';
+          badge.className = 'status-badge error';
+          eventSource.close();
+          resetBtn();
+        };
+      })
+      .catch(err => {
+        appendLog(`[ERROR] No se pudo contactar al servidor: ${err.message}`, 'error');
+        resetBtn();
+      });
+    }
+
+    function appendLog(text, tipo) {
+      const logs = document.getElementById('logs');
+      const line = document.createElement('div');
+      if (tipo) line.className = `log-${tipo}`;
+      line.textContent = text;
+      logs.appendChild(line);
+      logs.scrollTop = logs.scrollHeight;
+    }
+
+    function resetBtn() {
+      document.getElementById('btn-analizar').disabled = false;
+      document.getElementById('urls').disabled = false;
+    }
+  </script>
+</body>
+</html>

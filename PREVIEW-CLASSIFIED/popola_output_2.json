@@ -1,0 +1,315 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-03-10 - El gobierno saliente (Boric) ingresó 13 decretos a tramitación, siendo este el último día de su gestión. (Fuente: T13, Emol)",
+    "2026-03-12 - El subsecretario del Medio Ambiente, José Ignacio Vial, envió un oficio formalizando el retiro de más de 40 decretos supremos. (Fuente: T13, Emol)",
+    "2026-03-17 15:31 - Presidente José Antonio Kast abordó el retiro de 43 decretos ambientales. (Fuente: BioBioChile)",
+    "2026-03-17 16:31 - Emol.com reporta el retiro de 43 decretos medioambientales. (Fuente: Emol)",
+    "2026-03-17 17:30 - T13.cl reporta que el gobierno retira más de 40 decretos ambientales. (Fuente: T13)",
+    "2026-03-18 - Organizaciones ambientales alertan “retrocesos” tras retiro de 43 decretos. (Fuente: CNN Chile)",
+    "2026-03-19 - El exministro Marcelo Mena abordó el retiro de 43 decretos ambientales y el recurso de casación del Proyecto Dominga. (Fuente: 24 Horas)"
+  ],
+  "hechos_verificados": [
+    "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+    "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+    "La decisión de retirar los decretos fue formalizada mediante un oficio enviado por el subsecretario del Medio Ambiente, José Ignacio Vial, el 12 de marzo.",
+    "Los decretos retirados abarcaban áreas como la calidad del aire, planes de descontaminación, protección de la biodiversidad y adaptación al cambio climático.",
+    "Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin.",
+    "El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.",
+    "El gobierno saliente (Boric) ingresó 21 decretos a tramitación en los primeros días de marzo, de los cuales 13 fueron el 10 de marzo, el último día de su gestión.",
+    "Organizaciones ambientales expresaron preocupación y alertaron sobre posibles \"retrocesos\" o paralización de instrumentos regulatorios clave debido al retiro de los decretos."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "La medida generó cuestionamientos en los ámbitos político y ambiental.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "Los decretos retirados estaban en diversas etapas de tramitación y no habían completado el proceso administrativo antes de su retiro.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "El exministro Marcelo Mena afirmó que \"nunca se ha dado que fueran todos\" los decretos retirados.",
+      "fuente": "24 Horas"
+    },
+    {
+      "hecho": "El retiro de decretos también incluye el proyecto de negociación ramal.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "Chile cuenta con más de 850.000 personas sin trabajo formal, según el Presidente Kast.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "La entrada en vigencia del Servicio de Biodiversidad y Áreas Protegidas (SBAP) se inició el 1 de febrero de este año.",
+      "fuente": "CNN Chile"
+    }
+  ],
+  "rumores_confirmados": [
+    {
+      "declaracion": "Abordó el retiro de 43 decretos ambientales y el recurso de casación del Proyecto Dominga, lamentando que la protección del pingüino de Humboldt y la norma de emisión para termoeléctricas quedaran en vilo. Afirmó que 'nunca se ha dado que fueran todos' los decretos retirados.",
+      "quien": "Marcelo Mena (exministro de Medio Ambiente)",
+      "medio": "24 Horas"
+    },
+    {
+      "declaracion": "Advirtieron que la medida podría significar un 'retroceso relevante en materia ambiental' y una 'señal preocupante', sosteniendo que el retraso afecta la salud, los derechos humanos y el resguardo de los territorios.",
+      "quien": "246 organizaciones y 149 personas (incluyendo Greenpeace Chile, Fundación Terram y Oceana Chile)",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Aseguró que buscan que 'Chile vuelva a ser un país confiable'. Respecto a las críticas sobre la 'retroexcavadora', dijo: 'Ayer vimos el efecto positivo que puede tener una máquina excavadora para construir futuro, y el futuro se construye en base a seguridad y empleo'. Afirmó que la negociación ramal no es urgente debido al desempleo.",
+      "quien": "José Antonio Kast (Presidente de la República)",
+      "medio": "BioBioChile"
+    }
+  ],
+  "contradicciones": [],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "Emol.com",
+      "sesgo_detectado": "Presenta la noticia de forma factual y neutral, incluyendo la justificación del gobierno y el descontento general en redes sociales, junto con un listado detallado de los decretos.",
+      "hechos_omitidos": "No profundiza en reacciones o declaraciones específicas de organizaciones ambientales o figuras políticas de oposición."
+    },
+    {
+      "fuente": "24horas.cl",
+      "sesgo_detectado": "El encuadre resalta la perspectiva de preocupación y crítica sobre el retiro de los decretos, centrándose en las declaraciones de un exministro del área con una postura crítica.",
+      "hechos_omitidos": "No presenta la justificación completa del gobierno ni el listado detallado de decretos; se enfoca en el impacto y la opinión del exministro."
+    },
+    {
+      "fuente": "futuro360.cnnchile.com",
+      "sesgo_detectado": "Se enfoca en la perspectiva de las organizaciones ambientales, utilizando un lenguaje que subraya los 'retrocesos' y la 'señal preocupante', lo que indica un encuadre crítico hacia la acción del gobierno.",
+      "hechos_omitidos": "No presenta el listado completo de los decretos retirados ni declaraciones de apoyo a la medida por parte de otros sectores."
+    },
+    {
+      "fuente": "t13.cl",
+      "sesgo_detectado": "Ofrece una cobertura equilibrada y objetiva, detallando la medida, la justificación del gobierno y los impactos, incluyendo un listado exhaustivo de los decretos.",
+      "hechos_omitidos": "No incluye declaraciones de figuras políticas específicas de la oposición o activistas ambientales más allá de mencionar la 'controversia' y 'cuestionamientos'."
+    },
+    {
+      "fuente": "biobiochile.cl",
+      "sesgo_detectado": "Da prominencia a la justificación del gobierno y sus prioridades (seguridad, empleo, 'país confiable') a través de las declaraciones del Presidente Kast, lo que podría interpretarse como un encuadre que favorece la narrativa oficial.",
+      "hechos_omitidos": "No incluye las críticas detalladas de organizaciones ambientales ni de la oposición, ni el listado completo de decretos."
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "retiró 43 decretos supremos vinculados a normativa ambiental",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "Ministerio del Medio Ambiente decidiera retirar del proceso",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+      "url_respaldo": "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado",
+      "fragmento_clave": "abordó el retiro de 43 decretos ambientales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "retiro de 43 decretos ambientales impulsados",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría.",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/17/kast-y-retiro-de-decretos-ambientales-ayer-vimos-el-efecto-positivo-de-una-maquina-excavadora.shtml",
+      "fragmento_clave": "retiro de 43 decretos ambientales del Gobierno anterior",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "retiró 43 decretos supremos vinculados a normativa ambiental",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "retirar del proceso de toma de razón en la Contraloría más de 40 decretos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+      "url_respaldo": "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado",
+      "fragmento_clave": "retiro de 43 decretos ambientales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "retiro de 43 decretos ambientales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La cantidad de decretos retirados es de 43 o \"más de 40\".",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/17/kast-y-retiro-de-decretos-ambientales-ayer-vimos-el-efecto-positivo-de-una-maquina-excavadora.shtml",
+      "fragmento_clave": "retiro de 43 decretos ambientales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La decisión de retirar los decretos fue formalizada mediante un oficio enviado por el subsecretario del Medio Ambiente, José Ignacio Vial, el 12 de marzo.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "oficio enviado el 12 de marzo por el subsecretario",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La decisión de retirar los decretos fue formalizada mediante un oficio enviado por el subsecretario del Medio Ambiente, José Ignacio Vial, el 12 de marzo.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "oficio emanado con fecha 12 de Marzo, retiró 43 decretos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Los decretos retirados abarcaban áreas como la calidad del aire, planes de descontaminación, protección de la biodiversidad y adaptación al cambio climático.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "biodiversidad, calidad del aire y creación de parques nacionales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Los decretos retirados abarcaban áreas como la calidad del aire, planes de descontaminación, protección de la biodiversidad y adaptación al cambio climático.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "regulación climática, calidad ambiental, planes de descontaminación",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Los decretos retirados abarcaban áreas como la calidad del aire, planes de descontaminación, protección de la biodiversidad y adaptación al cambio climático.",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "calidad del aire, planes de descontaminación, protección de la biodiversidad",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "declaratoria del pingüino de Humboldt como monumento natural",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin.",
+      "url_respaldo": "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado",
+      "fragmento_clave": "protección del pingüino de Humboldt",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "monumento natural de especie al pingüino de Humboldt",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin.",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "declaración del pingüino de Humboldt de monumento natural",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "proceso de revisión técnica y jurídica de los decretos pendientes",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "plan de auditoría interna del gobierno del Presidente Kast",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "plan de auditoría interna del gobierno de José Antonio Kast",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/17/kast-y-retiro-de-decretos-ambientales-ayer-vimos-el-efecto-positivo-de-una-maquina-excavadora.shtml",
+      "fragmento_clave": "Nosotros queremos generar la mejor política pública posible",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El gobierno saliente (Boric) ingresó 21 decretos a tramitación en los primeros días de marzo, de los cuales 13 fueron el 10 de marzo, el último día de su gestión.",
+      "url_respaldo": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_clave": "gobierno del expresidente Boric ingresó 21 decretos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El gobierno saliente (Boric) ingresó 21 decretos a tramitación en los primeros días de marzo, de los cuales 13 fueron el 10 de marzo, el último día de su gestión.",
+      "url_respaldo": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_clave": "gobierno saliente ingresó a tramitación 21 decretos los primeros días de marzo",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Organizaciones ambientales expresaron preocupación y alertaron sobre posibles \"retrocesos\" o paralización de instrumentos regulatorios clave debido al retiro de los decretos.",
+      "url_respaldo": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_clave": "Organizaciones ambientales alertan “retrocesos” tras retiro de 43 decretos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Organizaciones ambientales expresaron preocupación y alertaron sobre posibles \"retrocesos\" o paralización de instrumentos regulatorios clave debido al retiro de los decretos.",
+      "url_respaldo": "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado",
+      "fragmento_clave": "situación que dejó en vilo la protección del pingüino",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "T13",
+      "url": "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026",
+      "fragmento_relevante": "Ministerio del Medio Ambiente decidiera retirar del proceso de toma de razón"
+    },
+    {
+      "indice": 2,
+      "medio": "24 Horas",
+      "url": "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado",
+      "fragmento_relevante": "abordó el retiro de 43 decretos ambientales desde la Contraloría"
+    },
+    {
+      "indice": 3,
+      "medio": "Emol",
+      "url": "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html",
+      "fragmento_relevante": "retiró 43 decretos supremos vinculados a normativa ambiental"
+    },
+    {
+      "indice": 4,
+      "medio": "CNN Chile",
+      "url": "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos",
+      "fragmento_relevante": "retiro de 43 decretos ambientales impulsados durante el gobierno"
+    },
+    {
+      "indice": 5,
+      "medio": "BioBioChile",
+      "url": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/17/kast-y-retiro-de-decretos-ambientales-ayer-vimos-el-efecto-positivo-de-una-maquina-excavadora.shtml",
+      "fragmento_relevante": "Presidente José Antonio Kast abordó el retiro de 43 decretos ambientales"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe una alta coincidencia en los hechos centrales (retiro de decretos, cantidad aproximada, justificación gubernamental y algunos decretos clave afectados) entre todas las fuentes analizadas."
+  },
+  "noticia_final": "El 10 de marzo de 2026, el gobierno saliente (Boric) ingresó 13 decretos a tramitación, siendo este el último día de su gestión. En los primeros días de marzo, el gobierno saliente había ingresado un total de 21 decretos a tramitación. Posteriormente, el 12 de marzo, el subsecretario del Medio Ambiente, José Ignacio Vial, envió un oficio formalizando el retiro de más de 40 decretos supremos. El Ministerio del Medio Ambiente retiró un número de decretos ambientales que estaban en proceso de toma de razón en la Contraloría [1]. La cantidad de decretos retirados es de 43 o \"más de 40\" [3][1]. El Ministerio del Medio Ambiente justificó el retiro como parte de un proceso de revisión técnica y jurídica o una auditoría interna del actual gobierno (Kast) para asegurar altos estándares de calidad jurídica.\n\nLos decretos retirados abarcaban áreas como la calidad del aire, planes de descontaminación, protección de la biodiversidad y adaptación al cambio climático. Entre los decretos afectados se encuentran la declaración del pingüino de Humboldt como monumento natural y el plan de recuperación de la ranita de Darwin. Según T13, la medida generó cuestionamientos en los ámbitos político y ambiental [1]. Según T13, los decretos retirados estaban en diversas etapas de tramitación y no habían completado el proceso administrativo antes de su retiro [1]. Según BioBioChile, el retiro de decretos también incluye el proyecto de negociación ramal [5].\n\nEl 17 de marzo, el Presidente José Antonio Kast abordó el retiro de 43 decretos ambientales [5]. Ese mismo día, Emol.com reportó el retiro de 43 decretos medioambientales [3], y T13.cl reportó que el gobierno retira más de 40 decretos ambientales [1]. José Antonio Kast declaró que buscan que 'Chile vuelva a ser un país confiable'. Respecto a las críticas sobre la 'retroexcavadora', dijo: 'Ayer vimos el efecto positivo que puede tener una máquina excavadora para construir futuro, y el futuro se construye en base a seguridad y empleo'. Afirmó que la negociación ramal no es urgente debido al desempleo, según BioBioChile [5]. Según BioBioChile, Chile cuenta con más de 850.000 personas sin trabajo formal, según el Presidente Kast [5].\n\nEl 18 de marzo, organizaciones ambientales alertaron “retrocesos” tras el retiro de 43 decretos [4]. Organizaciones ambientales expresaron preocupación y alertaron sobre posibles \"retrocesos\" o paralización de instrumentos regulatorios clave debido al retiro de los decretos. 246 organizaciones y 149 personas, incluyendo Greenpeace Chile, Fundación Terram y Oceana Chile, advirtieron que la medida podría significar un 'retroceso relevante en materia ambiental' y una 'señal preocupante', sosteniendo que el retraso afecta la salud, los derechos humanos y el resguardo de los territorios, según CNN Chile [4]. Según CNN Chile, la entrada en vigencia del Servicio de Biodiversidad y Áreas Protegidas (SBAP) se inició el 1 de febrero de este año [4]. El 19 de marzo, el exministro Marcelo Mena abordó el retiro de 43 decretos ambientales y el recurso de casación del Proyecto Dominga [2]. Marcelo Mena declaró que lamentaba que la protección del pingüino de Humboldt y la norma de emisión para termoeléctricas quedaran en vilo. Afirmó que 'nunca se ha dado que fueran todos' los decretos retirados, según 24 Horas [2].",
+  "titular_sugerido": "Gobierno retira 43 decretos ambientales; genera reacciones y cuestionamientos",
+  "status": "pendiente_revision",
+  "tags": [
+    "medio ambiente",
+    "decretos ambientales",
+    "gobierno Kast",
+    "política",
+    "Chile"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 5,
+    "fuentes_inaccesibles": [],
+    "urls": [
+      "https://www.emol.com/noticias/Nacional/2026/03/17/1194556/se-retiran-43-decretos-medioambientales.html&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgOEAE&usg=AOvVaw34gvJq63CS8pa5vEjQLVGu",
+      "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgTEAE&usg=AOvVaw113z9qwHe8yPln1A82rQDU",
+      "https://www.24horas.cl/programas/via-publica/video/exministro-de-medio-ambiente-y-retiro-de-decretos-ambientales-nunca-se-ha-dado&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgPEAE&usg=AOvVaw2kgUjc9AM35JTwVznfI7zx",
+      "https://www.t13.cl/noticia/politica/gobierno-retira-mas-40-decretos-ambientales-tramite-abre-debate-por-su-impacto-17-3-2026&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgKEAE&usg=AOvVaw351-lSbsTFKuxX1kb9dwmm",
+      "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/17/kast-y-retiro-de-decretos-ambientales-ayer-vimos-el-efecto-positivo-de-una-maquina-excavadora.shtml&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgREAE&usg=AOvVaw0_4UteLqZNfuIlIjrgCkkQ"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}

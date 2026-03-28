@@ -1,0 +1,191 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-03-26 madrugada - Alerta en La Moneda por intervención de cuentas (Fuente: La Tercera)",
+    "2026-03-26 01:51 - Publicación de mensaje contra Donald Trump en redes de Kast (Fuente: BioBioChile)",
+    "2026-03-26 02:00 AM (aproximado) - La Moneda detecta publicación desde perfil de Kast (Fuente: Chilevisión)",
+    "2026-03-26 madrugada - Cuentas de Presidente Kast en Instagram y X fueron intervenidas (Fuente: 24horas.cl)",
+    "2026-03-26 madrugada - Cuentas de José Antonio Kast en redes sociales hackeadas por terceros (Fuente: TVN)",
+    "2026-03-26 madrugada - Equipo del Mandatario indica que ambas redes sociales fueron intervenidas (Fuente: 24horas.cl)",
+    "2026-03-26 madrugada - Publicación de mensaje ofensivo fue borrada (Fuente: La Tercera, Chilevisión, TVN)",
+    "2026-03-26 mañana - Gobierno confirma hackeo de cuentas del Presidente Kast (Fuente: TVN)",
+    "2026-03-26 06:45 - Presidencia confirma que redes de Kast fueron 'comprometidas por terceros' (Fuente: BioBioChile)",
+    "2026-03-26 07:18 - Confirman hackeo de redes sociales personales del presidente Kast (Fuente: Chilevisión)",
+    "2026-03-26 13:01 - Publicación de BioBioChile con dudas sobre si fue hackeo o intervención (Fuente: BioBioChile)",
+    "2026-03-26 - Artículo de La Tercera sobre hackeo a cuenta personal de Kast (Fuente: La Tercera)"
+  ],
+  "hechos_verificados": [
+    "Las cuentas personales del Presidente José Antonio Kast en X (anteriormente Twitter) e Instagram fueron intervenidas por terceros.",
+    "El incidente ocurrió durante la madrugada del jueves 26 de marzo de 2026.",
+    "En la cuenta de X, se publicó un mensaje con críticas al presidente de Estados Unidos, Donald Trump, acompañado de una imagen que lo mostraba con un bigote similar al de Adolf Hitler.",
+    "El mensaje contenía la frase 'Donald Trumpler es peor que Hitler' y aludía a que Chile había cambiado su postura debido a acciones de Trump que causaron daños globales.",
+    "El contenido publicado fue eliminado de las cuentas poco después.",
+    "La Presidencia de la República confirmó el suceso.",
+    "Se advirtió que cualquier nueva publicación en esas cuentas no corresponde a declaraciones del presidente."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "La recuperación del control de las cuentas fue más rápida en Instagram (Meta) que en X (donde los protocolos iniciales resultaron más complejos).",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "Desde el inicio del mandato de Kast, se establecieron cuentas oficiales (@Oficina_Pdte en X y @presidente_kast en Instagram) para uso institucional, separadas de las personales debido a que el mandatario bloqueaba usuarios en sus perfiles anteriores, lo cual contraviene las directrices de la Contraloría para canales de información pública.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "El incidente generó un dilema administrativo en La Moneda respecto a si se debían iniciar acciones institucionales, como una denuncia, dado que las cuentas afectadas eran personales y no oficiales.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "El gobierno ha evitado confirmar la presentación de denuncias o acciones legales, argumentando que se trata de cuentas personales del Mandatario, a pesar de que el equipo presidencial colaboró en la recuperación.",
+      "fuente": "La Tercera"
+    }
+  ],
+  "rumores_confirmados": [
+    {
+      "declaracion": "Un experto digital, Cristián Chaparro, opinó que el evento fue un 'supuesto hackeo' y que 'alguien se dio un gustito'.",
+      "quien": "Cristián Chaparro (experto digital)",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Chaparro sugirió que se trató más de una 'intervención de terceros' que de un hackeo, basándose en la ausencia de cambios en la seguridad de las cuentas, la rapidez de la recuperación, la falta de adjudicación del acto y la ausencia de un pedido de rescate económico.",
+      "quien": "Cristián Chaparro (experto digital)",
+      "medio": "BioBioChile"
+    }
+  ],
+  "contradicciones": [
+    {
+      "punto": "Estado de la recuperación total de las cuentas hackeadas.",
+      "version_a": "Chilevisión y TVN reportan que no se había logrado recuperar el control completo de las redes sociales y que no se descartaban nuevas publicaciones ajenas al presidente.",
+      "version_b": "La Tercera indicó que desde Palacio se comunicó que las cuentas habían sido recuperadas. BioBioChile mencionó que la recuperación fue rápida y se lograron borrar las publicaciones."
+    }
+  ],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "24horas.cl",
+      "sesgo_detectado": "ninguno detectado",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "chilevision.cl",
+      "sesgo_detectado": "ninguno detectado",
+      "hechos_omitidos": "Omitió detalles sobre la distinción entre cuentas personales e institucionales del Presidente y el dilema administrativo en La Moneda."
+    },
+    {
+      "fuente": "latercera.com",
+      "sesgo_detectado": "Enfoca el incidente no solo como un hackeo, sino también como un 'dilema en Presidencia' y un 'flanco administrativo', destacando la 'zona gris' por ser cuentas personales versus la intervención del equipo presidencial, lo que podría implicar un encuadre más crítico hacia la gestión gubernamental del incidente.",
+      "hechos_omitidos": "No reporta las opiniones del experto digital Cristián Chaparro sobre la naturaleza del incidente (hackeo vs. intervención de terceros) mencionadas por BioBioChile."
+    },
+    {
+      "fuente": "biobiochile.cl",
+      "sesgo_detectado": "El título y el enfoque del artículo ('¿Fue un hackeo? Las dudas...') sugieren un encuadre que cuestiona la narrativa oficial de 'hackeo', inclinándose más por la opinión de un experto que habla de 'intervención de terceros', lo que podría generar cierta ambigüedad o escepticismo sobre la gravedad del evento.",
+      "hechos_omitidos": "Omitió detalles sobre el dilema administrativo en Presidencia y la distinción entre cuentas personales e institucionales de Kast, los cuales son abordados por La Tercera."
+    },
+    {
+      "fuente": "tvn.cl",
+      "sesgo_detectado": "ninguno detectado",
+      "hechos_omitidos": "Omitió detalles sobre la distinción entre cuentas personales e institucionales del Presidente y el dilema administrativo en La Moneda, así como las opiniones del experto digital Cristián Chaparro."
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "La recuperación del control de las cuentas fue más expedita en Instagram que en X.",
+      "url_respaldo": "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "fragmento_clave": "recuperación del control fue más expedita en la red social de Meta",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Las cuentas institucionales del Presidente son @Oficina_Pdte en X y @presidente_kast en Instagram, debido a normas de Contraloría.",
+      "url_respaldo": "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "fragmento_clave": "cuentas oficiales del Presidente serían @Oficina_Pdte en X y @presidente_kast",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El hackeo de las cuentas personales abrió un dilema administrativo en Palacio sobre si presentar acciones legales o una denuncia.",
+      "url_respaldo": "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "fragmento_clave": "dilema en Presidencia por acciones a seguir",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El gobierno ha evitado confirmar acciones institucionales debido a que las cuentas hackeadas son personales del Mandatario.",
+      "url_respaldo": "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "fragmento_clave": "evitado señalar si adoptó acciones institucionales",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El experto digital Cristián Chaparro opinó que fue un 'supuesto hackeo' y que 'alguien se dio un gustito'.",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/expreso-bio-bio/2026/03/26/fue-un-hackeo-las-dudas-tras-la-intervencion-de-las-redes-sociales-del-presidente-jose-antonio-kast.shtml",
+      "fragmento_clave": "experto digital Cristián Chaparro sostuvo que se trata de un 'supuesto hackeo'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Según Chaparro, hay puntos que indican una 'intervención de terceros' más que un hackeo, como la ausencia de cambios de seguridad o pedido de rescate.",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/expreso-bio-bio/2026/03/26/fue-un-hackeo-las-dudas-tras-la-intervencion-de-las-redes-sociales-del-presidente-jose-antonio-kast.shtml",
+      "fragmento_clave": "más que un hackeo, es una 'intervención de terceros'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El estado de la recuperación total de las cuentas hackeadas es contradictorio entre fuentes.",
+      "url_respaldo": "https://www.chilevision.cl/noticias/nacional/ahora-confirman-hackeo-de-redes-sociales-personales-de-presidente-kast/",
+      "fragmento_clave": "todavía no se lograría recuperar el control de dichas redes sociales",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "24horas.cl",
+      "url": "https://www.24horas.cl/actualidad/politica/gobierno-hackeo-cuentas-presidente-kast-instagram-x",
+      "fragmento_relevante": "Gobierno confirma hackeo a cuentas del Presidente Kast en Instagram y X"
+    },
+    {
+      "indice": 2,
+      "medio": "Chilevisión",
+      "url": "https://www.chilevision.cl/noticias/nacional/ahora-confirman-hackeo-de-redes-sociales-personales-de-presidente-kast/",
+      "fragmento_relevante": "Desde el gobierno confirmaron que la cuenta personal de Instagram y X"
+    },
+    {
+      "indice": 3,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "fragmento_relevante": "Presidencia confirmó que las cuentas personales del Presidente José Antonio Kast en X e Instagram habían sido “comprometidas por terceros”"
+    },
+    {
+      "indice": 4,
+      "medio": "BioBioChile",
+      "url": "https://www.biobiochile.cl/biobiotv/programas/expreso-bio-bio/2026/03/26/fue-un-hackeo-las-dudas-tras-la-intervencion-de-las-redes-sociales-del-presidente-jose-antonio-kast.shtml",
+      "fragmento_relevante": "redes sociales del presidente José Antonio Kast fueron 'comprometidas por terceros'"
+    },
+    {
+      "indice": 5,
+      "medio": "TVN",
+      "url": "https://www.tvn.cl/noticias/actualidad/gobierno-confirma-hackeo-de-cuentas-del-presidente-kast-en-redes-sociales",
+      "fragmento_relevante": "gobierno confirmó que en horas de esta madrugada, las cuentas en redes sociales del Presidente José Antonio Kast fueron hackeadas por terceros"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe un alto grado de coincidencia entre todas las fuentes respecto a los hechos centrales del incidente: el hackeo/intervención de las cuentas personales de José Antonio Kast en X e Instagram el jueves 26 de marzo de 2026, la publicación de un mensaje contra Donald Trump con una imagen modificada, su posterior eliminación, y la confirmación por parte del gobierno. Las disputas se centran en detalles sobre el estado exacto de la recuperación y la caracterización precisa del evento (hackeo versus intervención), lo cual es normal en la cobertura inicial."
+  },
+  "noticia_final": "Las cuentas personales del Presidente José Antonio Kast en X (anteriormente Twitter) e Instagram fueron intervenidas por terceros durante la madrugada del jueves 26 de marzo de 2026 [1][2][3][4][5]. A la 01:51, se publicó un mensaje en la cuenta de X con críticas al presidente de Estados Unidos, Donald Trump, acompañado de una imagen que lo mostraba con un bigote similar al de Adolf Hitler [4]. El mensaje contenía la frase 'Donald Trumpler es peor que Hitler' y aludía a que Chile había cambiado su postura debido a acciones de Trump que causaron daños globales. Aproximadamente a las 02:00 AM, La Moneda detectó la publicación desde el perfil de Kast [2]. El contenido publicado fue eliminado de las cuentas poco después [3][2][5].\n\nDurante la mañana del 26 de marzo, el Gobierno confirmó el hackeo de las cuentas del Presidente Kast [5]. A las 06:45, Presidencia confirmó que las redes de Kast fueron 'comprometidas por terceros' [4]. A las 07:18, se confirmó el hackeo de las redes sociales personales del presidente Kast [2]. La Presidencia de la República confirmó el suceso y advirtió que cualquier nueva publicación en esas cuentas no corresponde a declaraciones del presidente.\n\nSegún La Tercera, la recuperación del control de las cuentas fue más rápida en Instagram (Meta) que en X, donde los protocolos iniciales resultaron más complejos [3]. Desde el inicio del mandato de Kast, se establecieron cuentas oficiales para uso institucional, separadas de las personales, debido a que el mandatario bloqueaba usuarios en sus perfiles anteriores, lo cual contraviene las directrices de la Contraloría para canales de información pública [3]. El incidente generó un dilema administrativo en La Moneda respecto a si se debían iniciar acciones institucionales, como una denuncia, dado que las cuentas afectadas eran personales y no oficiales [3]. El gobierno ha evitado confirmar la presentación de denuncias o acciones legales, argumentando que se trata de cuentas personales del Mandatario, a pesar de que el equipo presidencial colaboró en la recuperación [3].\n\nUn experto digital, Cristián Chaparro, opinó que el evento fue un 'supuesto hackeo' y que 'alguien se dio un gustito', según BioBioChile [4]. Chaparro sugirió que se trató más de una 'intervención de terceros' que de un hackeo, basándose en la ausencia de cambios en la seguridad de las cuentas, la rapidez de la recuperación, la falta de adjudicación del acto y la ausencia de un pedido de rescate económico, según BioBioChile [4]. Respecto al estado de la recuperación total de las cuentas, mientras Chilevisión [2] y TVN [5] reportan que no se había logrado recuperar el control completo de las redes sociales y que no se descartaban nuevas publicaciones ajenas al presidente, La Tercera indicó que desde Palacio se comunicó que las cuentas habían sido recuperadas [3]. BioBioChile mencionó que la recuperación fue rápida y se lograron borrar las publicaciones [4].",
+  "titular_sugerido": "Cuentas personales de Presidente Kast en redes sociales fueron intervenidas",
+  "status": "pendiente_revision",
+  "tags": [
+    "hackeo",
+    "José Antonio Kast",
+    "redes sociales",
+    "política"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 5,
+    "fuentes_inaccesibles": [],
+    "urls": [
+      "https://www.latercera.com/politica/noticia/hackeo-a-cuenta-personal-de-kast-abre-dilema-en-presidencia-por-acciones-a-seguir/",
+      "https://www.biobiochile.cl/biobiotv/programas/expreso-bio-bio/2026/03/26/fue-un-hackeo-las-dudas-tras-la-intervencion-de-las-redes-sociales-del-presidente-jose-antonio-kast.shtml",
+      "https://www.chilevision.cl/noticias/nacional/ahora-confirman-hackeo-de-redes-sociales-personales-de-presidente-kast/",
+      "https://www.24horas.cl/actualidad/politica/gobierno-hackeo-cuentas-presidente-kast-instagram-x",
+      "https://www.tvn.cl/noticias/actualidad/gobierno-confirma-hackeo-de-cuentas-del-presidente-kast-en-redes-sociales"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}
