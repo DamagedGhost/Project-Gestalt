@@ -1,0 +1,287 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2016 - Desaparición de Narumi Kurosaki en Besanzón, Francia (Fuente: BioBioChile, T13, CNN Chile, Cooperativa, La Tercera)",
+    "5 de diciembre de 2016 - Narumi Kurosaki desapareció sin dejar rastro (Fuente: Cooperativa)",
+    "Madrugada del 5 de diciembre de 2016 - Zepeda habría matado a Narumi en su habitación (Fuente: T13)",
+    "2022 - Primer proceso judicial de Zepeda con condena a 28 años (Fuente: La Tercera)",
+    "2023 - Segundo proceso judicial de Zepeda con condena a 28 años, confirmada en apelación pero luego anulada (Fuente: T13, La Tercera)",
+    "17 de marzo - Inicio del juicio actual contra Nicolás Zepeda (Fuente: CNN Chile)",
+    "Lunes 23 de marzo de 2026 - Madre de Narumi Kurosaki declara sobre intentos de suicidio y expresa deseo de que Zepeda muera en prisión (Fuente: BioBioChile)",
+    "Martes 24 de marzo de 2026 - Novio de Narumi Kurosaki testifica contra Zepeda (Fuente: BioBioChile)",
+    "Miércoles 25 de marzo de 2026 - Fiscalía francesa solicita 30 años de cárcel para Nicolás Zepeda (Fuente: BioBioChile, T13)",
+    "Miércoles 25 de marzo de 2026 | 17:07 - Zepeda reitera su inocencia y rompe en llanto ante el tribunal (Fuente: BioBioChile)",
+    "Jueves 26 de marzo de 2026 - Nicolás Zepeda es condenado a cadena perpetua por el Tribunal de lo Criminal del Ródano, en Lyon (Fuente: CNN Chile, Cooperativa, La Tercera)",
+    "Jueves 26 de marzo de 2026 🕐 11:36 - Defensa de Zepeda anuncia apelación a la condena (Fuente: Cooperativa)"
+  ],
+  "hechos_verificados": [
+    "Nicolás Zepeda fue condenado a cadena perpetua por el asesinato de Narumi Kurosaki en Francia.",
+    "El cuerpo de Narumi Kurosaki, desaparecida en 2016, nunca ha sido hallado.",
+    "Zepeda apelará la condena a cadena perpetua.",
+    "Anteriormente, Zepeda había recibido dos condenas de 28 años de prisión que fueron anuladas por la Corte de Casación francesa debido a irregularidades o defectos de forma.",
+    "Zepeda ha negado haber cometido el crimen y ha reiterado su inocencia en este tercer juicio.",
+    "La fiscalía había solicitado una pena de 30 años de cárcel para Zepeda.",
+    "La condena a cadena perpetua impuesta superó la pena solicitada por la Fiscalía.",
+    "El tribunal acogió la figura de la premeditación en el asesinato de Narumi Kurosaki."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "La defensa de Zepeda calificó el fallo como 'absolutamente injusto' y desproporcionado, argumentando que lo equipara a 'asesinos en serie y terroristas'.",
+      "fuente": "Cooperativa.cl"
+    },
+    {
+      "hecho": "El abogado Sylvain Cormier afirmó que Zepeda fue castigado 'por haber osado responder a la condena contra él y haber ganado en casación'.",
+      "fuente": "Cooperativa.cl"
+    },
+    {
+      "hecho": "Zepeda admitió haber mentido en testimonios anteriores, pero aseguró que amaba sinceramente a Narumi.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "La abogada de la familia Kurosaki, Sylvie Galley, leyó intercambios escritos para ilustrar los mecanismos de control que Zepeda intentaba imponer a Narumi.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "El fiscal Vincent Auger indicó que 'si hay un experto en crímenes sin cuerpo en esta sala, es Nicolas Zepeda', haciendo una referencia a la dictadura de Pinochet.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "El novio de Narumi testificó en contra de Zepeda, afirmando que este 'Nunca revelará la ubicación del cuerpo'.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "La madre de Narumi Kurosaki reconoció haber tenido intentos de suicidio y expresó su deseo de que Zepeda 'muera en la cárcel'.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "El juicio actual contra Nicolás Zepeda comenzó el 17 de marzo.",
+      "fuente": "CNN Chile"
+    }
+  ],
+  "rumores_confirmados": [
+    {
+      "declaracion": "No la maté, la amaba profundamente. Soy incapaz de lastimarla.",
+      "quien": "Nicolás Zepeda",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Amé sinceramente a Narumi, con todo mi corazón. Con todos mis defectos, durante diez años ha estado en mis pensamientos. Está conmigo. Vivo en un infierno sin saber qué pasó... ¡Yo no maté a Narumi, no pude haber sido yo!",
+      "quien": "Nicolás Zepeda",
+      "medio": "La Tercera"
+    },
+    {
+      "declaracion": "El proyecto (de Zepeda) no era enterrarlo, sino quemarlo. La hipótesis más probable es que arrojó el cuerpo al río dentro de una maleta.",
+      "quien": "Fiscalía francesa",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "El plan de Nicolás Zepeda no era enterrar el cuerpo, sino quemarlo... La hipótesis más probable es que arrojara el cuerpo al río, dentro de su maleta.",
+      "quien": "Fiscalía francesa (Vincent Auger)",
+      "medio": "T13"
+    },
+    {
+      "declaracion": "Hay tres razones por las que un hombre mata a su pareja o expareja: cuando ella anuncia que lo va a dejar, cuando lo deja o cuando rehace su vida. En este caso, Nicolás Zepeda cumple las tres.",
+      "quien": "Fiscal francés",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Han castigado a Nicolás Zepeda por haber osado responder a la condena contra él y haber ganado en casación.",
+      "quien": "Abogado Sylvain Cormier",
+      "medio": "Cooperativa.cl"
+    }
+  ],
+  "contradicciones": [],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "BioBioChile",
+      "sesgo_detectado": "Enfocado en el drama humano y las emociones del acusado y la familia de la víctima, utilizando un lenguaje que resalta el sufrimiento y las contradicciones personales.",
+      "hechos_omitidos": "No profundiza en los aspectos técnicos o jurídicos de la anulación de las condenas anteriores ni la fecha de inicio del juicio actual."
+    },
+    {
+      "fuente": "T13",
+      "sesgo_detectado": "Se inclina por destacar las hipótesis más impactantes de la fiscalía sobre el destino del cuerpo y la supuesta planificación del crimen. Introduce elementos contextuales (como la dictadura de Pinochet) que pueden influir en la percepción del acusado.",
+      "hechos_omitidos": "No reporta la condena final a cadena perpetua, ya que su publicación es anterior al veredicto."
+    },
+    {
+      "fuente": "CNN Chile",
+      "sesgo_detectado": "Presenta un enfoque directo y conciso, priorizando la noticia principal de la condena y los hechos judiciales clave. Mantiene un tono neutral, pero su énfasis está en la inmediatez y la resolución judicial.",
+      "hechos_omitidos": "Omite detalles sobre las declaraciones emocionales de Zepeda o las hipótesis detalladas de la fiscalía sobre el cuerpo."
+    },
+    {
+      "fuente": "Cooperativa.cl",
+      "sesgo_detectado": "Muestra un sesgo hacia la perspectiva de la defensa de Zepeda, destacando sus críticas a la severidad del fallo y sus argumentos sobre la injusticia de la condena.",
+      "hechos_omitidos": "No profundiza en las declaraciones personales de Zepeda ni en las hipótesis de la fiscalía sobre el manejo del cuerpo."
+    },
+    {
+      "fuente": "futuro360.cnnchile.com",
+      "sesgo_detectado": "Contenido no analizado debido a que la URL fue inaccesible o no relevante para el caso Narumi. Esta fuente fue agregada a 'fuentes_inaccesibles'.",
+      "hechos_omitidos": "No aplica, fuente inaccesible."
+    },
+    {
+      "fuente": "La Tercera",
+      "sesgo_detectado": "Enfocado en la última declaración de Nicolás Zepeda, dando espacio a sus expresiones de inocencia y amor, aunque también valida el veredicto de culpabilidad. Prioriza el aspecto personal y emocional del acusado en sus últimas palabras.",
+      "hechos_omitidos": "No detalla las hipótesis de la fiscalía sobre el manejo del cuerpo de Narumi ni el inicio del juicio."
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "La defensa de Zepeda calificó el fallo como 'absolutamente injusto' y desproporcionado, y que lo equipara a 'asesinos en serie y terroristas'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.cooperativa.cl/noticias/pais/judicial/casos-emblematicos/nicolas-zepeda-apelara-a-condena-a-cadena-perpetua-por-caso-narumi/2026-03-26/113421.html",
+      "fragmento_clave": "calificar el fallo como \"absolutamente injusto\" y desproporcionado",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El abogado Sylvain Cormier afirmó que castigaron a Zepeda 'por haber osado responder a la condena contra él y haber ganado en casación'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.cooperativa.cl/noticias/pais/judicial/casos-emblematicos/nicolas-zepeda-apelara-a-condena-a-cadena-perpetua-por-caso-narumi/2026-03-26/113421.html",
+      "fragmento_clave": "\"Han castigado a Nicolás Zepeda por haber osado responder\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Zepeda admitió haber mentido en testimonios anteriores pero aseguró que amaba sinceramente a Narumi.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "\"No me enorgullece haber mentido\" ... \"amé sinceramente, profundamente\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La abogada de la familia Kurosaki, Sylvie Galley, leyó intercambios escritos para ilustrar los mecanismos de control que Zepeda intentaba imponer a Narumi.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/fiscalia-expone-hipotesis-nicolas-zepeda-habria-planeado-hacer-cuerpo-sin-vida-narumi-25-3-2026",
+      "fragmento_clave": "abogada Sylvie Galley leyó repetidamente los intercambios escritos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El fiscal Vincent Auger dijo: 'si hay un experto en crímenes sin cuerpo en esta sala, es Nicolas Zepeda', haciendo referencia a la dictadura de Pinochet.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/fiscalia-expone-hipotesis-nicolas-zepeda-habria-planeado-hacer-cuerpo-sin-vida-narumi-25-3-2026",
+      "fragmento_clave": "\"si hay un experto en crímenes sin cuerpo ... es Nicolas Zepeda\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El novio de Narumi testificó contra Zepeda diciendo que 'Nunca revelará la ubicación del cuerpo'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "\"Nunca revelará la ubicación del cuerpo\": testimonio del novio",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La madre de Narumi Kurosaki reconoció intentos de suicidio y expresó que quería que Zepeda 'muera en la cárcel'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "Madre de Narumi reconoce intentos de suicidio y explota contra Zepeda",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El juicio comenzó el 17 de marzo.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.cnnchile.com/mundo/caso-narumi-kurosaki-cadena-perpetua-nicolas-zepeda_20260326/",
+      "fragmento_clave": "Este juicio comenzó el 17 de marzo",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Nicolás Zepeda declaró: 'No la maté, la amaba profundamente. Soy incapaz de lastimarla.'",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "\"No la maté, la amaba profundamente\": Zepeda",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Nicolás Zepeda declaró: 'Amé sinceramente a Narumi, con todo mi corazón. ... ¡Yo no maté a Narumi, no pude haber sido yo!'",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.latercera.com/tendencias/noticia/la-ultima-declaracion-que-hizo-nicolas-zepeda-antes-de-recibir-el-veredicto-de-su-tercer-juicio/",
+      "fragmento_clave": "\"Amé sinceramente a Narumi... ¡Yo no maté a Narumi!\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La Fiscalía francesa planteó la hipótesis de que Zepeda planeó incinerar el cuerpo de Narumi o arrojarlo al río en una maleta, basándose en la compra de fósforos y líquido inflamable.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "Fiscalía sostiene que Zepeda planeó deshacerse del cuerpo mediante incineración",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El fiscal Vincent Auger declaró que el plan de Zepeda no era enterrar el cuerpo, sino quemarlo, o la hipótesis más probable es que lo arrojó al río dentro de su maleta.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/fiscalia-expone-hipotesis-nicolas-zepeda-habria-planeado-hacer-cuerpo-sin-vida-narumi-25-3-2026",
+      "fragmento_clave": "\"El plan de Nicolás Zepeda no era enterrar el cuerpo, sino quemarlo\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El fiscal argumentó que 'hay tres razones por las que un hombre mata a su pareja o expareja', y que Zepeda cumple con las tres.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_clave": "\"Hay tres razones por las que un hombre mata a su pareja\"",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El abogado Sylvain Cormier afirmó que 'Han castigado a Nicolás Zepeda por haber osado responder a la condena contra él y haber ganado en casación'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cooperativa.cl/noticias/pais/judicial/casos-emblematicos/nicolas-zepeda-apelara-a-condena-a-cadena-perpetua-por-caso-narumi/2026-03-26/113421.html",
+      "fragmento_clave": "\"Han castigado a Nicolás Zepeda por haber osado responder\"",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "BioBioChile",
+      "url": "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "fragmento_relevante": "Zepeda rompe en llanto ante inminente sentencia por caso Narumi"
+    },
+    {
+      "indice": 2,
+      "medio": "T13",
+      "url": "https://www.t13.cl/noticia/mundo/fiscalia-expone-hipotesis-nicolas-zepeda-habria-planeado-hacer-cuerpo-sin-vida-narumi-25-3-2026",
+      "fragmento_relevante": "Fiscalía expone hipótesis sobre lo que Nicolás Zepeda habría planeado"
+    },
+    {
+      "indice": 3,
+      "medio": "CNN Chile",
+      "url": "https://www.cnnchile.com/mundo/caso-narumi-kurosaki-cadena-perpetua-nicolas-zepeda_20260326/",
+      "fragmento_relevante": "Dictan cadena perpetua para Nicolás Zepeda tras ser declarado culpable"
+    },
+    {
+      "indice": 4,
+      "medio": "Cooperativa.cl",
+      "url": "https://www.cooperativa.cl/noticias/pais/judicial/casos-emblematicos/nicolas-zepeda-apelara-a-condena-a-cadena-perpetua-por-caso-narumi/2026-03-26/113421.html",
+      "fragmento_relevante": "Nicolás Zepeda apelará a condena a cadena perpetua por caso Narumi"
+    },
+    {
+      "indice": 6,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/tendencias/noticia/la-ultima-declaracion-que-hizo-nicolas-zepeda-antes-de-recibir-el-veredicto-de-su-tercer-juicio/",
+      "fragmento_relevante": "La última declaración que hizo Nicolás Zepeda antes de recibir el veredicto"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe una alta coincidencia en los hechos centrales entre la mayoría de las fuentes (4 de 5 relevantes). La condena a cadena perpetua, la apelación, la desaparición en 2016, las condenas previas anuladas y la negación de Zepeda son reportados consistentemente. Las diferencias se centran en el enfoque o el momento de la publicación respecto al veredicto, no en contradicciones fácticas fundamentales."
+  },
+  "noticia_final": "Narumi Kurosaki desapareció en Besanzón, Francia, en 2016 [1][2][3][4][6]. El 5 de diciembre de 2016, Kurosaki desapareció sin dejar rastro [4]. En la madrugada de ese día, Zepeda habría matado a Narumi en su habitación, según T13 [2]. El cuerpo de Narumi Kurosaki, desaparecida en 2016, nunca ha sido hallado.\n\nEn 2022, Zepeda enfrentó un primer proceso judicial que resultó en una condena de 28 años [6]. Un segundo proceso en 2023 también lo condenó a 28 años, condena que fue confirmada en apelación pero posteriormente anulada [2][6]. Anteriormente, Zepeda había recibido dos condenas de 28 años de prisión que fueron anuladas por la Corte de Casación francesa debido a irregularidades o defectos de forma. El juicio actual contra Nicolás Zepeda comenzó el 17 de marzo [3].\n\nDurante el juicio, el lunes 23 de marzo de 2026, la madre de Narumi Kurosaki declaró sobre intentos de suicidio y expresó su deseo de que Zepeda muriera en prisión [1]. La madre de Narumi Kurosaki reconoció haber tenido intentos de suicidio y expresó su deseo de que Zepeda \"muera en la cárcel\", según BioBioChile [1]. El martes 24 de marzo de 2026, el novio de Narumi Kurosaki testificó contra Zepeda [1]. El novio de Narumi testificó en contra de Zepeda, afirmando que este \"Nunca revelará la ubicación del cuerpo\", según BioBioChile [1]. El miércoles 25 de marzo de 2026, la Fiscalía francesa solicitó 30 años de cárcel para Nicolás Zepeda [1][2]. La fiscalía había solicitado una pena de 30 años de cárcel para Zepeda [1][2]. Ese mismo día, Zepeda reiteró su inocencia y rompió en llanto ante el tribunal [1]. Zepeda ha negado haber cometido el crimen y ha reiterado su inocencia en este tercer juicio [1][6]. Nicolás Zepeda declaró: \"No la maté, la amaba profundamente. Soy incapaz de lastimarla\", según BioBioChile [1]. También declaró: \"Amé sinceramente a Narumi, con todo mi corazón. Con todos mis defectos, durante diez años ha estado en mis pensamientos. Está conmigo. Vivo en un infierno sin saber qué pasó... ¡Yo no maté a Narumi, no pude haber sido yo!\", según La Tercera [6]. Zepeda admitió haber mentido en testimonios anteriores, pero aseguró que amaba sinceramente a Narumi, según BioBioChile [1]. La abogada de la familia Kurosaki, Sylvie Galley, leyó intercambios escritos para ilustrar los mecanismos de control que Zepeda intentaba imponer a Narumi, según T13 [2]. El fiscal Vincent Auger indicó que \"si hay un experto en crímenes sin cuerpo en esta sala, es Nicolas Zepeda\", haciendo una referencia a la dictadura de Pinochet, según T13 [2]. La Fiscalía francesa declaró que \"El proyecto (de Zepeda) no era enterrarlo, sino quemarlo. La hipótesis más probable es que arrojó el cuerpo al río dentro de una maleta\", según BioBioChile [1]. La Fiscalía francesa (Vincent Auger) declaró que \"El plan de Nicolás Zepeda no era enterrar el cuerpo, sino quemarlo... La hipótesis más probable es que arrojara el cuerpo al río, dentro de su maleta\", según T13 [2]. Un fiscal francés declaró que \"Hay tres razones por las que un hombre mata a su pareja o expareja: cuando ella anuncia que lo va a dejar, cuando lo deja o cuando rehace su vida. En este caso, Nicolás Zepeda cumple las tres\", según BioBioChile [1].\n\nEl jueves 26 de marzo de 2026, Nicolás Zepeda fue condenado a cadena perpetua por el Tribunal de lo Criminal del Ródano, en Lyon [3][4][6]. Nicolás Zepeda fue condenado a cadena perpetua por el asesinato de Narumi Kurosaki en Francia [3][4][6]. La condena a cadena perpetua impuesta superó la pena solicitada por la Fiscalía. El tribunal acogió la figura de la premeditación en el asesinato de Narumi Kurosaki. El mismo jueves 26 de marzo de 2026, la defensa de Zepeda anunció una apelación a la condena [4]. Zepeda apelará la condena a cadena perpetua [4]. Según Cooperativa.cl, la defensa de Zepeda calificó el fallo como \"absolutamente injusto\" y desproporcionado, argumentando que lo equipara a \"asesinos en serie y terroristas\" [4]. El abogado Sylvain Cormier afirmó que Zepeda fue castigado \"por haber osado responder a la condena contra él y haber ganado en casación\", según Cooperativa.cl [4]. El abogado Sylvain Cormier declaró que \"Han castigado a Nicolás Zepeda por haber osado responder a la condena contra él y haber ganado en casación\", según Cooperativa.cl [4].",
+  "titular_sugerido": "Nicolás Zepeda condenado a cadena perpetua por desaparición de Narumi Kurosaki",
+  "status": "pendiente_revision",
+  "tags": [
+    "Nicolás Zepeda",
+    "Narumi Kurosaki",
+    "Cadena Perpetua",
+    "Juicio Francia",
+    "Apelación"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 5,
+    "fuentes_inaccesibles": [
+      "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgTEAE&usg=AOvVaw113z9qwHe8yPl1A82rQDU"
+    ],
+    "urls": [
+      "https://www.biobiochile.cl/noticias/internacional/mundo/2026/03/25/no-la-mate-la-amaba-profundamente-zepeda-rompe-en-llanto-ante-inminente-sentencia-por-caso-narumi.shtml",
+      "https://www.t13.cl/noticia/mundo/fiscalia-expone-hipotesis-nicolas-zepeda-habria-planeado-hacer-cuerpo-sin-vida-narumi-25-3-2026",
+      "https://www.cnnchile.com/mundo/caso-narumi-kurosaki-cadena-perpetua-nicolas-zepeda_20260326/",
+      "https://www.cooperativa.cl/noticias/pais/judicial/casos-emblematicos/nicolas-zepeda-apelara-a-condena-a-cadena-perpetua-por-caso-narumi/2026-03-26/113421.html",
+      "https://futuro360.cnnchile.com/organizaciones-ambientales-alertan-retrocesos-tras-retiro-de-43-decretos&ved=2ahUKEwiunbep0ayTAxWlpJUCHefIBOAQxfQBKAB6BAgTEAE&usg=AOvVaw113z9qwHe8yPl1A82rQDU",
+      "https://www.latercera.com/tendencias/noticia/la-ultima-declaracion-que-hizo-nicolas-zepeda-antes-de-recibir-el-veredicto-de-su-tercer-juicio/"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}

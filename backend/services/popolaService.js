@@ -14,7 +14,9 @@ function runPopola(urls) {
     console.log(`[POPOLA SERVICE] Script: ${scriptPath}`);
     console.log(`[POPOLA SERVICE] URLs recibidas: ${JSON.stringify(urls)}`);
 
-    const python = spawn(pythonCmd, [scriptPath]);
+    const python = spawn(pythonCmd, [scriptPath], {
+      env: { ...process.env, PYTHONIOENCODING: 'utf-8' },
+    });
 
     // Enviar URLs a Popola por stdin
     python.stdin.write(JSON.stringify({ urls }));

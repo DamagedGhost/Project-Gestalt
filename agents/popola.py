@@ -1,6 +1,8 @@
 # ==============================================================================
 #  UNIT: POPOLA (Data Extraction and Purification Android)
-#  VERSION: 1.0.0 
+#  VERSION: 1.2.0 (Protocolo de deteccion de tipo de sesgo, checklist de verificación y evaluación de nivel de verificación)
+#  (Mejora en redacción del prompt para el Agente Redactor, con reglas estrictas de citas inline y agrupación narrativa de declaraciones)
+#  AKA menos mecánico y más fluido, pero con citas obligatorias para cada hecho reportado.
 #  
 #  Este script actúa como el procesador cognitivo principal (Agente IA). 
 #  Su directiva es ingerir datos externos contaminados (noticias con sesgo), 
@@ -75,9 +77,8 @@ FUENTES A ANALIZAR:
 
 HERRAMIENTAS DISPONIBLES:
 - url_context: úsala para leer cada URL entregada como fuente.
-- google_search: úsala ÚNICAMENTE si un dato crítico no puede verificarse
-  con las fuentes entregadas. Máximo 3 búsquedas. Si las fuentes son
-  suficientes, NO busques.
+- google_search para verificar datos noticiosos: máximo 2 búsquedas
+- google_search para investigar línea editorial en el PASO 3: máximo 1 búsqueda por fuente
 
 INSTRUCCIONES SECUENCIALES:
 
@@ -88,15 +89,24 @@ PROHIBIDO mezclar datos entre fuentes en este paso.
 PASO 2 — CLASIFICACIÓN DE DATOS
 - VERIFICADO: Aparece en 2 o más fuentes sin contradicción.
 - FUENTE ÚNICA: Dato reportado por un solo medio (nombrar el medio).
-- RUMOR CONFIRMADO: Declaración atribuida a persona específica.
+- De "rumores_confirmados", incluir SOLO declaraciones que:
+    - Contengan cifras específicas no verificables (encuestas, porcentajes)
+    - Contradigan hechos verificados
+    - Provengan de fuente única
+NO incluir declaraciones de rechazo o apoyo político genérico
 - CONTRADICCIÓN: Disputa de cifras, tiempos o hechos
   (citar qué medio dice qué).
+  
 
 PASO 3 — ANÁLISIS DE SESGO (OBLIGATORIO PARA LAS {len(urls)} FUENTES)
-Para CADA una de las {len(urls)} fuentes debes generar una entrada en
-"sesgo_por_fuente". Si una fuente no presenta sesgo detectable, escribe
-"sesgo_detectado": "ninguno detectado" y "hechos_omitidos": "ninguno".
-No omitir fuentes en este campo — una entrada faltante invalida el JSON.
+Para CADA una de las {len(urls)} fuentes genera una entrada en "sesgo_por_fuente".
+Para identificar el tipo de sesgo puedes usar google_search si necesitas
+contexto sobre el medio (línea editorial, historial, ideología conocida).
+Si una fuente no presenta sesgo detectable escribe:
+  "sesgo_detectado": "ninguno detectado"
+  "tipo_sesgo": "ninguno"
+  "hechos_omitidos": "ninguno"
+No omitir fuentes — una entrada faltante invalida el JSON.
 
 PASO 4 — CHECKLIST PARA DEVOLA
 Genera ítems en "devola_checklist" ÚNICAMENTE para datos que requieren
@@ -160,14 +170,16 @@ NUNCA inferir ni inventar datos de fuentes no leídas.
     {{
       "fuente": "nombre del medio",
       "sesgo_detectado": "descripción concreta del sesgo o encuadre",
+      "tipo_sesgo": "descripción libre del tipo: ej. 'sesgo de confirmación hacia la fiscalía', 'encuadre sensacionalista del crimen', 'omisión sistemática de la defensa'",
       "hechos_omitidos": "qué omite esta fuente que otras sí reportan"
     }}
   ],
   "devola_checklist": [
     {{
-      "hecho": "el hecho verificado a confirmar",
+      "hecho": "el dato a verificar",
+      "tipo": "fuente_unica | rumor | contradiccion",
       "url_respaldo": "https://...",
-      "fragmento_clave": "extracto de máximo 10 palabras que lo respalda",
+      "fragmento_clave": "máximo 10 palabras",
       "estado": "pendiente"
     }}
   ],
@@ -236,6 +248,7 @@ else:
         print(f"[ERROR] No se pudo parsear la respuesta como JSON: {e}", file=sys.stderr)
         print("Respuesta completa para debug:", file=sys.stderr)
         print(full_response, file=sys.stderr)
+        sys.exit(1) #abortar ejecución si no se puede parsear el JSON, ya que el resto del pipeline depende de esta estructura
 
     sys.stderr.write("\n[TELEMETRÍA DE RED]\n")
     meta = candidate.grounding_metadata
@@ -287,12 +300,15 @@ DATOS DEL ANALISTA:
 INSTRUCCIONES DE REDACCIÓN:
 - Redacta en orden cronológico estricto siguiendo "linea_de_tiempo_extraida".
 - Mínimo 4 párrafos. Cada párrafo cubre un bloque temporal o temático distinto.
-- Tono aséptico. Prohibido usar adjetivos valorativos.
+- Tono: periodístico directo. Permitido construir párrafos con fluidez narrativa.
+- Prohibido: adjetivos que evalúen moralmente los hechos o a los actores.
+- Permitido: conectores temporales, causales y de contraste que den ritmo al texto.
 - Usa solo "hechos_verificados" como base del relato.
 - Los datos de "hechos_fuente_unica" pueden incluirse indicando el medio:
   "Según [Medio], ..."
-- Las declaraciones de "rumores_confirmados" deben atribuirse explícitamente:
-  "[Quien] declaró que ... según [Medio] [n]."
+- Si una misma persona o entidad tiene múltiples declaraciones, AGRÚPALAS en un solo párrafo fluido usando conectores
+  (ej: "Asimismo, Marcel advirtió...", "En esa línea, el exministro agregó..."). EVITA repetir mecánicamente "Marcel declaró".
+- Las declaraciones deben atribuirse a su autor, finalizando el bloque con la cita del medio [n]
 - Las "contradicciones" deben redactarse así:
   "Mientras [Medio A] indica X [n], [Medio B] reporta Y [n]."
 - No menciones "sesgo_por_fuente" directamente en la noticia.
@@ -314,6 +330,15 @@ REGLAS DE FORMATO:
 - "titular_sugerido" es una oración directa, sin signos de exclamación,
   sin adjetivos valorativos, máximo 15 palabras.
 - Sin markdown, sin bullets, sin numeración dentro del string.
+
+REGLA DE DEDUPLICACIÓN (ABSOLUTA):
+Cada hecho aparece UNA SOLA VEZ en la noticia.
+- Si un hecho está en "hechos_verificados", NO lo repitas al procesar
+  "hechos_fuente_unica" ni "rumores_confirmados".
+- Los hechos presentes en "contradicciones" NO se narran como verificados.
+  Solo aparecen en formato de disputa:
+  "Mientras [Medio A] indica X [n], [Medio B] reporta Y [n]."
+  Nunca antes, nunca después.
 
 {{
   "noticia_final": "texto con citas [n] obligatorias",

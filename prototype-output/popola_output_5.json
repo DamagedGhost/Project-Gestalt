@@ -1,0 +1,547 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-03-24 - Encuesta Cadem muestra aprobación del gobierno de Kast del 47% y desaprobación del 49%, una caída de 10 puntos desde el 13 de marzo. (BioBioChile)",
+    "2026-03-25 - Publicación de gráficas en redes sociales del gobierno haciendo alusión a un 'Estado en quiebra'. (BioBioChile, T13/Ex-Ante)",
+    "2026-03-25 11:37 - Diputado Araya pide instruir sumario y suspender a funcionarios detrás del 'Estado quebrado'. (BioBioChile)",
+    "2026-03-25 15:37 - T13/Ex-Ante reporta que las publicaciones de 'Estado quebrado' fueron borradas. (T13/Ex-Ante)",
+    "2026-03-25 16:46 - Oposición pide sesión especial en la Cámara para que ministro Quiroz explique alza de combustibles. (BioBioChile)",
+    "2026-03-26 09:50 - BioBioChile reporta la línea comunicacional que complicó al gobierno de Kast. (BioBioChile)",
+    "2026-03-26 10:14 - Mario Marcel desmiente el 'estado de quiebra' de Chile en entrevista con Daniel Matamala. (CNN Chile)",
+    "2026-03-26 12:05 - Contraloría solicita explicaciones a Sedini por polémico posteo. (BioBioChile)",
+    "2026-03-26 19:10 - Presidente José Antonio Kast lamenta que 'algunos quieran concentrarse en conceptos'. (Cooperativa.cl)",
+    "2026-03-26 - Cuentas de X e Instagram del Presidente Kast fueron intervenidas. (BioBioChile)",
+    "2026-03-27 - La Tercera publica columna de opinión sobre 'Estado en quiebra: ¿error o estrategia?'. (La Tercera)"
+  ],
+  "hechos_verificados": [
+    "El gobierno de José Antonio Kast utilizó la expresión 'Estado en quiebra' en comunicaciones oficiales para explicar el alza de combustibles.",
+    "Estas publicaciones fueron realizadas en redes sociales (Instagram, X) y posteriormente eliminadas.",
+    "El Ministro de Hacienda, Jorge Quiroz, se desmarcó de la expresión 'Estado en quiebra', calificándola de 'deterioro fiscal' o una situación fiscal 'deteriorada'.",
+    "La Contraloría General de la República, a través de Dorothy Pérez, ofició a la Secretaría General de Gobierno (Segegob), liderada por Mara Sedini, solicitando explicaciones sobre las publicaciones.",
+    "La presidenta del Banco Central, Rossana Costa, o el exministro Mario Marcel, afirmaron que la 'quiebra' no refleja la realidad económica de Chile.",
+    "La estrategia comunicacional fue considerada un error por diversas voces, incluyendo miembros del oficialismo.",
+    "La frase fue atribuida a Cristián Valenzuela, asesor del Segundo Piso del gobierno, quien reconoció su responsabilidad."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "La encuesta Cadem del 24 de marzo mostró una aprobación del gobierno del 47% y desaprobación del 49%, una caída de 10 puntos respecto al 13 de marzo.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "El Panel Ciudadano-UDD registró un 42% de aprobación y un 48% de rechazo al gobierno, evidenciando una baja de 17 puntos desde el inicio del gobierno.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "Las cuentas de X e Instagram del Presidente Kast fueron intervenidas por terceras personas el 26 de marzo de 2026.",
+      "fuente": "BioBioChile"
+    },
+    {
+      "hecho": "Una minuta confidencial de la Secretaría de Comunicaciones (Secom) incluía el concepto de 'Estado en la quiebra' y mencionaba un endeudamiento de más de 4 mil millones de dólares en 4 años.",
+      "fuente": "T13/Ex-Ante"
+    },
+    {
+      "hecho": "La ministra de Energía, Ximena Rincón, señaló que tampoco había usado el término 'Estado en quiebra'.",
+      "fuente": "T13/Ex-Ante"
+    }
+  ],
+  "rumores_confirmados": [
+    {
+      "declaracion": "Lamentó que 'algunos quisieran concentrarse en conceptos' en lugar de buscar soluciones a los problemas de los chilenos.",
+      "quien": "José Antonio Kast",
+      "medio": "Cooperativa.cl"
+    },
+    {
+      "declaracion": "Calificó de 'desafortunado' hablar de un país quebrado y explicó que el manejo de la caja fiscal no justifica el traspaso directo del shock externo a los ciudadanos.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Aseguró que el país cuenta con indicadores de solvencia sólidos y desestimó el argumento de la 'caja vacía'.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Afirmó que la situación fiscal que él enfrentó en 2022 era considerablemente más crítica que la presente, con un déficit estructural de casi 11% y efectivo de casi 8%, comparado con el 3.5% actual. También mencionó deudas no registradas por PGU, salud y congelamiento de tarifas eléctricas.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Criticó la decisión del gobierno de José Antonio Kast de traspasar el costo íntegro del escenario internacional a los consumidores, calificándola como la alternativa 'más radical'.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Advirtió que el impacto en la inflación será inevitable, mencionando una expectativa de 1% para abril frente al 0.2% esperado.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Señaló una posible inconsistencia en la estrategia económica del gobierno si se dice que no hay plata para combustibles pero se bajan impuestos a empresas y herencias.",
+      "quien": "Mario Marcel",
+      "medio": "CNN Chile"
+    },
+    {
+      "declaracion": "Afirmó que 'jamás' utilizaría el término 'Estado en quiebra'.",
+      "quien": "Jorge Quiroz",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Hizo un llamado a que los equipos de comunicaciones asuman la responsabilidad por el impasse.",
+      "quien": "Jorge Quiroz",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Afirmó que la 'quiebra' no refleja la realidad de Chile.",
+      "quien": "Rossana Costa, presidenta del Banco Central",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Llamó al gobierno a dejar el tono de campaña presidencial.",
+      "quien": "Paulina Vodanovic, presidenta del Partido Socialista",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Pidió mayor responsabilidad al gobierno.",
+      "quien": "Raúl Soto, diputado (PPD)",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Calificaron el mensaje como desafortunado.",
+      "quien": "Diego Schalper (RN) y Javier Macaya (UDI)",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Relevó que el Presidente Kast es capaz de tomar decisiones impopulares que a la larga serán buenas para el país.",
+      "quien": "Arturo Squella, presidente del Partido Republicano",
+      "medio": "BioBioChile"
+    },
+    {
+      "declaracion": "Rechazaron el término 'Estado quebrado'.",
+      "quien": "Claudio Alvarado (ministro del Interior) y José García Ruminot (ministro de Segpres)",
+      "medio": "T13/Ex-Ante"
+    },
+    {
+      "declaracion": "Remarcó que el Estado no está en quiebra, pero sí en una situación fiscal deteriorada y compleja, con la caja fiscal 'casi en cero'.",
+      "quien": "Claudio Alvarado",
+      "medio": "T13/Ex-Ante"
+    },
+    {
+      "declaracion": "Reconoció internamente el error de la frase 'Estado en quiebra'.",
+      "quien": "Cristián Valenzuela",
+      "medio": "T13/Ex-Ante"
+    },
+    {
+      "declaracion": "Elaboró la frase del Estado sobre la quiebra basándose en declaraciones de Quiroz sobre 'quedarnos sin plata', y pidió a Secom que creara las piezas gráficas.",
+      "quien": "Fuentes de La Moneda sobre Cristián Valenzuela",
+      "medio": "T13/Ex-Ante"
+    }
+  ],
+  "contradicciones": [
+    {
+      "punto": "Gravedad de la situación fiscal y uso del término 'quiebra'",
+      "version_a": "Gobierno (en comunicaciones iniciales): El Estado está 'en quiebra' y con 'caja completamente vacía' debido a una 'mala administración pasada' o porque 'nos dejaron sin plata'.",
+      "version_b": "Mario Marcel (exministro de Hacienda): La situación fiscal en 2022 era 'mucho peor' que la actual. Ministro Jorge Quiroz (Hacienda): Se desmarcó de la palabra 'quiebra', pero habló de 'deterioro fiscal'. Rossana Costa (presidenta Banco Central): La 'quiebra' no refleja la realidad de Chile. Claudio Alvarado (ministro del Interior): El Estado no está en quiebra, pero la caja fiscal se recibió 'prácticamente casi en cero'."
+    }
+  ],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "CNN Chile",
+      "sesgo_detectado": "ninguno detectado",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "Cooperativa.cl",
+      "sesgo_detectado": "El artículo enmarca los hechos como una 'polémica comunicacional del Gobierno' y una 'controversia política'. Aunque se esfuerza por presentar las declaraciones directamente, el énfasis está en el aspecto de 'polémica' y las críticas. Su línea editorial histórica ha estado asociada a la Democracia Cristiana, lo que podría influir en un enfoque más crítico hacia un gobierno de derecha.",
+      "tipo_sesgo": "Enfoque crítico / Ideológico (sutil)",
+      "hechos_omitidos": "No profundiza en los argumentos económicos o la defensa del gobierno más allá de la justificación inicial (que fue retractada)."
+    },
+    {
+      "fuente": "BioBioChile",
+      "sesgo_detectado": "El medio encuadra el evento como el 'primer gran error comunicacional' del gobierno de Kast y una 'línea comunicacional que complicó el relato'. Destaca las críticas transversales y la caída en encuestas, lo que sugiere un enfoque en los aspectos negativos y las consecuencias políticas para el gobierno. Su línea editorial se declara independiente y cercana a la gente, pero en este contexto se manifiesta como una crítica a la administración en el poder.",
+      "tipo_sesgo": "Encuadre crítico / Negativo",
+      "hechos_omitidos": "Aunque menciona medidas paliativas, el enfoque principal es el error comunicacional y sus impactos, más que un análisis exhaustivo de la situación económica."
+    },
+    {
+      "fuente": "La Tercera",
+      "sesgo_detectado": "El artículo es una columna de opinión que analiza la expresión 'Estado en quiebra' como una posible 'estrategia' política. Aunque explora la idea de que fue un error, también presenta la hipótesis de que se buscaba instalar un mensaje extremo para justificar la falta de recursos. La Tercera es un medio de tendencia conservadora o de centro-derecha, y este análisis puede interpretarse como un intento de contextualizar o incluso justificar la lógica detrás de una comunicación gubernamental controversial.",
+      "tipo_sesgo": "Análisis de estrategia política / Ideológico (en el marco de opinión)",
+      "hechos_omitidos": "Al ser una columna de opinión, no presenta una cobertura exhaustiva de los hechos técnicos o todas las críticas, centrándose en la intencionalidad política y la recepción ciudadana."
+    },
+    {
+      "fuente": "T13.cl (Ex-Ante)",
+      "sesgo_detectado": "El artículo se centra en el 'tiro por la culata' de Cristián Valenzuela y los pormenores de la estrategia comunicacional interna del gobierno. Ex-Ante, con su enfoque en el análisis político y las 'noticias que importan', prioriza la intriga política y la gestión gubernamental 'detrás de cámaras'. Su línea editorial se declara de centro/centro-derecha y liberal, y el sesgo se manifiesta en un enfoque en la efectividad política y las dinámicas de poder.",
+      "tipo_sesgo": "Enfoque en política interna / Análisis estratégico",
+      "hechos_omitidos": "No profundiza en las implicaciones económicas detalladas o comparativas (como lo hace Marcel), sino en la autoría y el impacto interno de la decisión comunicacional."
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "La encuesta Cadem del 24 de marzo mostró una aprobación del gobierno del 47% y desaprobación del 49%, una caída de 10 puntos respecto al 13 de marzo.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "aprobación 47% desaprobación 49% caída 10 puntos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El Panel Ciudadano-UDD registró un 42% de aprobación y un 48% de rechazo al gobierno, evidenciando una baja de 17 puntos desde el inicio del gobierno.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "42% aprobación 48% rechazo baja 17 puntos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Las cuentas de X e Instagram del Presidente Kast fueron intervenidas por terceras personas el 26 de marzo de 2026.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "cuentas de X e Instagram intervenidas",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Una minuta confidencial de la Secretaría de Comunicaciones (Secom) incluía el concepto de 'Estado en la quiebra' y mencionaba un endeudamiento de más de 4 mil millones de dólares en 4 años.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "minuta confidencial Secom endeudamiento 4 mil millones dólares",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La ministra de Energía, Ximena Rincón, señaló que tampoco había usado el término 'Estado en quiebra'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "Ximena Rincón tampoco usó término",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "José Antonio Kast lamentó que 'algunos quisieran concentrarse en conceptos' en lugar de buscar soluciones a los problemas de los chilenos.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cooperativa.cl/noticias/pais/presidente-kast/estado-en-quiebra-kast-lamento-que-algunos-quieran-concentrarse-en/2026-03-26/184047.html",
+      "fragmento_clave": "Kast lamentó 'concentrarse en conceptos'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel calificó de 'desafortunado' hablar de un país quebrado y explicó que el manejo de la caja fiscal no justifica el traspaso directo del shock externo a los ciudadanos.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel 'desafortunado' hablar país quebrado",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel aseguró que el país cuenta con indicadores de solvencia sólidos y desestimó el argumento de la 'caja vacía'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel desestimó argumento 'caja vacía'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel afirmó que la situación fiscal que él enfrentó en 2022 era considerablemente más crítica que la presente, con un déficit estructural de casi 11% y efectivo de casi 8%, comparado con el 3.5% actual. También mencionó deudas no registradas por PGU, salud y congelamiento de tarifas eléctricas.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel: 2022 situación fiscal peor",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel criticó la decisión del gobierno de José Antonio Kast de traspasar el costo íntegro del escenario internacional a los consumidores, calificándola como la alternativa 'más radical'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel criticó decisión traspasar costo íntegro",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel advirtió que el impacto en la inflación será inevitable, mencionando una expectativa de 1% para abril frente al 0.2% esperado.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel advirtió impacto inevitable inflación",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Mario Marcel señaló una posible inconsistencia en la estrategia económica del gobierno si se dice que no hay plata para combustibles pero se bajan impuestos a empresas y herencias.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "Marcel señaló inconsistencia bajar impuestos",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El ministro de Hacienda, Jorge Quiroz, afirmó que 'jamás' utilizaría el término 'Estado en quiebra'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Quiroz 'jamás' usaría 'Estado en quiebra'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Jorge Quiroz hizo un llamado a que los equipos de comunicaciones asuman la responsabilidad por el impasse.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Quiroz: equipos de comunicaciones asuman responsabilidad",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La presidenta del Banco Central, Rossana Costa, afirmó que la 'quiebra' no refleja la realidad de Chile.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Rossana Costa: 'quiebra' no refleja realidad",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La presidenta del Partido Socialista, Paulina Vodanovic, llamó al gobierno a dejar el tono de campaña presidencial.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Vodanovic: dejar tono campaña presidencial",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El diputado Raúl Soto (PPD) pidió mayor responsabilidad al gobierno.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Raúl Soto pidió mayor responsabilidad",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El diputado Diego Schalper (RN) y el senador Javier Macaya (UDI) calificaron el mensaje como desafortunado.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Schalper y Macaya: mensaje desafortunado",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El presidente del Partido Republicano, Arturo Squella, relevó que el Presidente Kast es capaz de tomar decisiones impopulares que a la larga serán buenas para el país.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "Squella: Kast toma decisiones impopulares",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Claudio Alvarado (ministro del Interior) y José García Ruminot (ministro de Segpres) rechazaron el término 'Estado quebrado'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "Alvarado y García Ruminot rechazaron",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Claudio Alvarado remarcó que el Estado no está en quiebra, pero sí en una situación fiscal deteriorada y compleja, con la caja fiscal 'casi en cero'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "Alvarado: caja fiscal 'casi en cero'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Cristián Valenzuela reconoció internamente el error de la frase 'Estado en quiebra'.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "Valenzuela reconoció internamente el error",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "Fuentes de La Moneda señalan que Valenzuela elaboró la frase del Estado sobre la quiebra basándose en declaraciones de Quiroz sobre 'quedarnos sin plata', y pidió a Secom que creara las piezas gráficas.",
+      "tipo": "rumor",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "Valenzuela elaboró frase 'Estado sobre quiebra'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El punto en disputa es la gravedad de la situación fiscal y el uso del término 'quiebra'. La versión del gobierno en comunicaciones iniciales afirmaba que el Estado está 'en quiebra' y con 'caja completamente vacía' debido a una 'mala administración pasada' o porque 'nos dejaron sin plata'. Sin embargo, Mario Marcel (exministro de Hacienda) indicó que la situación fiscal en 2022 era 'mucho peor' que la actual. El ministro Jorge Quiroz se desmarcó de la palabra 'quiebra', aunque reconoció un 'deterioro fiscal', mientras que Rossana Costa (presidenta del Banco Central) afirmó que la 'quiebra' no refleja la realidad de Chile. El ministro Claudio Alvarado también afirmó que la caja fiscal se recibió 'prácticamente casi en cero'.",
+      "tipo": "contradiccion",
+      "url_respaldo": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_clave": "gravedad situación fiscal y uso 'quiebra'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El punto en disputa es la gravedad de la situación fiscal y el uso del término 'quiebra'. La versión del gobierno en comunicaciones iniciales afirmaba que el Estado está 'en quiebra' y con 'caja completamente vacía' debido a una 'mala administración pasada' o porque 'nos dejaron sin plata'. Sin embargo, Mario Marcel (exministro de Hacienda) indicó que la situación fiscal en 2022 era 'mucho peor' que la actual. El ministro Jorge Quiroz se desmarcó de la palabra 'quiebra', aunque reconoció un 'deterioro fiscal', mientras que Rossana Costa (presidenta del Banco Central) afirmó que la 'quiebra' no refleja la realidad de Chile. El ministro Claudio Alvarado también afirmó que la caja fiscal se recibió 'prácticamente casi en cero'.",
+      "tipo": "contradiccion",
+      "url_respaldo": "https://www.cooperativa.cl/noticias/pais/presidente-kast/estado-en-quiebra-kast-lamento-que-algunos-quieran-concentrarse-en/2026-03-26/184047.html",
+      "fragmento_clave": "gravedad situación fiscal y uso 'quiebra'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El punto en disputa es la gravedad de la situación fiscal y el uso del término 'quiebra'. La versión del gobierno en comunicaciones iniciales afirmaba que el Estado está 'en quiebra' y con 'caja completamente vacía' debido a una 'mala administración pasada' o porque 'nos dejaron sin plata'. Sin embargo, Mario Marcel (exministro de Hacienda) indicó que la situación fiscal en 2022 era 'mucho peor' que la actual. El ministro Jorge Quiroz se desmarcó de la palabra 'quiebra', aunque reconoció un 'deterioro fiscal', mientras que Rossana Costa (presidenta del Banco Central) afirmó que la 'quiebra' no refleja la realidad de Chile. El ministro Claudio Alvarado también afirmó que la caja fiscal se recibió 'prácticamente casi en cero'.",
+      "tipo": "contradiccion",
+      "url_respaldo": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_clave": "gravedad situación fiscal y uso 'quiebra'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El punto en disputa es la gravedad de la situación fiscal y el uso del término 'quiebra'. La versión del gobierno en comunicaciones iniciales afirmaba que el Estado está 'en quiebra' y con 'caja completamente vacía' debido a una 'mala administración pasada' o porque 'nos dejaron sin plata'. Sin embargo, Mario Marcel (exministro de Hacienda) indicó que la situación fiscal en 2022 era 'mucho peor' que la actual. El ministro Jorge Quiroz se desmarcó de la palabra 'quiebra', aunque reconoció un 'deterioro fiscal', mientras que Rossana Costa (presidenta del Banco Central) afirmó que la 'quiebra' no refleja la realidad de Chile. El ministro Claudio Alvarado también afirmó que la caja fiscal se recibió 'prácticamente casi en cero'.",
+      "tipo": "contradiccion",
+      "url_respaldo": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_clave": "gravedad situación fiscal y uso 'quiebra'",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "CNN Chile",
+      "url": "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "fragmento_relevante": "Marcel desmiente “estado de quiebra” de Chile y advierte"
+    },
+    {
+      "indice": 2,
+      "medio": "Cooperativa.cl",
+      "url": "https://www.cooperativa.cl/noticias/pais/presidente-kast/estado-en-quiebra-kast-lamento-que-algunos-quieran-concentrarse-en/2026-03-26/184047.html",
+      "fragmento_relevante": "Kast lamentó que \"algunos quieran concentrarse en conceptos\""
+    },
+    {
+      "indice": 3,
+      "medio": "BioBioChile",
+      "url": "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "fragmento_relevante": "línea comunicacional que complicó el relato del gobierno de Kast"
+    },
+    {
+      "indice": 4,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/opinion/noticia/estado-en-quiebra-error-o-estrategia/",
+      "fragmento_relevante": "Estado en quiebra: ¿error o estrategia?"
+    },
+    {
+      "indice": 5,
+      "medio": "T13.cl",
+      "url": "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026",
+      "fragmento_relevante": "\"Estado en quiebra\": El tiro por la culata de Cristián Valenzuela"
+    },
+    {
+      "indice": 6,
+      "medio": "CNN Chile - Wikipedia",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj_MF86yCFquuz27xMO_0m0iKup1CA5cHqpQyNb_t96VQLtrZEbToXd-dqrHZcbo0fHuYUhwsg7HDYSr81_I9SaEsRegj0Q-4q9AFCKtERcaVWWiR20I_mJqW-1tm4N-EH",
+      "fragmento_relevante": "CNN Chile es un canal de televisión por suscripción de noticias"
+    },
+    {
+      "indice": 7,
+      "medio": "CNN Chile - Cómo cambió el periodismo",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4jbXT2UX64-8MFkNHtl6NT9eMCiXqz14Y7SW6X1KQKg_MsQWkok2rstEsWEtTAvuYXSOXnhmV4GcOXBDqTzVm7JOjLa2LYhNr9VOtu517oIrDBbRlRilLkSM4wa66iNBAS4WMXE87zLD_6ltHwPSPfWO2FzC3KEG4pPMVhs_ObfJfl6drbaI4vH5nEnguiV_b6UPQFDI=",
+      "fragmento_relevante": "la libertad editorial absoluta que nos da trabajar acá"
+    },
+    {
+      "indice": 8,
+      "medio": "CNN Chile - Editorial and Production Team",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2kBuZdbVOiE6uCpZ6yzAN0nyinfEpBg3EKlIDGZPbvGzGERsjey8yAC9oq4Xpx_50RMVIxKlNrYXndVkeShAWiCl--hvZzaet_fteTjO8tebbWUeZCDBaR0DoedTl9LPy_OxT57lKHQoiItm4alT831pm-jHF0Fo5AtWv-jQ=",
+      "fragmento_relevante": "Their role is crucial in delivering accurate, timely, and engaging news"
+    },
+    {
+      "indice": 9,
+      "medio": "CNN Chile - Editorial",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYEFSSjmxkWU9J5h-CGjKAi3-Sv7dUNxN0v4J9SvxMPRtlznxYTklGF6p5-9RhUlHaLviOo0Iu8wKGKiAc7vEY0tPn74StKsDSmFVheq_t01n6jY_ctghGpCFCiG4=",
+      "fragmento_relevante": "CNN Data · CNN Tiempo · Cultura · Deportes"
+    },
+    {
+      "indice": 10,
+      "medio": "Radio Cooperativa (Chile) - Wikipedia",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrtiaR2lgVnd8KJwZx4jgzewXhKKb_MdQxlmqsFh6Gsil7xt_2hHTg4icESWBMFYeUS2C6gtrZutYQ-mP1sd_t1xOjetUPVKoG1IqyascLitGqFYVtNe562GZgvCNVOyhxAvCjCiV_ggtppKVMKaII_Y3Y=",
+      "fragmento_relevante": "línea editorial de Radio Cooperativa posee una marcada orientación"
+    },
+    {
+      "indice": 11,
+      "medio": "Cooperativa.cl: Noticias de Chile y el mundo",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwJ2jLqQa48nzh74ncPuJ0p3yLr2ooFUAPNXaLwsFurkky0Cq_W-2mof3Z90GrCUNCevb6gvO4HaQ8gDDI0FtBSWhVAKnWVh1e7sRuNQWZlkb7RZMxtA==",
+      "fragmento_relevante": "medio de comunicación con más de 80 años de trayectoria"
+    },
+    {
+      "indice": 12,
+      "medio": "Opinión - Cooperativa.cl",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaEoPniYmqDNrWpKuQY7D-z3rSmow8_C4Yj43vEbAJ_2SDjF1qLy2Jf5uV04o041yTDhj4IphmpGYueRLcWQlf3pvlhFB5XSn__Ryed3F9wxV1hi_sOdKNIFA=",
+      "fragmento_relevante": "Columnas de opinión sobre actualidad nacional, internacional, política"
+    },
+    {
+      "indice": 13,
+      "medio": "Portada Información corporativa - Cooperativa.cl",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU6jSudXsUcWffxQ9p9JQsHtgLD-PMMfi_awI4nCS60Vefr85O5IkRrw5hcOdD_pHJglTTcuQWBHU2MYz7ayz2L7adIqz5nGmMa_Ske7w5RaZ0KRapdJrCHmikpBECNAfGjvKOk4FsVvTD1ZViYIU9kqaSMY-D7wohnH4cKNpd4nHH5oj3xfPdkCbbSo9173PUvK-_tZ-CsQmo5Q=",
+      "fragmento_relevante": "credibilidad es su propiedad más preciada, alcanzada con la objetividad"
+    },
+    {
+      "indice": 14,
+      "medio": "Por sexto año consecutivo, Cooperativa es el medio de comunicación más confiable",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb52eOn0lROvM09QW9wmYr1QK0FM78C6zK230tvpNiiuuIyK2H1pqmhLNRBWRDpk9U-Ow9pNJiCc5QLDKxFjCM65GT-L5CcSY_nu1zXok7L-rhAmJxUYlgXTHZ5-q_BEwstND2Wm9euCZJtjBLlP_4iPi5sZxkOA5joQ7Oj57pP3ljk3ER8XrjQqs1kKcaTcy2aX-lo4UZJy4aIk9m8NnctRAeESiWdx7B0560gyFsIV2gufOiO6Jv7LRzdWgNRTjXXejB_ScnMwAGSfeKM3A0YuLnPGqJBHMcLqKHKg=",
+      "fragmento_relevante": "Cooperativa se transformó en el medio de comunicación en el que más confían"
+    },
+    {
+      "indice": 15,
+      "medio": "Quiénes somos - BioBioChile",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG25GmprAwKAExLSevYNDONrlA7vOahQR9BhLfA-XClQPlwfOAnP7ift8OGezEkQxoxZu80unRiIH6J-9tM9V0oKb3gKctLn0XSOv26VGGyF10GIMsNWbN1Z49HGe3zFNpUS6v_sOxjdd3mJMOg",
+      "fragmento_relevante": "periodismo independiente, innovador, pero fiel a lo que hemos sido siempre"
+    },
+    {
+      "indice": 16,
+      "medio": "BioBioChile - La Red de Prensa Más Grande de Chile",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmVXRdntkIzB0llT1c0JfElFFGRnvbkkLOs6PSIQ3kzv_Ca1BJJFcVtldzo_SREaW8BchKsZSHVv-b5QaymdKc8Nj2xBJI-nOBx6AxX1vMlsS3JRgRZwFyVe0D9V1EvZV4dCh3oW9Ek9A=",
+      "fragmento_relevante": "El portal de noticias BioBioChile fue fundado en Concepción el 1 de agosto de 2009"
+    },
+    {
+      "indice": 17,
+      "medio": "Alfie riley leaks at last it felt less like a relaxing",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeJ8NhLQfj8NXfN6F40TFYqckdXsPGL7Mr7CPMgIEEDXl8-cjgCexTIn0bX77NKwr8qnmxzkqQwUi_2fPfa2b2D18WrMADbuJTxPRUjtEn1uhEnsK2ynP2nFOy14msn4zBHn2ayTc7wO3y82Fw69-ruHrRYrAdlhqoCmEy1ESPbPcP0CZptHuXQ4aCUqD3UA2sI",
+      "fragmento_relevante": "línea editorial de BioBioChile. Seguimos criterios de The Trust Project"
+    },
+    {
+      "indice": 18,
+      "medio": "BioBioChile - La Red de Prensa Más Grande de Chile",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEksVyRR1quEOgca7pVT1WwWd-0bbtMwkl425Srd9nGFnrpmXjuFh200dJjB9LA0EsnxeNyyhzVrw4K54lHpHyztgsEaBmnGcB8RBbWcXgk2ZqBgJNa9A==",
+      "fragmento_relevante": "Todas las Noticias · Zona Norte · Valparaíso · Metropolitana"
+    },
+    {
+      "indice": 19,
+      "medio": "La Tercera - Wikipedia",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG17xoeION5xapi43Q_g3JBbPNaCFIxf1KudduUZokqS_8zOFVo3UsytvY-4dHgd8vKle9H3YCLTQqynJnD_nll-axLnb4Mkwdou61u0y6yCf0IoAqdl0Lyeni7Ztl5euDJDw==",
+      "fragmento_relevante": "La Tercera es un periódico chileno con ediciones impresas"
+    },
+    {
+      "indice": 20,
+      "medio": "Quiénes Somos - La Tercera",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9j8_5kQZq5NstEyK_2lekwcK4fxRwaAZ_Ovry4OT0e6-YDoyKAY8bXjPUS4HGpblN_rn1PZYbNl-l8RbQ2aTiN41tZw7CdHc4alF0MBFyIzK1q9M4cCET9iyxx08ai5Zwmw==",
+      "fragmento_relevante": "Director: José Luis Santa María Oyanedel. Subdirector: Víctor Cofré Soto"
+    },
+    {
+      "indice": 21,
+      "medio": "Editorial - La Tercera",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwx1qaeeC-1A9HhLB1eEjHUWIBAzFlLt2dD_FGMYiSlx8T8Tuggj78euQ9X0-B0Nank9Mt0zeONm12Tu7DJZwr5-nTQ6TfJPLgpGgfa92Dwr95jAmUgoQ0b-O8NSMhh6lWBNuZPUuo",
+      "fragmento_relevante": "La medida anunciada por el Presidente de Estados Unidos no solo generó confusión"
+    },
+    {
+      "indice": 22,
+      "medio": "La Tercera - Noticias de Chile y el Mundo",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRWrm856CC4WRt3O2IVJ7LTfcV-9I3l1HtVaDFK_mrlq9zsXdepQijlSABgY-3HuOP9kI8cx4r0mssvs0pyy1LXKp-s5Id_5Hf0Gy6dxkzrIUjR9M=",
+      "fragmento_relevante": "Noticias de última hora de Chile, América Latina y el mundo"
+    },
+    {
+      "indice": 23,
+      "medio": "Acerca de equipo Ex-Ante: Quiénes somos y nuestros objetivos",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_D_tdM9dbooj4tnTazBkVs9tDuTheATD9JLK0Zu30zBkGaN8H1n6-M1Im3BbWxYj7fAsP4D1XqKlKeG9LBufPm-jf3vbegLzp7nzFHfaL0swlNUx_vPp0qKk94A==",
+      "fragmento_relevante": "medio digital focalizado en las noticias, debates, tendencias y personajes"
+    },
+    {
+      "indice": 24,
+      "medio": "Cristián Bofill: \"Por primera vez la línea editorial dependerá exclusivamente de mí\"",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTrWeIcV-deD-G0v67AtnDSY3PnAeiOMobPFB-7AyiahfN2PYmdf3YCF4OLJGOIFQsGlzktz-rxRBToI3hsUPfZywv9uhf82psEWLmN1wKMR80YTZZCAwWNS6e7iyeJW81Ny5davZdiip2kaHjT50WSsr72KJP1vinHvxxFnRNo5XgLBaKyQF6Vp9JbpRfGJ1bDLHRqCpfxP7CxQ==",
+      "fragmento_relevante": "Cristián Bofill, uno de los periodistas políticos más reconocidos del país"
+    },
+    {
+      "indice": 25,
+      "medio": "Ex-Ante (Chile) - Wikipedia",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZc3MnipMp8T6uQLdSAkeHGc2e-8L9E-7KAI8rcBMuNsLXq-4GQCrTv7yf7jrap00Ini29ORjxkRLAHrEv73p0rYRY33EWM2FUS6_yeNMzxX8VmWXTllY_0Jg45ofmsEZNKrLl2o9y1w==",
+      "fragmento_relevante": "Ex-Ante es un periódico en línea chileno, fundado en 2020 por Cristian Bofill"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe una alta coincidencia en los hechos centrales de la controversia del 'Estado en quiebra', incluyendo la publicación, la posterior eliminación, el desmarque del Ministro de Hacienda, la intervención de la Contraloría y la atribución de la autoría a Cristián Valenzuela. Las fuentes difieren en el nivel de detalle o en el enfoque del análisis, pero los eventos clave son consistentes entre múltiples medios."
+  },
+  "noticia_final": "Según BioBioChile, el 24 de marzo de 2026, una encuesta Cadem mostró una aprobación del gobierno de Kast del 47% y una desaprobación del 49%, lo que representó una caída de 10 puntos desde el 13 de marzo [3]. El Panel Ciudadano-UDD registró un 42% de aprobación y un 48% de rechazo al gobierno, evidenciando una baja de 17 puntos desde el inicio del gobierno [3]. El 25 de marzo, el gobierno de José Antonio Kast utilizó la expresión \"Estado en quiebra\" en comunicaciones oficiales para explicar el alza de combustibles [3][5]. Estas publicaciones fueron realizadas en redes sociales, incluyendo Instagram y X [3][5]. Ese mismo día, el diputado Araya solicitó instruir un sumario y suspender a los funcionarios responsables de las publicaciones sobre el \"Estado quebrado\" [3].\n\nLas publicaciones de \"Estado quebrado\" fueron borradas el 25 de marzo [5]. La oposición, el 25 de marzo, pidió una sesión especial en la Cámara para que el ministro Quiroz explicara el alza de combustibles [3]. El 26 de marzo, la Contraloría General de la República, a través de Dorothy Pérez, ofició a la Secretaría General de Gobierno (Segegob), liderada por Mara Sedini, solicitando explicaciones sobre las publicaciones [3]. El exministro Mario Marcel desmintió el \"estado de quiebra\" de Chile en una entrevista el 26 de marzo [1]. Marcel calificó de \"desafortunado\" hablar de un país quebrado y explicó que el manejo de la caja fiscal no justifica el traspaso directo del shock externo a los ciudadanos [1]. Aseguró que el país cuenta con indicadores de solvencia sólidos y desestimó el argumento de la \"caja vacía\" [1]. Afirmó que la situación fiscal que él enfrentó en 2022 era considerablemente más crítica que la presente, con un déficit estructural de casi 11% y efectivo de casi 8%, comparado con el 3.5% actual, y mencionó deudas no registradas por PGU, salud y congelamiento de tarifas eléctricas [1]. Criticó la decisión del gobierno de José Antonio Kast de traspasar el costo íntegro del escenario internacional a los consumidores, calificándola como la alternativa \"más radical\" [1]. Advirtió que el impacto en la inflación será inevitable, mencionando una expectativa de 1% para abril frente al 0.2% esperado [1]. Señaló una posible inconsistencia en la estrategia económica del gobierno si se dice que no hay plata para combustibles pero se bajan impuestos a empresas y herencias [1]. El ministro de Hacienda, Jorge Quiroz, afirmó que \"jamás\" utilizaría el término \"Estado en quiebra\" [3]. Hizo un llamado a que los equipos de comunicaciones asuman la responsabilidad por el impasse [3]. Según T13/Ex-Ante, la ministra de Energía, Ximena Rincón, señaló que tampoco había usado el término \"Estado en quiebra\" [5].\n\nEl 26 de marzo, el Presidente José Antonio Kast lamentó que \"algunos quisieran concentrarse en conceptos\" [2]. Según BioBioChile, ese mismo día, las cuentas de X e Instagram del Presidente Kast fueron intervenidas por terceras personas [3]. La frase \"Estado en quiebra\" fue atribuida a Cristián Valenzuela, asesor del Segundo Piso del gobierno, quien reconoció internamente el error [5]. Fuentes de La Moneda indicaron que Valenzuela elaboró la frase basándose en declaraciones de Quiroz sobre \"quedarnos sin plata\", y pidió a Secom que creara las piezas gráficas [5]. Según T13/Ex-Ante, una minuta confidencial de la Secretaría de Comunicaciones (Secom) incluía el concepto de \"Estado en la quiebra\" y mencionaba un endeudamiento de más de 4 mil millones de dólares en 4 años [5]. La estrategia comunicacional fue considerada un error por diversas voces, incluyendo miembros del oficialismo [3][5]. Paulina Vodanovic, presidenta del Partido Socialista, llamó al gobierno a dejar el tono de campaña presidencial [3]. El diputado Raúl Soto (PPD) pidió mayor responsabilidad al gobierno [3]. Diego Schalper (RN) y Javier Macaya (UDI) calificaron el mensaje como desafortunado [3]. Arturo Squella, presidente del Partido Republicano, relevó que el Presidente Kast es capaz de tomar decisiones impopulares que a la larga serán buenas para el país [3].\n\nRespecto a la gravedad de la situación fiscal y el uso del término \"quiebra\", mientras el gobierno, en comunicaciones iniciales, indicó que el Estado estaba \"en quiebra\" y con \"caja completamente vacía\" debido a una \"mala administración pasada\" o porque \"nos dejaron sin plata\", Mario Marcel (exministro de Hacienda) declaró que la situación fiscal en 2022 era \"mucho peor\" que la actual [1]. El ministro Jorge Quiroz (Hacienda) se desmarcó de la palabra \"quiebra\", pero habló de \"deterioro fiscal\" [3]. Rossana Costa (presidenta Banco Central) afirmó que la \"quiebra\" no refleja la realidad de Chile [3], y Claudio Alvarado (ministro del Interior) remarcó que el Estado no está en quiebra, pero la caja fiscal se recibió \"prácticamente casi en cero\" [5]. Claudio Alvarado y José García Ruminot (ministro de Segpres) rechazaron el término \"Estado quebrado\" [5]. El 27 de marzo, La Tercera publicó una columna de opinión sobre \"Estado en quiebra: ¿error o estrategia?\" [4].",
+  "titular_sugerido": "Gobierno de Kast enfrenta controversia por uso de expresión 'Estado en quiebra' y caída en aprobación.",
+  "status": "pendiente_revision",
+  "tags": [
+    "Gobierno de Kast",
+    "Estado en quiebra",
+    "Alza combustibles",
+    "Comunicación política",
+    "Crisis fiscal"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 5,
+    "fuentes_inaccesibles": [],
+    "urls": [
+      "https://www.biobiochile.cl/biobiotv/programas/radiograma-biobiotv/2026/03/26/la-linea-comunicacional-que-complico-el-relato-del-gobierno-de-kast-alusion-a-un-estado-en-quiebra.shtml",
+      "https://www.latercera.com/opinion/noticia/estado-en-quiebra-error-o-estrategia/",
+      "https://www.cooperativa.cl/noticias/pais/presidente-kast/estado-en-quiebra-kast-lamento-que-algunos-quieran-concentrarse-en/2026-03-26/184047.html",
+      "https://www.cnnchile.com/negocios/marcel-desmiente-quiebra-alza-combustibles_20260326/",
+      "https://www.t13.cl/noticia/ex-ante/politica/estado-quiebra-tiro-por-culata-cristian-valenzuela-remecio-al-gobierno-25-3-2026"
+    ],
+    "busquedas_adicionales": 5,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}

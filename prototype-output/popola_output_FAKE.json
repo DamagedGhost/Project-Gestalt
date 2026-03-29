@@ -1,0 +1,111 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-04-05 - Despliegue militar de Kast en la frontera norte genera choques con autoridades locales y caos en Colchane (Fuente: La Tercera)"
+  ],
+  "hechos_verificados": [],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "El despliegue militar del gobierno de Kast en la frontera norte ha causado conflictos con las autoridades locales y una situación de caos en Colchane.",
+      "fuente": "La Tercera"
+    }
+  ],
+  "rumores_confirmados": [],
+  "contradicciones": [],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "BioBioChile",
+      "sesgo_detectado": "inaccessible",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "La Tercera",
+      "sesgo_detectado": "Encuadre negativo de la gestión del gobierno, destacando el 'caos' y 'choques' generados por el despliegue militar en la frontera.",
+      "tipo_sesgo": "encuadre negativo",
+      "hechos_omitidos": "Posibles resultados positivos del despliegue o la perspectiva oficial del gobierno sobre la situación."
+    },
+    {
+      "fuente": "El Mostrador",
+      "sesgo_detectado": "inaccessible",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "T13.cl",
+      "sesgo_detectado": "inaccessible",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "CNN Chile",
+      "sesgo_detectado": "inaccessible",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "Emol",
+      "sesgo_detectado": "La URL sugería un contenido relacionado con el tema original pero el contenido actual es sobre un caso de corrupción diferente. Por lo tanto, no se puede determinar el sesgo respecto al tema de la crisis fronteriza.",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "Cooperativa.cl",
+      "sesgo_detectado": "inaccessible",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "El despliegue militar del gobierno de Kast en la frontera norte ha provocado conflictos con las autoridades locales y una situación de caos en Colchane.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.latercera.com/politica/noticia/caos-en-colchane-despliegue-militar-de-kast-genera-choques-con-autoridades-locales/",
+      "fragmento_clave": "despliegue militar de Kast genera choques con autoridades locales",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/politica/noticia/caos-en-colchane-despliegue-militar-de-kast-genera-choques-con-autoridades-locales/",
+      "fragmento_relevante": "despliegue militar de Kast genera choques con autoridades locales"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "bajo",
+    "justificacion": "La verificación es baja debido a que solo una fuente relevante y accesible pudo ser analizada para el tema central. Esto limita la confirmación cruzada de los hechos."
+  },
+  "noticia_final": "El 5 de abril de 2026, el gobierno de Kast inició un despliegue militar en la frontera norte [1].\n\nEsta acción ha generado conflictos con las autoridades locales [1].\n\nAsimismo, la situación ha provocado una situación de caos en la localidad de Colchane [1].\n\nSegún reportes de La Tercera, el despliegue militar del gobierno de Kast es la causa de estos choques y el desorden en la zona [1].",
+  "titular_sugerido": "Despliegue militar en frontera norte genera conflictos y caos en Colchane",
+  "status": "pendiente_revision",
+  "tags": [
+    "frontera norte",
+    "despliegue militar",
+    "Colchane",
+    "gobierno Kast",
+    "crisis migratoria"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 7,
+    "fuentes_inaccesibles": [
+      "https://www.biobiochile.cl/noticias/nacional/chile/2026/04/05/gobierno-anuncia-cierre-total-de-frontera-norte-y-despliegue-militar.shtml",
+      "https://www.elmostrador.cl/destacado/2026/04/05/el-fracaso-del-plan-frontera-militares-sin-equipamiento-y-aumento-de-ingresos-clandestinos/",
+      "https://www.t13.cl/noticia/politica/kast-defiende-cierre-de-fronteras-hemos-reducido-el-ingreso-ilegal-en-un-80-por-ciento-5-4-2026",
+      "https://www.cnnchile.com/pais/indh-y-amnistia-internacional-presentan-recurso-contra-gobierno-por-crisis-humanitaria-en-el-norte_20260406/",
+      "https://www.emol.com/noticias/Nacional/2026/04/06/1122335/alcalde-de-colchane-agradece-medida-de-kast-al-fin-tenemos-seguridad.html",
+      "https://www.cooperativa.cl/noticias/pais/presidente-kast/vocero-de-gobierno-desmiente-falta-de-equipamiento-militar-en-el-norte/2026-04-06/123456.html"
+    ],
+    "urls": [
+      "https://www.biobiochile.cl/noticias/nacional/chile/2026/04/05/gobierno-anuncia-cierre-total-de-frontera-norte-y-despliegue-militar.shtml",
+      "https://www.latercera.com/politica/noticia/caos-en-colchane-despliegue-militar-de-kast-genera-choques-con-autoridades-locales/",
+      "https://www.elmostrador.cl/destacado/2026/04/05/el-fracaso-del-plan-frontera-militares-sin-equipamiento-y-aumento-de-ingresos-clandestinos/",
+      "https://www.t13.cl/noticia/politica/kast-defiende-cierre-de-fronteras-hemos-reducido-el-ingreso-ilegal-en-un-80-por-ciento-5-4-2026",
+      "https://www.cnnchile.com/pais/indh-y-amnistia-internacional-presentan-recurso-contra-gobierno-por-crisis-humanitaria-en-el-norte_20260406/",
+      "https://www.emol.com/noticias/Nacional/2026/04/06/1122335/alcalde-de-colchane-agradece-medida-de-kast-al-fin-tenemos-seguridad.html",
+      "https://www.cooperativa.cl/noticias/pais/presidente-kast/vocero-de-gobierno-desmiente-falta-de-equipamiento-militar-en-el-norte/2026-04-06/123456.html"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}

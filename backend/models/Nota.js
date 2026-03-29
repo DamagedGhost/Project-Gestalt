@@ -21,26 +21,32 @@ const RumorConfirmadoSchema = new mongoose.Schema({
 }, { _id: false });
 
 const ContradiccionSchema = new mongoose.Schema({
-  descripcion: { type: String },
-  fuentes:     [{ type: String }],
+  punto:     { type: String },
+  version_a: { type: String },
+  version_b: { type: String },
 }, { _id: false });
 
 const SesgoPorFuenteSchema = new mongoose.Schema({
   fuente:          { type: String, required: true },
   sesgo_detectado: { type: String },
+  tipo_sesgo:      { type: String }, // ← nuevo (ideológico, de confirmación, etc.)
   hechos_omitidos: { type: String },
 }, { _id: false });
 
 const DevolaChecklistItemSchema = new mongoose.Schema({
-  hecho:          { type: String, required: true },
-  url_respaldo:   { type: String },
-  fragmento_clave:{ type: String },
+  hecho:           { type: String, required: true },
+  tipo: {
+    type: String,
+    enum: ['fuente_unica', 'rumor', 'contradiccion'], // ← nuevo
+  },
+  url_respaldo:    { type: String },
+  fragmento_clave: { type: String },
   estado: {
     type: String,
     enum: ['pendiente', 'confirmado', 'rechazado'],
     default: 'pendiente',
   },
-  nota_devola: { type: String }, // Comentario opcional de Devola al revisar
+  nota_devola: { type: String }, // Observaciones de Devola para este hecho específico
 }, { _id: false });
 
 const EvaluacionVerificacionSchema = new mongoose.Schema({

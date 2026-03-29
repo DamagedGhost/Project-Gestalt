@@ -1,0 +1,198 @@
+{
+  "linea_de_tiempo_extraida": [
+    "2026-03-16 - Inicio de excavaciones en Chacalluta (Chile) como parte del 'Plan Escudo Fronterizo'. (Fuente: Emol, T13)",
+    "2026-03-27 - Perú comenzó a trabajar en su propia zanja en zona fronteriza con Chile. (Fuente: ADN Radio, Meganoticias, CNN Chile)",
+    "2026-03-28 - Medios reportan que Perú construye zanjas junto al límite internacional con Chile. (Fuente: Emol, BioBioChile, La Tercera, T13)"
+  ],
+  "hechos_verificados": [
+    "Perú está construyendo una zanja en su frontera con Chile, cerca del complejo fronterizo Santa Rosa, en Tacna.",
+    "La zanja peruana se ubica a unos 60 metros de la Línea de la Concordia.",
+    "El Gobierno Regional de Tacna es responsable de las obras en Perú.",
+    "Eduardo Sánchez, gerente de infraestructura del Gobierno Regional de Tacna, ha declarado sobre el propósito de la zanja.",
+    "El propósito principal de la zanja peruana es ordenar el flujo de camiones de carga pesada y agilizar el tránsito de otros vehículos, como buses y autos particulares, en el complejo fronterizo.",
+    "Las autoridades peruanas han descartado que la zanja tenga motivos relacionados con el control de la migración irregular o que sea una réplica del plan chileno.",
+    "La zanja peruana tiene aproximadamente 200 metros lineales de longitud, 2 metros de ancho y 2 metros de profundidad.",
+    "Las obras en Perú incluyen iluminación y señalización para mejorar la seguridad en el área.",
+    "Chile, por su parte, está construyendo zanjas y barreras físicas en Chacalluta como parte del 'Plan Escudo Fronterizo' para contener la migración irregular y el crimen organizado.",
+    "El complejo fronterizo entre Tacna y Arica (Santa Rosa/Chacalluta) registra un alto flujo anual de aproximadamente 7 millones de personas y 2 millones de vehículos."
+  ],
+  "hechos_fuente_unica": [
+    {
+      "hecho": "La zanja chilena del 'Plan Escudo Fronterizo' tiene prevista una extensión de 500 kilómetros y se espera completar 30 kilómetros en los primeros 90 días.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "El gobernador de Tacna, Luis Ramón Torres, había solicitado apoyo al gobierno central de Lima hace casi dos semanas, después de que Chile iniciara sus excavaciones.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "El entonces canciller peruano sostuvo que las obras chilenas eran una decisión soberana y podrían beneficiar a Perú al dificultar cruces irregulares.",
+      "fuente": "La Tercera"
+    },
+    {
+      "hecho": "La zanja peruana tiene una forma de 'L'.",
+      "fuente": "T13"
+    },
+    {
+      "hecho": "La zanja peruana servirá como contención para evitar que vehículos menores evadan el control aduanero.",
+      "fuente": "T13"
+    }
+  ],
+  "rumores_confirmados": [],
+  "contradicciones": [],
+  "sesgo_por_fuente": [
+    {
+      "fuente": "ADN Radio",
+      "sesgo_detectado": "ninguno detectado",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "Emol",
+      "sesgo_detectado": "ligero énfasis en control y fiscalización",
+      "tipo_sesgo": "encuadre conservador/de seguridad",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "BioBioChile",
+      "sesgo_detectado": "ninguno detectable, con énfasis en aclarar la información",
+      "tipo_sesgo": "informativo y aclaratorio",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "La Tercera",
+      "sesgo_detectado": "ninguno detectable",
+      "tipo_sesgo": "ninguno",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "Meganoticias",
+      "sesgo_detectado": "encuadre para desmentir especulaciones rápidamente",
+      "tipo_sesgo": "informativo y aclaratorio",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "T13",
+      "sesgo_detectado": "encuadre para ofrecer una verdad definitiva y desmentir desinformación",
+      "tipo_sesgo": "informativo y aclaratorio",
+      "hechos_omitidos": "ninguno"
+    },
+    {
+      "fuente": "CNN Chile",
+      "sesgo_detectado": "ninguno detectable, con énfasis en la distinción de motivos",
+      "tipo_sesgo": "informativo y comparativo",
+      "hechos_omitidos": "ninguno"
+    }
+  ],
+  "devola_checklist": [
+    {
+      "hecho": "La zanja chilena del 'Plan Escudo Fronterizo' tiene prevista una extensión de 500 kilómetros y se espera completar 30 kilómetros en los primeros 90 días.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/la-verdad-detras-zanja-esta-construyendo-peru-frontera-chile-28-3-2026",
+      "fragmento_clave": "zanja de 500 kilómetros, 30 kilómetros en 90 días",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El gobernador de Tacna, Luis Ramón Torres, había solicitado apoyo al gobierno central de Lima hace casi dos semanas, después de que Chile iniciara sus excavaciones.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.latercera.com/nacional/noticia/peru-tambien-ejecuta-obras-para-una-zanja-al-limite-con-chile/",
+      "fragmento_clave": "Luis Ramón Torres había solicitado apoyo",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "El entonces canciller peruano sostuvo que las obras chilenas eran una decisión soberana y podrían beneficiar a Perú al dificultar cruces irregulares.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.latercera.com/nacional/noticia/peru-tambien-ejecuta-obras-para-una-zanja-al-limite-con-chile/",
+      "fragmento_clave": "canciller peruano obras chilenas decisión soberana",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La zanja peruana tiene una forma de 'L'.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/la-verdad-detras-zanja-esta-construyendo-peru-frontera-chile-28-3-2026",
+      "fragmento_clave": "zanja en forma de 'L'",
+      "estado": "pendiente"
+    },
+    {
+      "hecho": "La zanja peruana servirá como contención para evitar que vehículos menores evadan el control aduanero.",
+      "tipo": "fuente_unica",
+      "url_respaldo": "https://www.t13.cl/noticia/mundo/la-verdad-detras-zanja-esta-construyendo-peru-frontera-chile-28-3-2026",
+      "fragmento_clave": "contención para evitar vehículos menores evadan control",
+      "estado": "pendiente"
+    }
+  ],
+  "citas": [
+    {
+      "indice": 1,
+      "medio": "ADN Radio",
+      "url": "https://www.adnradio.cl/2026/03/27/peru-comenzo-a-trabajar-en-su-propia-zanja-en-zona-fronteriza-con-chile-pero-por-distintas-motivaciones/",
+      "fragmento_relevante": "Perú comenzó a trabajar en su propia zanja"
+    },
+    {
+      "indice": 2,
+      "medio": "Emol",
+      "url": "https://www.emol.com/noticias/Nacional/2026/03/28/1195660/peru-construye-zanjas-limite-chile.html",
+      "fragmento_relevante": "Perú también construye zanjas junto al límite internacional"
+    },
+    {
+      "indice": 3,
+      "medio": "BioBioChile",
+      "url": "https://www.biobiochile.cl/noticias/internacional/america-latina/2026/03/28/las-razones-detras-de-la-zanja-que-construye-peru-en-la-frontera-con-chile.shtml",
+      "fragmento_relevante": "maquinaria pesada removía tierra en el sector del complejo"
+    },
+    {
+      "indice": 4,
+      "medio": "La Tercera",
+      "url": "https://www.latercera.com/nacional/noticia/peru-tambien-ejecuta-obras-para-una-zanja-al-limite-con-chile/",
+      "fragmento_relevante": "Perú también ejecuta obras para una zanja"
+    },
+    {
+      "indice": 5,
+      "medio": "Meganoticias",
+      "url": "https://www.meganoticias.cl/mundo/518172-por-que-peru-esta-construyendo-una-zanja-en-frontera-con-chile-27-03-2026.html",
+      "fragmento_relevante": "Perú construye en la frontera con Chile"
+    },
+    {
+      "indice": 6,
+      "medio": "T13",
+      "url": "https://www.t13.cl/noticia/mundo/la-verdad-detras-zanja-esta-construyendo-peru-frontera-chile-28-3-2026",
+      "fragmento_relevante": "Perú está realizando una zanja en la frontera"
+    },
+    {
+      "indice": 7,
+      "medio": "CNN Chile",
+      "url": "https://www.cnnchile.com/mundo/peru-tambien-excava-una-zanja-en-la-frontera-con-chile-pero-con-un-motivo-distinto_20260327/",
+      "fragmento_relevante": "Perú también está excavando una zanja"
+    }
+  ],
+  "evaluacion_verificacion": {
+    "nivel": "alto",
+    "justificacion": "Existe una alta coincidencia en los hechos centrales reportados por todas las fuentes, incluyendo la existencia de la zanja, su ubicación, dimensiones, el motivo declarado por Perú (ordenar flujo de camiones, no migración), y el contraste con la zanja chilena (control migratorio). No hay contradicciones significativas en los datos fundamentales."
+  },
+  "noticia_final": "El 16 de marzo de 2026, Chile inició excavaciones en Chacalluta como parte del 'Plan Escudo Fronterizo' [2][6]. Este plan busca contener la migración irregular y el crimen organizado [2][6]. La zanja chilena del 'Plan Escudo Fronterizo' tiene prevista una extensión de 500 kilómetros y se espera completar 30 kilómetros en los primeros 90 días, según T13 [6].\n\nPosteriormente, el 27 de marzo de 2026, Perú comenzó a trabajar en su propia zanja en la zona fronteriza con Chile [1][5][7]. Medios reportaron el 28 de marzo de 2026 que Perú construye zanjas junto al límite internacional con Chile [2][3][4][6].\n\nPerú está construyendo una zanja en su frontera con Chile, cerca del complejo fronterizo Santa Rosa, en Tacna [1][2][3][4][5][6][7]. La zanja peruana se ubica a unos 60 metros de la Línea de la Concordia. El Gobierno Regional de Tacna es responsable de las obras en Perú. Eduardo Sánchez, gerente de infraestructura del Gobierno Regional de Tacna, ha declarado que el propósito principal de la zanja peruana es ordenar el flujo de camiones de carga pesada y agilizar el tránsito de otros vehículos, como buses y autos particulares, en el complejo fronterizo. Las autoridades peruanas han descartado que la zanja tenga motivos relacionados con el control de la migración irregular o que sea una réplica del plan chileno [1][5][7]. La zanja peruana tiene aproximadamente 200 metros lineales de longitud, 2 metros de ancho y 2 metros de profundidad. Asimismo, presenta una forma de 'L', según T13 [6]. También servirá como contención para evitar que vehículos menores evadan el control aduanero, según T13 [6]. Las obras en Perú incluyen iluminación y señalización para mejorar la seguridad en el área. El complejo fronterizo entre Tacna y Arica (Santa Rosa/Chacalluta) registra un alto flujo anual de aproximadamente 7 millones de personas y 2 millones de vehículos.\n\nEl gobernador de Tacna, Luis Ramón Torres, había solicitado apoyo al gobierno central de Lima hace casi dos semanas, después de que Chile iniciara sus excavaciones, según La Tercera [4]. El entonces canciller peruano sostuvo que las obras chilenas eran una decisión soberana y podrían beneficiar a Perú al dificultar cruces irregulares, según La Tercera [4].",
+  "titular_sugerido": "Chile y Perú construyen zanjas en frontera con distintos propósitos",
+  "status": "pendiente_revision",
+  "tags": [
+    "Perú",
+    "Chile",
+    "frontera",
+    "zanja",
+    "migración",
+    "comercio"
+  ],
+  "metadata": {
+    "fuentes_analizadas": 7,
+    "fuentes_inaccesibles": [],
+    "urls": [
+      "https://www.biobiochile.cl/noticias/internacional/america-latina/2026/03/28/las-razones-detras-de-la-zanja-que-construye-peru-en-la-frontera-con-chile.shtml",
+      "https://www.latercera.com/nacional/noticia/peru-tambien-ejecuta-obras-para-una-zanja-al-limite-con-chile/",
+      "https://www.emol.com/noticias/Nacional/2026/03/28/1195660/peru-construye-zanjas-limite-chile.html",
+      "https://www.cnnchile.com/mundo/peru-tambien-excava-una-zanja-en-la-frontera-con-chile-pero-con-un-motivo-distinto_20260327/",
+      "https://www.t13.cl/noticia/mundo/la-verdad-detras-zanja-esta-construyendo-peru-frontera-chile-28-3-2026",
+      "https://www.adnradio.cl/2026/03/27/peru-comenzo-a-trabajar-en-su-propia-zanja-en-zona-fronteriza-con-chile-pero-por-distintas-motivaciones/",
+      "https://www.meganoticias.cl/mundo/518172-por-que-peru-esta-construyendo-una-zanja-en-frontera-con-chile-27-03-2026.html"
+    ],
+    "busquedas_adicionales": 0,
+    "protocolo": "GESTALT v0.5.0"
+  }
+}

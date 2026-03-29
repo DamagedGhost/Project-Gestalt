@@ -6,7 +6,8 @@ const Nota = require('../models/Nota');
  */
 async function guardarNota(resultado) {
   console.log(`[NOTA SERVICE] Preparando documento para MongoDB...`);
-
+  resultado.citas = (resultado.citas || []).filter(c => typeof c.indice === 'number' && Number.isFinite(c.indice));
+  
   const doc = {
     // === Campos de Popola ===
     titular_sugerido:          resultado.titular_sugerido,
