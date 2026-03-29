@@ -1,6 +1,6 @@
 # ==============================================================================
 #  UNIT: POPOLA (Data Extraction and Purification Android)
-#  VERSION: 0.1.0 (pipeline in development)
+#  VERSION: 1.0.0 
 #  
 #  Este script actúa como el procesador cognitivo principal (Agente IA). 
 #  Su directiva es ingerir datos externos contaminados (noticias con sesgo), 

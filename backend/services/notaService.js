@@ -49,4 +49,24 @@ async function guardarNota(resultado) {
   }
 }
 
-module.exports = { guardarNota };
+async function listarNotas() {
+  try {
+    const notas = await Nota.find().sort({ createdAt: -1 }).limit(20);
+    return notas;
+  } catch (err) {
+    console.error(`[NOTA SERVICE] Error al listar notas: ${err.message}`);
+    throw err;
+  }
+}
+
+async function buscarNotasPorId(ids) {
+  try {
+    const notas = await Nota.find({ _id: { $in: ids } });
+    return notas;
+  } catch (err) {
+    console.error(`[NOTA SERVICE] Error al buscar notas por ID: ${err.message}`);
+    throw err;
+  }
+}
+
+module.exports = { guardarNota, listarNotas, buscarNotasPorId };

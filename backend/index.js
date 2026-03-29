@@ -12,6 +12,7 @@ app.use(express.json());
 
 // ─── Rutas ────────────────────────────────────────────────────────────────────
 app.use('/api/analyze', analyzeRouter);
+app.use('/api/select', require('./routes/select'));
 
 // Health check
 app.get('/health', (req, res) => {
