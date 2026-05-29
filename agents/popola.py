@@ -218,9 +218,10 @@ candidate = response.candidates[0]
 
 # Validación básica de la respuesta antes de intentar parsear el JSON
 if candidate.content is None:
-    print(f"[ERROR] Respuesta vacía.")
-    print(f"  Finish reason: {candidate.finish_reason}")
-    print(f"  Safety ratings: {candidate.safety_ratings}")
+    print(f"[ERROR] Respuesta vacía.", file=sys.stderr)
+    print(f"  Finish reason: {candidate.finish_reason}", file=sys.stderr)
+    print(f"  Safety ratings: {candidate.safety_ratings}", file=sys.stderr)
+    sys.exit(1)
 else:
     full_response = ""
     for part in candidate.content.parts:
@@ -365,14 +366,16 @@ Cada hecho aparece UNA SOLA VEZ en la noticia.
         for part in candidate_redactor.content.parts:
             if hasattr(part, "text") and part.text:
                 redactor_raw += part.text
-
-        start = redactor_raw.find("{")
-        end = redactor_raw.rfind("}") + 1
-
-        if start == -1 or end == 0:
-            raise json.JSONDecodeError("No se encontró JSON en la respuesta del Redactor", redactor_raw, 0)
-
-        redactor_data = json.loads(redactor_raw[start:end])
+        try:
+            start = redactor_raw.find("{")
+            end = redactor_raw.rfind("}") + 1
+            if start == -1 or end == 0:
+                raise json.JSONDecodeError("No se encontró JSON en la respuesta del Redactor", redactor_raw, 0)
+            redactor_data = json.loads(redactor_raw[start:end])
+        except json.JSONDecodeError as e:
+            print(f"[ERROR] Agente 2 JSON inválido: {e}", file=sys.stderr)
+            print(f"  Raw (500c): {redactor_raw[:500]}", file=sys.stderr)
+            sys.exit(1)
 
 except json.JSONDecodeError as e:
     # ⚠️ CORRECCIÓN: Enviar prints a stderr
