@@ -3,21 +3,30 @@ const express  = require('express');
 const mongoose = require('mongoose');
 
 const analyzeRouter = require('./routes/analyze');
+const authRouter = require('./routes/auth');
+const notasRouter = require('./routes/notas');
+const emilRouter = require('./routes/emil');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 app.use(cors({
-  origin: 'http://localhost:5173' // puerto de Vite
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+  credentials: true,
 }));
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
-app.use(express.json());
+app.use(express.json({ limit: '2mb' }));
+app.use(cookieParser());
 
 // ─── Rutas ────────────────────────────────────────────────────────────────────
 app.use('/api/analyze', analyzeRouter);
 app.use('/api/select', require('./routes/select'));
+app.use('/api/auth', authRouter);
+app.use('/api/notas', notasRouter);
+app.use('/api/emil', emilRouter);
 
 // Health check
 app.get('/health', (req, res) => {
