@@ -44,10 +44,27 @@ tools = [
 # Leer input desde stdin (enviado por Express)
 raw_input = sys.stdin.read()
 input_data = json.loads(raw_input)
-urls = input_data["urls"]  # ya es el array limpio
 
-# Generar las líneas de fuentes dinámicamente
-fuentes = "\n".join([f"Fuente {i+1}: {url}" for i, url in enumerate(urls)])
+sources = input_data.get("sources")
+use_purified_sources = isinstance(sources, list) and len(sources) > 0
+
+if use_purified_sources:
+    urls = [s.get("url", "") for s in sources]
+    fuentes_inaccesibles = input_data.get("fuentes_inaccesibles", [])
+    tools = [
+        {"google_search": {}},
+    ]
+    fuentes = "\n".join([
+        f"Fuente {i+1}: {s.get('medio', 'Fuente')} ({s.get('url', '')})\n"
+        f"TITULAR: {s.get('titular', '')}\n"
+        f"TEXTO LIMPIO:\n{s.get('texto', '')}"
+        for i, s in enumerate(sources)
+    ])
+else:
+    urls = input_data["urls"]  # ya es el array limpio
+    fuentes_inaccesibles = input_data.get("fuentes_inaccesibles", [])
+    # Generar las líneas de fuentes dinámicamente
+    fuentes = "\n".join([f"Fuente {i+1}: {url}" for i, url in enumerate(urls)])
 
 # ==============================================================================
 #  AGENTE 1 — ANALISTA (Con tools de lectura web y búsqueda)
@@ -55,6 +72,18 @@ fuentes = "\n".join([f"Fuente {i+1}: {url}" for i, url in enumerate(urls)])
 #? con énfasis en la extracción de hechos verificables y la identificación de contradicciones y sesgos.
 # ==============================================================================
 PROTOCOLO_VERSION = "GESTALT v0.5.0"
+
+if use_purified_sources:
+    fuentes_label = "FUENTES PURIFICADAS (NO usar url_context):"
+    tools_instructions = """- google_search para verificar datos noticiosos: máximo 2 búsquedas
+- google_search para investigar línea editorial en el PASO 3: máximo 1 búsqueda por fuente"""
+    paso1_instruccion = "Lee cada fuente usando exclusivamente el texto limpio entregado."
+else:
+    fuentes_label = "FUENTES A ANALIZAR:"
+    tools_instructions = """- url_context: úsala para leer cada URL entregada como fuente.
+- google_search para verificar datos noticiosos: máximo 2 búsquedas
+- google_search para investigar línea editorial en el PASO 3: máximo 1 búsqueda por fuente"""
+    paso1_instruccion = "Lee cada fuente de forma aislada."
 
 response = client.models.generate_content(
     model=model_id,
@@ -72,18 +101,16 @@ Está PROHIBIDO copiar o reproducir texto literal de las fuentes.
 Todos los datos deben ser parafraseados. Cita solo fragmentos mínimos
 e imprescindibles (máximo 10 palabras) en "fragmento_relevante".
 
-FUENTES A ANALIZAR:
+{fuentes_label}
 {fuentes}
 
 HERRAMIENTAS DISPONIBLES:
-- url_context: úsala para leer cada URL entregada como fuente.
-- google_search para verificar datos noticiosos: máximo 2 búsquedas
-- google_search para investigar línea editorial en el PASO 3: máximo 1 búsqueda por fuente
+{tools_instructions}
 
 INSTRUCCIONES SECUENCIALES:
 
 PASO 1 — AISLAMIENTO TEMPORAL
-Lee cada fuente de forma aislada. Extrae fechas, horas y secuencias.
+{paso1_instruccion} Extrae fechas, horas y secuencias.
 PROHIBIDO mezclar datos entre fuentes en este paso.
 
 PASO 2 — CLASIFICACIÓN DE DATOS
@@ -201,7 +228,7 @@ NUNCA inferir ni inventar datos de fuentes no leídas.
   "tags": ["tema1", "tema2"],
   "metadata": {{
     "fuentes_analizadas": {len(urls)},
-    "fuentes_inaccesibles": [],
+    "fuentes_inaccesibles": {json.dumps(fuentes_inaccesibles, ensure_ascii=False)},
     "urls": {json.dumps(urls, ensure_ascii=False)},
     "busquedas_adicionales": 0,
     "protocolo": "{PROTOCOLO_VERSION}"
@@ -218,9 +245,10 @@ candidate = response.candidates[0]
 
 # Validación básica de la respuesta antes de intentar parsear el JSON
 if candidate.content is None:
-    print(f"[ERROR] Respuesta vacía.")
-    print(f"  Finish reason: {candidate.finish_reason}")
-    print(f"  Safety ratings: {candidate.safety_ratings}")
+    print(f"[ERROR] Respuesta vacía.", file=sys.stderr)
+    print(f"  Finish reason: {candidate.finish_reason}", file=sys.stderr)
+    print(f"  Safety ratings: {candidate.safety_ratings}", file=sys.stderr)
+    sys.exit(1)
 else:
     full_response = ""
     for part in candidate.content.parts:
@@ -365,14 +393,16 @@ Cada hecho aparece UNA SOLA VEZ en la noticia.
         for part in candidate_redactor.content.parts:
             if hasattr(part, "text") and part.text:
                 redactor_raw += part.text
-
-        start = redactor_raw.find("{")
-        end = redactor_raw.rfind("}") + 1
-
-        if start == -1 or end == 0:
-            raise json.JSONDecodeError("No se encontró JSON en la respuesta del Redactor", redactor_raw, 0)
-
-        redactor_data = json.loads(redactor_raw[start:end])
+        try:
+            start = redactor_raw.find("{")
+            end = redactor_raw.rfind("}") + 1
+            if start == -1 or end == 0:
+                raise json.JSONDecodeError("No se encontró JSON en la respuesta del Redactor", redactor_raw, 0)
+            redactor_data = json.loads(redactor_raw[start:end])
+        except json.JSONDecodeError as e:
+            print(f"[ERROR] Agente 2 JSON inválido: {e}", file=sys.stderr)
+            print(f"  Raw (500c): {redactor_raw[:500]}", file=sys.stderr)
+            sys.exit(1)
 
 except json.JSONDecodeError as e:
     # ⚠️ CORRECCIÓN: Enviar prints a stderr

@@ -2,26 +2,42 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 /**
- * Llama a popola.py con un array de URLs.
+ * Llama a popola.py con un array de URLs o fuentes purificadas.
  * Retorna el JSON parseado o lanza un error.
  */
-function runPopola(urls) {
+function runPopola(input) {
   return new Promise((resolve, reject) => {
     const pythonCmd  = process.platform === 'win32' ? 'python' : 'python3';
     const scriptPath = path.join(__dirname, '..', '..', 'agents', 'popola.py');
 
+    let payload = null;
+    if (Array.isArray(input)) {
+      payload = { urls: input };
+    } else if (input && Array.isArray(input.urls)) {
+      payload = { urls: input.urls };
+    } else if (input && Array.isArray(input.sources)) {
+      payload = {
+        sources: input.sources,
+        fuentes_inaccesibles: input.fuentes_inaccesibles || [],
+      };
+    }
+
+    if (!payload) {
+      return reject(new Error('Input inválido para Popola.'));
+    }
+
     console.log(`[POPOLA SERVICE] Iniciando Popola...`);
     console.log(`[POPOLA SERVICE] Script: ${scriptPath}`);
-    console.log(`[POPOLA SERVICE] URLs recibidas: ${JSON.stringify(urls)}`);
+    console.log(`[POPOLA SERVICE] Payload: ${JSON.stringify(payload)}`);
 
     const python = spawn(pythonCmd, [scriptPath], {
       env: { ...process.env, PYTHONIOENCODING: 'utf-8' },
     });
 
-    // Enviar URLs a Popola por stdin
-    python.stdin.write(JSON.stringify({ urls }));
+    // Enviar payload a Popola por stdin
+    python.stdin.write(JSON.stringify(payload));
     python.stdin.end();
-    console.log(`[POPOLA SERVICE] URLs enviadas a stdin.`);
+    console.log(`[POPOLA SERVICE] Payload enviado a stdin.`);
 
     // stderr → logs de progreso de Popola
     python.stderr.on('data', (data) => {

@@ -17,8 +17,24 @@ const useNoteViewModel = () => {
     }, []);
 
     useEffect(() => {
-        fetchNotes();
-    }, [fetchNotes]);
+        let active = true;
+        const load = async () => {
+            try {
+                const response = await axios.get(URL_SELECT);
+                if (active) {
+                    setNotes(response.data.notas);
+                }
+            } catch (error) {
+                if (active) {
+                    console.error('Error fetching notes:', error);
+                }
+            }
+        };
+        load();
+        return () => {
+            active = false;
+        };
+    }, []);
 
     return { notes, refreshNotes: fetchNotes };
 }
