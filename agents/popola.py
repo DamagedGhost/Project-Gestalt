@@ -240,6 +240,11 @@ NUNCA inferir ni inventar datos de fuentes no leídas.
     ),
 )
 
+#! metadata.busquedas_adicionales está hardcodeado en 0 en el propio template del prompt (línea ~233)
+#! nunca va a reflejar la realidad. El número real ya lo capturas en Python vía meta.web_search_queries para la telemetría de stderr;
+#! bastaría con data["metadata"]["busquedas_adicionales"] = len(meta.web_search_queries or []) después de la respuesta,
+#! en vez de confiarle ese campo al modelo.
+  
 # Extraer el bloque JSON de la respuesta del modelo
 candidate = response.candidates[0]
 
@@ -272,7 +277,6 @@ else:
         sys.stderr.write(f"[OK] Output guardado en {output_path}\n")
 
     except json.JSONDecodeError as e:
-        # ⚠️ CORRECCIÓN: Enviar prints de error a stderr
         print(f"[ERROR] No se pudo parsear la respuesta como JSON: {e}", file=sys.stderr)
         print("Respuesta completa para debug:", file=sys.stderr)
         print(full_response, file=sys.stderr)
@@ -282,7 +286,6 @@ else:
     meta = candidate.grounding_metadata
     if meta:
         if meta.web_search_queries:
-            # ⚠️ CORRECCIÓN: Enviar prints a stderr
             print(f"  Búsquedas realizadas: {meta.web_search_queries}", file=sys.stderr)
         if meta.grounding_chunks:
             print(f"  Fuentes leídas ({len(meta.grounding_chunks)}):", file=sys.stderr)
@@ -378,6 +381,12 @@ Cada hecho aparece UNA SOLA VEZ en la noticia.
         ),
     )
 
+      #! el modelo trata la cita de la primera oración de un bloque como si cubriera el resto,
+      #! en vez de citar oración por oración. El ejemplo few-shot que le das ya es bueno pero es corto (2 oraciones);
+      #! agregar un ejemplo negativo de un bloque largo —
+      #! donde solo la primera frase tiene cita y está marcado como incorrecto —
+      #! probablemente ayude más que bajar más la temperature.
+
     candidate_redactor = response_redactor.candidates[0]
 
     if candidate_redactor.content is None:
@@ -394,26 +403,33 @@ Cada hecho aparece UNA SOLA VEZ en la noticia.
             if hasattr(part, "text") and part.text:
                 redactor_raw += part.text
         try:
-            start = redactor_raw.find("{")
-            end = redactor_raw.rfind("}") + 1
+            response_redactor = client.models.generate_content(...)
+            candidate_redactor = response_redactor.candidates[0]
+
+            if candidate_redactor.content is None:
+                print(f"[ERROR] Agente 2 respuesta vacía. Finish reason: {candidate_redactor.finish_reason}", file=sys.stderr)
+                sys.exit(1)  # mismo criterio que el Analista: sin contenido, no hay fallback razonable
+
+            redactor_raw = "".join(p.text for p in candidate_redactor.content.parts if getattr(p, "text", None))
+            start, end = redactor_raw.find("{"), redactor_raw.rfind("}") + 1
             if start == -1 or end == 0:
-                raise json.JSONDecodeError("No se encontró JSON en la respuesta del Redactor", redactor_raw, 0)
+                raise json.JSONDecodeError("Sin JSON en respuesta del Redactor", redactor_raw, 0)
             redactor_data = json.loads(redactor_raw[start:end])
+
         except json.JSONDecodeError as e:
             print(f"[ERROR] Agente 2 JSON inválido: {e}", file=sys.stderr)
-            print(f"  Raw (500c): {redactor_raw[:500]}", file=sys.stderr)
             sys.exit(1)
+        except Exception as e:
+            print(f"[ERROR CRÍTICO] Agente 2 falló: {e}", file=sys.stderr)
+            sys.exit(1)  # esto es lo que falta hoy
 
 except json.JSONDecodeError as e:
-    # ⚠️ CORRECCIÓN: Enviar prints a stderr
     print(f"[ERROR] No se pudo parsear la respuesta del Agente 2: {e}", file=sys.stderr)
     print("Respuesta raw del Agente 2:", file=sys.stderr)
     print(redactor_raw, file=sys.stderr)
-    # ...
 
 except Exception as e:
     print(f"[ERROR CRÍTICO] Agente 2 falló con excepción inesperada: {e}", file=sys.stderr)
-    # ...
 
 # Merge y guardar archivo
 data["noticia_final"]    = redactor_data["noticia_final"]
@@ -424,5 +440,4 @@ with open("popola_output.json", "w", encoding="utf-8") as f:
 
 sys.stderr.write("[OK] noticia_final con citas guardada en popola_output.json\n")
 
-# ✅ ÚNICA LÍNEA QUE VA A STDOUT (Sin file=sys.stderr) — Express la parsea
 print(json.dumps(data, ensure_ascii=False))
