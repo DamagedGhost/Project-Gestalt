@@ -10,8 +10,11 @@ function buildFilter(query) {
   if (query.status) {
     filter.status = query.status;
   }
-  if (query.tag) {
+  if (query.tag && query.tag !== 'TODOS') {
     filter.tags = query.tag;
+  }
+  if (query.veracidad) {
+    filter['evaluacion_verificacion.nivel'] = query.veracidad.toLowerCase();
   }
   if (query.search) {
     const search = query.search.trim();
@@ -19,6 +22,7 @@ function buildFilter(query) {
       filter.$or = [
         { titular_sugerido: { $regex: search, $options: 'i' } },
         { titular_final: { $regex: search, $options: 'i' } },
+        { noticia_final: { $regex: search, $options: 'i' } },
       ];
     }
   }
@@ -38,8 +42,13 @@ router.get('/', async (req, res) => {
     const limit = parseLimit(req.query.limit);
     const skip = Number.parseInt(req.query.skip || '0', 10) || 0;
 
+    let sort = { fecha_publicacion: -1, createdAt: -1 };
+    if (req.query.sort === 'antiguas') {
+      sort = { fecha_publicacion: 1, createdAt: 1 };
+    }
+
     const notas = await Nota.find(filter)
-      .sort({ createdAt: -1 })
+      .sort(sort)
       .skip(skip)
       .limit(limit);
 
