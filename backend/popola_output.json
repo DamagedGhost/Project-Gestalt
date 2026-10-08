@@ -181,11 +181,10 @@
     "comercio"
   ],
   "metadata": {
-    "fuentes_analizadas": 2,
+    "fuentes_analizadas": 1,
     "fuentes_inaccesibles": [],
     "urls": [
-      "https://test1.com",
-      "https://test2.com"
+      "https://www.latercera.com/nacional/noticia/bajas-penas-y-falta-de-especializacion-de-los-fiscales-radiografia-a-la-ley-cholito/"
     ],
     "busquedas_adicionales": 0,
     "protocolo": "GESTALT v0.5.0 (MOCK)"

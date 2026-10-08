@@ -8,6 +8,7 @@
     "dev": "nodemon index.js",
     "test": "node test-server.js",
     "test-db": "node test-db.js",
+    "test:hitl": "node test-hitl.js",
     "seed": "node seed.js"
   },
   "repository": {

@@ -40,11 +40,28 @@ async function seedDatabase() {
       console.log(`[SEED] ✓ Usuario actualizado: ${devolaUser.email} (rol: ${devolaUser.rol})`);
     }
 
+    // Si no hay notas publicadas en La Biblioteca, publicar una como muestra
+    const publishedCount = await Nota.countDocuments({ status: 'publicada' });
+    if (publishedCount === 0) {
+      const notaMuestra = (await Nota.findOne({ titular_sugerido: /Ley Cholito/i })) || (await Nota.findOne());
+      if (notaMuestra) {
+        notaMuestra.status = 'publicada';
+        notaMuestra.titular_final = notaMuestra.titular_final || notaMuestra.titular_sugerido;
+        notaMuestra.fecha_publicacion = new Date();
+        notaMuestra.fecha_aprobacion = new Date();
+        notaMuestra.aprobado_por = devolaUser._id;
+        await notaMuestra.save();
+        console.log(`[SEED] ✓ Nota activada en 'La Biblioteca': "${notaMuestra.titular_final}"`);
+      }
+    }
+
     const totalNotas = await Nota.countDocuments();
+    const totalPublicadas = await Nota.countDocuments({ status: 'publicada' });
+    const totalPendientes = await Nota.countDocuments({ status: 'pendiente_revision' });
     const totalUsuarios = await Usuario.countDocuments();
     console.log(`[SEED] Estado actual de la base de datos:`);
     console.log(`       - Colección 'usuarios': ${totalUsuarios}`);
-    console.log(`       - Colección 'notas': ${totalNotas}`);
+    console.log(`       - Colección 'notas':    ${totalNotas} (${totalPublicadas} publicadas, ${totalPendientes} pendientes)`);
     console.log(`[SEED] Credenciales disponibles para pruebas:`);
     console.log(`       - Email:    ${defaultEmail}`);
     console.log(`       - Password: ${defaultPassword}`);

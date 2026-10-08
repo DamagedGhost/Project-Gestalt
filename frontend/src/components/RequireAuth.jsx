@@ -1,43 +1,22 @@
-import { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import api from '../lib/api';
+import { useAuth } from '../hooks/useAuth';
 
 function RequireAuth() {
-  const [state, setState] = useState({ status: 'loading', user: null });
+  const { user, loading } = useAuth();
 
-  useEffect(() => {
-    let active = true;
-    api
-      .get('/auth/me')
-      .then((response) => {
-        if (active) {
-          setState({ status: 'ok', user: response.data.user });
-        }
-      })
-      .catch(() => {
-        if (active) {
-          setState({ status: 'unauth', user: null });
-        }
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  if (state.status === 'loading') {
+  if (loading) {
     return (
-      <div className="panel subtle">
-        <p className="mono">Verificando acceso...</p>
+      <div className="panel subtle" style={{ margin: '40px auto', maxWidth: '480px', textAlign: 'center' }}>
+        <p className="mono">// PROTOCOLO GESTALT: Verificando autorización...</p>
       </div>
     );
   }
 
-  if (state.status === 'unauth') {
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  return <Outlet context={{ user: state.user }} />;
+  return <Outlet context={{ user }} />;
 }
 
 export default RequireAuth;

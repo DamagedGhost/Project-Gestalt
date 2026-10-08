@@ -8,32 +8,32 @@ const SOURCE_CONFIG = [
     match: /latercera\.com$/i,
     medio: 'La Tercera',
     title: 'h1',
-    body: 'article p, .contenido p, .single__body p',
+    body: 'article p, .contenido p, .single__body p, main p, p',
   },
   {
     match: /biobiochile\.cl$/i,
     medio: 'BioBioChile',
     title: 'h1',
-    body: 'article p, .entry-content p',
+    body: 'article p, .entry-content p, main p, p',
   },
   {
     match: /emol\.com$/i,
     medio: 'Emol',
     title: 'h1',
-    body: 'article p, .texto-nota p',
+    body: 'article p, .texto-nota p, main p, p',
   },
   {
     match: /cnnchile\.com$/i,
     medio: 'CNN Chile',
     title: 'h1',
-    body: 'article p, .entry-content p',
+    body: 'article p, .entry-content p, main p, p',
   },
 ];
 
 const DEFAULT_CONFIG = {
   medio: 'Fuente desconocida',
   title: 'h1',
-  body: 'article p, main p',
+  body: 'article p, main p, p',
 };
 
 function normalizeText(text) {
