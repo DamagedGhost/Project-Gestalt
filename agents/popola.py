@@ -20,22 +20,50 @@
 import json
 import os
 import sys
+import time
 import dotenv
 from google import genai
 from google.genai.types import GenerateContentConfig
 
-# Carga de variables de entorno .env
-# clave api debe estar dentro de .env
+# Asegurar codificación UTF-8 en stdin/stdout/stderr (crucial en Windows)
+if hasattr(sys.stdin, "reconfigure"):
+    sys.stdin.reconfigure(encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
+# Carga de variables de entorno .env (revisa la raíz del proyecto y cwd)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(script_dir)
+dotenv.load_dotenv(os.path.join(root_dir, ".env"))
 dotenv.load_dotenv()
 
-# Variable de entorno para clave API
-GENAI_API_KEY = os.getenv("GENAI_API_KEY")
-if not GENAI_API_KEY:
-    raise ValueError("[ERROR CRÍTICO] GENAI_API_KEY no encontrada. Protocolo abortado.")
+# Modo simulación (Mock) para depuración a costo $0 sin gastar cuota de API
+POPOLA_MOCK = os.getenv("POPOLA_MOCK", "false").strip().lower() in ("true", "1", "yes")
 
-#? Nota: "Gemini 2.5 Flash" Modelo recomendado para tareas de análisis y síntesis de información compleja,
-model_id = "gemini-2.5-flash"
-client = genai.Client(api_key=GENAI_API_KEY)
+# Configuración de modelo Gemini
+model_id = os.getenv("POPOLA_MODEL", "gemini-2.5-flash").strip()
+
+# Configuración de creatividad/temperatura del Agente 2 (Redactor)
+# 0.0 - 0.2: Máxima fidelidad y apego estricto a las reglas de citas (más aséptico).
+# 0.3 - 0.5: Balance recomendado (redacción periodística atractiva y fluida).
+# 0.6 - 0.8: Mayor creatividad y libertad narrativa (estilo más llamativo).
+try:
+    redactor_temperature = float(os.getenv("POPOLA_REDACTOR_TEMPERATURE", "0.2"))
+    redactor_temperature = max(0.0, min(1.0, redactor_temperature))
+except ValueError:
+    redactor_temperature = 0.2
+
+# Variable de entorno para clave API (solo obligatoria si no estamos en modo Mock)
+GENAI_API_KEY = os.getenv("GENAI_API_KEY")
+client = None
+
+if not POPOLA_MOCK:
+    if not GENAI_API_KEY or GENAI_API_KEY.startswith("AIzaSy...") or "Clave eliminada" in GENAI_API_KEY:
+        raise ValueError("[ERROR CRÍTICO] GENAI_API_KEY inválida o ausente. Para depurar sin clave, activa POPOLA_MOCK=true en .env")
+    client = genai.Client(api_key=GENAI_API_KEY)
+
 tools = [
     {"url_context": {}},
     {"google_search": {}},
@@ -61,10 +89,75 @@ if use_purified_sources:
         for i, s in enumerate(sources)
     ])
 else:
-    urls = input_data["urls"]  # ya es el array limpio
+    urls = input_data.get("urls", [])  # array de URLs crudas
     fuentes_inaccesibles = input_data.get("fuentes_inaccesibles", [])
     # Generar las líneas de fuentes dinámicamente
     fuentes = "\n".join([f"Fuente {i+1}: {url}" for i, url in enumerate(urls)])
+
+# ==============================================================================
+#  RAMA MOCK — EJECUCIÓN SIMULADA PARA DESARROLLO SIN CONSUMO DE API
+# ==============================================================================
+PROTOCOLO_VERSION = "GESTALT v0.5.0"
+
+if POPOLA_MOCK:
+    sys.stderr.write("[POPOLA MOCK] Modo simulación activo. Procesando con datos de prototipo...\n")
+    mock_candidates = [
+        os.path.join(root_dir, "prototype", "popola_output_FINAL.json"),
+        os.path.join(script_dir, "..", "prototype", "popola_output_FINAL.json"),
+        os.path.join(os.getcwd(), "prototype", "popola_output_FINAL.json"),
+        os.path.join(os.getcwd(), "popola_output_FINAL.json"),
+    ]
+    mock_data = None
+    for cand in mock_candidates:
+        if os.path.exists(cand):
+            try:
+                with open(cand, "r", encoding="utf-8") as f:
+                    mock_data = json.load(f)
+                sys.stderr.write(f"[POPOLA MOCK] Archivo de referencia cargado: {cand}\n")
+                break
+            except Exception as e:
+                sys.stderr.write(f"[POPOLA MOCK] Error leyendo {cand}: {e}\n")
+
+    if not mock_data:
+        sys.stderr.write("[POPOLA MOCK] No se encontró popola_output_FINAL.json, utilizando estructura base.\n")
+        mock_data = {
+            "titular_sugerido": "Simulación: Nota verificada por Protocolo Gestalt",
+            "noticia_final": "Esta es una noticia generada en modo simulación para desarrollo local [1]. El sistema opera desacoplado de la API externa para preservar cuota [1].",
+            "hechos_verificados": ["Modo simulación de Popola activo."],
+            "hechos_fuente_unica": [],
+            "rumores_confirmados": [],
+            "contradicciones": [],
+            "sesgo_por_fuente": [],
+            "devola_checklist": [],
+            "citas": [{"indice": 1, "medio": "Protocolo Gestalt", "url": "https://gestalt.local", "fragmento_relevante": "Modo simulación"}],
+            "evaluacion_verificacion": {"nivel": "alto", "justificacion": "Datos de simulación validados localmente."},
+            "tags": ["simulacion", "gestalt", "mock"],
+            "metadata": {}
+        }
+
+    # Adaptar metadatos con las URLs de la petición actual
+    if "metadata" not in mock_data or not isinstance(mock_data["metadata"], dict):
+        mock_data["metadata"] = {}
+    mock_data["metadata"]["urls"] = urls
+    mock_data["metadata"]["fuentes_analizadas"] = len(urls)
+    mock_data["metadata"]["fuentes_inaccesibles"] = fuentes_inaccesibles
+    mock_data["metadata"]["busquedas_adicionales"] = 0
+    mock_data["metadata"]["protocolo"] = f"{PROTOCOLO_VERSION} (MOCK)"
+
+    # Simular una breve latencia de procesamiento (1 segundo)
+    time.sleep(1.0)
+
+    output_path = os.path.join(os.getcwd(), "popola_output.json")
+    try:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(mock_data, f, indent=2, ensure_ascii=False)
+        sys.stderr.write(f"[POPOLA MOCK] Output guardado en {output_path}\n")
+    except Exception as e:
+        sys.stderr.write(f"[POPOLA MOCK] Advertencia al escribir archivo local: {e}\n")
+
+    # Salida única por STDOUT (lo que parsea Express)
+    print(json.dumps(mock_data, ensure_ascii=False))
+    sys.exit(0)
 
 # ==============================================================================
 #  AGENTE 1 — ANALISTA (Con tools de lectura web y búsqueda)
@@ -85,9 +178,7 @@ else:
 - google_search para investigar línea editorial en el PASO 3: máximo 1 búsqueda por fuente"""
     paso1_instruccion = "Lee cada fuente de forma aislada."
 
-response = client.models.generate_content(
-    model=model_id,
-    contents=f"""
+contents_analista = f"""
 PROHIBIDO incluir texto explicativo, pasos de razonamiento o comentarios fuera del JSON.
 Tu respuesta comienza directamente con {{ y termina con }}.
 
@@ -234,66 +325,83 @@ NUNCA inferir ni inventar datos de fuentes no leídas.
     "protocolo": "{PROTOCOLO_VERSION}"
   }}
 }}
-    """,
-    config=GenerateContentConfig(
-        tools=tools,
-    ),
-)
+    """
+try:
+    response = client.models.generate_content(
+        model=model_id,
+        contents=contents_analista,
+        config=GenerateContentConfig(
+            tools=tools,
+        ),
+    )
+except Exception as e:
+    print(f"[ERROR CRÍTICO POPOLA - ANALISTA] Fallo al invocar Gemini API: {e}", file=sys.stderr)
+    sys.exit(1)
 
-#! metadata.busquedas_adicionales está hardcodeado en 0 en el propio template del prompt (línea ~233)
-#! nunca va a reflejar la realidad. El número real ya lo capturas en Python vía meta.web_search_queries para la telemetría de stderr;
-#! bastaría con data["metadata"]["busquedas_adicionales"] = len(meta.web_search_queries or []) después de la respuesta,
-#! en vez de confiarle ese campo al modelo.
-  
+if not response.candidates:
+    print("[ERROR POPOLA - ANALISTA] Gemini no retornó ningún candidato.", file=sys.stderr)
+    sys.exit(1)
+
 # Extraer el bloque JSON de la respuesta del modelo
 candidate = response.candidates[0]
 
 # Validación básica de la respuesta antes de intentar parsear el JSON
 if candidate.content is None:
-    print(f"[ERROR] Respuesta vacía.", file=sys.stderr)
+    print(f"[ERROR] Respuesta vacía del Analista.", file=sys.stderr)
     print(f"  Finish reason: {candidate.finish_reason}", file=sys.stderr)
     print(f"  Safety ratings: {candidate.safety_ratings}", file=sys.stderr)
     sys.exit(1)
+
+full_response = ""
+for part in candidate.content.parts:
+    if hasattr(part, "text") and part.text:
+        full_response += part.text
+
+# Intentar parsear el bloque JSON de la respuesta
+try:
+    start = full_response.find("{")
+    end = full_response.rfind("}") + 1
+
+    if start == -1 or end == 0:
+        raise json.JSONDecodeError("No se encontró JSON en la respuesta del Analista", full_response, 0)
+
+    clean_response = full_response[start:end]
+    data = json.loads(clean_response)
+
+except json.JSONDecodeError as e:
+    print(f"[ERROR] No se pudo parsear la respuesta del Analista como JSON: {e}", file=sys.stderr)
+    print("Respuesta completa para debug:", file=sys.stderr)
+    print(full_response, file=sys.stderr)
+    sys.exit(1)
+
+# Telemetría real de Google Search Grounding y actualización de metadata
+sys.stderr.write("\n[TELEMETRÍA DE RED]\n")
+meta = candidate.grounding_metadata
+queries_count = 0
+if meta:
+    if meta.web_search_queries:
+        queries_count = len(meta.web_search_queries)
+        print(f"  Búsquedas realizadas ({queries_count}): {meta.web_search_queries}", file=sys.stderr)
+    if meta.grounding_chunks:
+        print(f"  Fuentes leídas ({len(meta.grounding_chunks)}):", file=sys.stderr)
+        for chunk in meta.grounding_chunks:
+            if chunk.web:
+                print(f"    - {chunk.web.title}: {chunk.web.uri}", file=sys.stderr)
 else:
-    full_response = ""
-    for part in candidate.content.parts:
-        if hasattr(part, "text") and part.text:
-            full_response += part.text
+    print("  Sin metadata de grounding disponible", file=sys.stderr)
 
-    # Intentar parsear el bloque JSON de la respuesta, ignorando cualquier texto adicional o razonamiento previo.
-    try:
-        start = full_response.find("{")
-        end = full_response.rfind("}") + 1
+# Sobrescribir busquedas_adicionales con la cantidad real de búsquedas efectuadas
+if "metadata" not in data or not isinstance(data["metadata"], dict):
+    data["metadata"] = {}
+data["metadata"]["busquedas_adicionales"] = queries_count
 
-        if start == -1 or end == 0:
-            raise json.JSONDecodeError("No se encontró JSON en la respuesta", full_response, 0)
-
-        clean_response = full_response[start:end]
-        data = json.loads(clean_response)
-
-        output_path = "popola_output.json"
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        sys.stderr.write(f"[OK] Output guardado en {output_path}\n")
-
-    except json.JSONDecodeError as e:
-        print(f"[ERROR] No se pudo parsear la respuesta como JSON: {e}", file=sys.stderr)
-        print("Respuesta completa para debug:", file=sys.stderr)
-        print(full_response, file=sys.stderr)
-        sys.exit(1) #abortar ejecución si no se puede parsear el JSON, ya que el resto del pipeline depende de esta estructura
-
-    sys.stderr.write("\n[TELEMETRÍA DE RED]\n")
-    meta = candidate.grounding_metadata
-    if meta:
-        if meta.web_search_queries:
-            print(f"  Búsquedas realizadas: {meta.web_search_queries}", file=sys.stderr)
-        if meta.grounding_chunks:
-            print(f"  Fuentes leídas ({len(meta.grounding_chunks)}):", file=sys.stderr)
-            for chunk in meta.grounding_chunks:
-                if chunk.web:
-                    print(f"    - {chunk.web.title}: {chunk.web.uri}", file=sys.stderr)
-    else:
-        print("  Sin metadata de grounding disponible", file=sys.stderr)
+output_path = "popola_output.json"
+try:
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    sys.stderr.write(f"[OK] Output del Analista guardado en {output_path}\n")
+except Exception as e:
+    sys.stderr.write(f"[ADVERTENCIA] No se pudo escribir {output_path}: {e}\n")
 
 
 # ==============================================================================
@@ -313,15 +421,12 @@ hechos = json.dumps({
     "citas":                     data["citas"],
 }, ensure_ascii=False, indent=2)
 
-try:
-    response_redactor = client.models.generate_content(
-        model=model_id,
-        contents=f"""
+prompt_redactor = f"""
 PROHIBIDO incluir texto explicativo o comentarios fuera del JSON.
 Tu respuesta comienza directamente con {{ y termina con }}.
 
-Eres un redactor periodístico neutral del Protocolo Gestalt.
-Tu única tarea es redactar una noticia final y un titular
+Eres un redactor periodístico del Protocolo Gestalt.
+Tu tarea es redactar una noticia con ritmo narrativo y un titular periodístico claro,
 basándote EXCLUSIVAMENTE en los datos entregados por el Agente Analista.
 PROHIBIDO agregar hechos, inferencias o datos que no estén en el input.
 
@@ -331,10 +436,10 @@ DATOS DEL ANALISTA:
 INSTRUCCIONES DE REDACCIÓN:
 - Redacta en orden cronológico estricto siguiendo "linea_de_tiempo_extraida".
 - Mínimo 4 párrafos. Cada párrafo cubre un bloque temporal o temático distinto.
-- Tono: periodístico directo. Permitido construir párrafos con fluidez narrativa.
+- Tono: periodístico directo, fluido y riguroso.
 - Prohibido: adjetivos que evalúen moralmente los hechos o a los actores.
-- Permitido: conectores temporales, causales y de contraste que den ritmo al texto.
-- Usa solo "hechos_verificados" como base del relato.
+- Permitido: conectores temporales, causales y de contraste que den dinamismo al relato.
+- Usa solo "hechos_verificados" como base del relato central.
 - Los datos de "hechos_fuente_unica" pueden incluirse indicando el medio:
   "Según [Medio], ..."
 - Si una misma persona o entidad tiene múltiples declaraciones, AGRÚPALAS en un solo párrafo fluido usando conectores
@@ -344,17 +449,26 @@ INSTRUCCIONES DE REDACCIÓN:
   "Mientras [Medio A] indica X [n], [Medio B] reporta Y [n]."
 - No menciones "sesgo_por_fuente" directamente en la noticia.
 
-REGLA DE CITAS INLINE (ABSOLUTA):
+REGLA DE CITAS INLINE Y COBERTURA CONTINUA (ABSOLUTA):
 Cada afirmación que provenga de una fuente DEBE terminar con [n],
 donde n es el índice del array "citas".
+PROHIBIDO colocar una cita únicamente en la primera frase de un párrafo y dejar el resto de oraciones factuales sin cita.
+Toda oración que aporte un dato debe llevar su respaldo inmediato [n].
+
 EJEMPLO CORRECTO:
 "Kast se reunió con Boric el 8 de marzo en La Moneda [1][2].
 El encuentro ocurrió tras su regreso de Miami [3].
 Mientras La Tercera indica que duró 30 minutos [1],
 ADN Radio no reporta duración [2]."
-EJEMPLO INCORRECTO:
+
+EJEMPLO INCORRECTO (SIN CITAS):
 "Kast se reunió con Boric en La Moneda."
-Si "noticia_final" no contiene ningún [n], la respuesta es INVÁLIDA.
+
+EJEMPLO INCORRECTO (COBERTURA INSUFICIENTE EN PÁRRAFO LARGO):
+"El 16 de marzo comenzaron las obras en el paso fronterizo [1][2]. Los trabajos abarcan una extensión de 200 metros y se espera que concluyan en mayo. Las autoridades descartaron impacto en el tránsito vecinal."
+(ERROR: La segunda y tercera oración contienen hechos factuales pero carecen de citas individuales [n]).
+
+Si "noticia_final" no contiene citas [n] distribuidas a lo largo de todo el texto, la respuesta es INVÁLIDA.
 
 REGLAS DE FORMATO:
 - "noticia_final" es un string continuo con saltos de línea entre párrafos (\\n\\n).
@@ -372,72 +486,68 @@ Cada hecho aparece UNA SOLA VEZ en la noticia.
   Nunca antes, nunca después.
 
 {{
-  "noticia_final": "texto con citas [n] obligatorias",
+  "noticia_final": "texto con citas [n] obligatorias por cada oración factual",
   "titular_sugerido": "titular directo y aséptico"
 }}
-""",
+"""
+
+try:
+    response_redactor = client.models.generate_content(
+        model=model_id,
+        contents=prompt_redactor,
         config=GenerateContentConfig(
-            temperature=0.1,
+            temperature=redactor_temperature,
         ),
     )
+except Exception as e:
+    print(f"[ERROR CRÍTICO POPOLA - REDACTOR] Fallo al invocar Gemini API: {e}", file=sys.stderr)
+    sys.exit(1)
 
-      #! el modelo trata la cita de la primera oración de un bloque como si cubriera el resto,
-      #! en vez de citar oración por oración. El ejemplo few-shot que le das ya es bueno pero es corto (2 oraciones);
-      #! agregar un ejemplo negativo de un bloque largo —
-      #! donde solo la primera frase tiene cita y está marcado como incorrecto —
-      #! probablemente ayude más que bajar más la temperature.
+if not response_redactor.candidates:
+    print("[ERROR POPOLA - REDACTOR] Gemini no retornó ningún candidato para redacción.", file=sys.stderr)
+    sys.exit(1)
 
-    candidate_redactor = response_redactor.candidates[0]
+candidate_redactor = response_redactor.candidates[0]
 
-    if candidate_redactor.content is None:
-        print(f"[ERROR] Agente 2 devolvió respuesta vacía.")
-        print(f"  Finish reason: {candidate_redactor.finish_reason}")
-        print(f"  Safety ratings: {candidate_redactor.safety_ratings}")
-        redactor_data = {
-            "noticia_final": "ERROR — Agente 2 sin contenido",
-            "titular_sugerido": "ERROR"
-        }
-    else:
-        redactor_raw = ""
-        for part in candidate_redactor.content.parts:
-            if hasattr(part, "text") and part.text:
-                redactor_raw += part.text
-        try:
-            response_redactor = client.models.generate_content(...)
-            candidate_redactor = response_redactor.candidates[0]
+if candidate_redactor.content is None:
+    print(f"[ERROR] Agente 2 devolvió respuesta vacía.", file=sys.stderr)
+    print(f"  Finish reason: {candidate_redactor.finish_reason}", file=sys.stderr)
+    print(f"  Safety ratings: {candidate_redactor.safety_ratings}", file=sys.stderr)
+    sys.exit(1)
 
-            if candidate_redactor.content is None:
-                print(f"[ERROR] Agente 2 respuesta vacía. Finish reason: {candidate_redactor.finish_reason}", file=sys.stderr)
-                sys.exit(1)  # mismo criterio que el Analista: sin contenido, no hay fallback razonable
+redactor_raw = ""
+for part in candidate_redactor.content.parts:
+    if hasattr(part, "text") and part.text:
+        redactor_raw += part.text
 
-            redactor_raw = "".join(p.text for p in candidate_redactor.content.parts if getattr(p, "text", None))
-            start, end = redactor_raw.find("{"), redactor_raw.rfind("}") + 1
-            if start == -1 or end == 0:
-                raise json.JSONDecodeError("Sin JSON en respuesta del Redactor", redactor_raw, 0)
-            redactor_data = json.loads(redactor_raw[start:end])
-
-        except json.JSONDecodeError as e:
-            print(f"[ERROR] Agente 2 JSON inválido: {e}", file=sys.stderr)
-            sys.exit(1)
-        except Exception as e:
-            print(f"[ERROR CRÍTICO] Agente 2 falló: {e}", file=sys.stderr)
-            sys.exit(1)  # esto es lo que falta hoy
+try:
+    start = redactor_raw.find("{")
+    end   = redactor_raw.rfind("}") + 1
+    if start == -1 or end == 0:
+        raise json.JSONDecodeError("Sin JSON en respuesta del Redactor", redactor_raw, 0)
+    redactor_data = json.loads(redactor_raw[start:end])
 
 except json.JSONDecodeError as e:
     print(f"[ERROR] No se pudo parsear la respuesta del Agente 2: {e}", file=sys.stderr)
     print("Respuesta raw del Agente 2:", file=sys.stderr)
     print(redactor_raw, file=sys.stderr)
+    sys.exit(1)
 
 except Exception as e:
     print(f"[ERROR CRÍTICO] Agente 2 falló con excepción inesperada: {e}", file=sys.stderr)
+    sys.exit(1)
 
 # Merge y guardar archivo
-data["noticia_final"]    = redactor_data["noticia_final"]
-data["titular_sugerido"] = redactor_data["titular_sugerido"]
+data["noticia_final"]    = redactor_data.get("noticia_final", "ERROR")
+data["titular_sugerido"] = redactor_data.get("titular_sugerido", "ERROR")
 
-with open("popola_output.json", "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
+output_path = "popola_output.json"
+try:
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    sys.stderr.write(f"[OK] noticia_final con citas guardada en {output_path}\n")
+except Exception as e:
+    sys.stderr.write(f"[ADVERTENCIA] No se pudo guardar {output_path}: {e}\n")
 
-sys.stderr.write("[OK] noticia_final con citas guardada en popola_output.json\n")
-
+# Única salida por STDOUT requerida por Express/popolaService
 print(json.dumps(data, ensure_ascii=False))
