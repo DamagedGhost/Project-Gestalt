@@ -9,19 +9,21 @@ router.post('/', async (req, res) => {
   console.log(`[ANALYZE] Nueva petición recibida`);
   console.log(`[ANALYZE] Body: ${JSON.stringify(req.body)}`);
 
-  const { urls } = req.body;
+  const { urls } = req.body || {};
+  const cleanUrls = Array.isArray(urls) 
+    ? urls.filter(u => typeof u === 'string' && u.trim().length > 0).map(u => u.trim()) 
+    : [];
 
-  // Validación
-  if (!urls || !Array.isArray(urls) || urls.length === 0) {
+  if (cleanUrls.length === 0) {
     console.warn(`[ANALYZE] Validación fallida: urls inválidas.`);
-    return res.status(400).json({ error: 'Se requiere un array de URLs.' });
+    return res.status(400).json({ error: 'Se requiere un array con al menos una URL válida.' });
   }
-  console.log(`[ANALYZE] URLs validadas: ${urls.length} URL(s)`);
+  console.log(`[ANALYZE] URLs validadas: ${cleanUrls.length} URL(s)`);
 
   try {
     // 1. Llamar a Popola
     console.log(`[ANALYZE] Paso 1 — Llamando a Popola...`);
-    const resultado = await runPopola(urls);
+    const resultado = await runPopola(cleanUrls);
     console.log(`[ANALYZE] Paso 1 — Popola completado OK.`);
 
     // 2. Guardar en MongoDB

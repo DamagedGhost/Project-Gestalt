@@ -1,0 +1,548 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Project Gestalt API",
+    "description": "API REST del Protocolo Gestalt — Sistema de periodismo verificado asistido por IA con arquitectura Human-in-the-Loop (HitL).\n\n### Actores:\n- **Emil**: Scraper y purificador de fuentes de noticias.\n- **Popola**: Analista y Redactor IA (Google Gemini 2.5).\n- **Devola**: Panel editorial humano y orquestador backend.\n- **La Biblioteca**: Archivo público verificado de solo lectura.\n\n### Autenticación:\nEndpoints protegidos aceptan **Bearer Token (JWT)** en el header `Authorization` o cookie HttpOnly `gestalt_token`.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "DamagedGhost",
+      "url": "https://github.com/DamagedGhost/Project-Gestalt"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor de desarrollo local"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Ingresa el token JWT recibido en /api/auth/login"
+      },
+      "cookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "gestalt_token",
+        "description": "Cookie HttpOnly establecida automáticamente en navegadores"
+      }
+    },
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": { "type": "string", "example": "Mensaje descriptivo del error" }
+        }
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "6a19dd5a4cc05d49dc478d2a" },
+          "email": { "type": "string", "example": "devola@gestalt.local" },
+          "nombre": { "type": "string", "example": "Devola" },
+          "rol": { "type": "string", "enum": ["devola", "admin"], "example": "devola" }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": { "type": "string", "example": "devola@gestalt.local" },
+          "password": { "type": "string", "example": "gestalt2026" }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string", "example": "Login exitoso." },
+          "token": { "type": "string", "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." },
+          "user": { "$ref": "#/components/schemas/Usuario" }
+        }
+      },
+      "Cita": {
+        "type": "object",
+        "properties": {
+          "indice": { "type": "integer", "example": 1 },
+          "medio": { "type": "string", "example": "La Tercera" },
+          "url": { "type": "string", "example": "https://www.latercera.com/noticia/..." },
+          "fragmento_relevante": { "type": "string", "example": "Extracto clave citado" }
+        }
+      },
+      "ChecklistItem": {
+        "type": "object",
+        "properties": {
+          "hecho": { "type": "string", "example": "Dato específico a auditar por el editor" },
+          "tipo": { "type": "string", "enum": ["fuente_unica", "rumor", "contradiccion"], "example": "fuente_unica" },
+          "url_respaldo": { "type": "string", "example": "https://..." },
+          "fragmento_clave": { "type": "string", "example": "máximo 10 palabras" },
+          "estado": { "type": "string", "enum": ["pendiente", "confirmado", "rechazado"], "example": "pendiente" },
+          "nota_devola": { "type": "string", "nullable": true, "example": "Verificado con fuente oficial" }
+        }
+      },
+      "SesgoPorFuente": {
+        "type": "object",
+        "properties": {
+          "fuente": { "type": "string", "example": "BioBioChile" },
+          "sesgo_detectado": { "type": "string", "example": "ninguno detectable" },
+          "tipo_sesgo": { "type": "string", "example": "informativo y aclaratorio" },
+          "hechos_omitidos": { "type": "string", "example": "ninguno" }
+        }
+      },
+      "Contradiccion": {
+        "type": "object",
+        "properties": {
+          "punto": { "type": "string", "example": "Fecha límite de entrega" },
+          "version_a": { "type": "string", "example": "Medio A indica que vence en mayo" },
+          "version_b": { "type": "string", "example": "Medio B reporta que vence en julio" }
+        }
+      },
+      "Nota": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "69c8b609568c675bbe7d7ade" },
+          "titular_sugerido": { "type": "string", "example": "Chile y Perú construyen zanjas en frontera con distintos propósitos" },
+          "titular_final": { "type": "string", "nullable": true, "example": "Chile y Perú: Obras fronterizas en detalle" },
+          "noticia_final": { "type": "string", "example": "Texto redactado con citas inline [1][2]..." },
+          "linea_de_tiempo_extraida": {
+            "type": "array",
+            "items": { "type": "string" },
+            "example": ["2026-03-16 - Inicio de excavaciones (Fuente: Emol)"]
+          },
+          "hechos_verificados": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "contradicciones": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Contradiccion" }
+          },
+          "sesgo_por_fuente": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/SesgoPorFuente" }
+          },
+          "devola_checklist": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ChecklistItem" }
+          },
+          "citas": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Cita" }
+          },
+          "evaluacion_verificacion": {
+            "type": "object",
+            "properties": {
+              "nivel": { "type": "string", "enum": ["alto", "medio", "bajo"], "example": "alto" },
+              "justificacion": { "type": "string", "example": "Alta coincidencia en hechos centrales..." }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pendiente_revision", "aprobada", "rechazada", "publicada"],
+            "example": "pendiente_revision"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "example": ["frontera", "seguridad"]
+          },
+          "notas_devola": { "type": "string", "nullable": true },
+          "fecha_aprobacion": { "type": "string", "format": "date-time", "nullable": true },
+          "fecha_publicacion": { "type": "string", "format": "date-time", "nullable": true },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "IngestRequest": {
+        "type": "object",
+        "required": ["urls"],
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": { "type": "string" },
+            "example": [
+              "https://www.latercera.com/nacional/noticia/...",
+              "https://www.biobiochile.cl/noticias/..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Check del Servidor y Base de Datos",
+        "tags": ["Sistema"],
+        "responses": {
+          "200": {
+            "description": "Estado del servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "db": { "type": "string", "example": "conectado" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Iniciar Sesión (Operador Devola)",
+        "description": "Valida credenciales contra `devola-db.usuarios`, genera token JWT y emite cookie HttpOnly `gestalt_token`.",
+        "tags": ["Autenticación"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login exitoso",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LoginResponse" }
+              }
+            }
+          },
+          "400": { "description": "Email o contraseña faltantes", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } },
+          "401": { "description": "Credenciales inválidas", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "summary": "Cerrar Sesión",
+        "tags": ["Autenticación"],
+        "responses": {
+          "200": {
+            "description": "Sesión cerrada y cookie eliminada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "message": { "type": "string", "example": "Sesión cerrada." } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "summary": "Obtener Usuario Actual Autenticado",
+        "tags": ["Autenticación"],
+        "security": [
+          { "bearerAuth": [] },
+          { "cookieAuth": [] }
+        ],
+        "responses": {
+          "200": {
+            "description": "Datos del usuario actual",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "user": { "$ref": "#/components/schemas/Usuario" } }
+                }
+              }
+            }
+          },
+          "401": { "description": "No autorizado", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/emil/ingest": {
+      "post": {
+        "summary": "Ingestión Automatizada (Emil Scraper + Popola IA)",
+        "description": "1. Emil scrapea y purifica las URLs (eliminando HTML basura y anuncios).\n2. Popola procesa el texto limpio con Gemini (o en modo Mock si POPOLA_MOCK=true).\n3. Devola guarda el resultado en MongoDB con estado `pendiente_revision`.",
+        "tags": ["Agentes"],
+        "security": [
+          { "bearerAuth": [] },
+          { "cookieAuth": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/IngestRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Ingestión completada y nota registrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string", "example": "Ingestión completada y guardada." },
+                    "nota_id": { "type": "string" },
+                    "status": { "type": "string", "example": "pendiente_revision" },
+                    "titular": { "type": "string" },
+                    "fuentes_analizadas": { "type": "integer" },
+                    "fuentes_inaccesibles": { "type": "array", "items": { "type": "string" } },
+                    "resultado": { "$ref": "#/components/schemas/Nota" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "URLs inválidas", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } },
+          "401": { "description": "No autorizado", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } },
+          "422": { "description": "No se pudo extraer contenido válido", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/analyze": {
+      "post": {
+        "summary": "Análisis Directo con Popola",
+        "description": "Ejecuta Popola directamente con URLs crudas y persiste el resultado en MongoDB.",
+        "tags": ["Agentes"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/IngestRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Análisis completado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string", "example": "Análisis completado y guardado." },
+                    "nota_id": { "type": "string" },
+                    "status": { "type": "string", "example": "pendiente_revision" },
+                    "titular": { "type": "string" },
+                    "resultado": { "$ref": "#/components/schemas/Nota" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "URLs inválidas", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/notas": {
+      "get": {
+        "summary": "Listar Notas",
+        "description": "Lista artículos con filtros opcionales. Usado por La Biblioteca (`status=publicada`) y por Devola (`status=pendiente_revision`).",
+        "tags": ["Notas"],
+        "parameters": [
+          { "name": "status", "in": "query", "schema": { "type": "string", "enum": ["pendiente_revision", "aprobada", "rechazada", "publicada"] }, "description": "Filtrar por estado" },
+          { "name": "tag", "in": "query", "schema": { "type": "string" }, "description": "Filtrar por etiqueta" },
+          { "name": "search", "in": "query", "schema": { "type": "string" }, "description": "Búsqueda textual en titulares" },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 20 }, "description": "Cantidad de resultados (máx 50)" },
+          { "name": "skip", "in": "query", "schema": { "type": "integer", "default": 0 }, "description": "Offset para paginación" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de notas obtenida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "notas": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Nota" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear Nota Manualmente",
+        "tags": ["Notas"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["titular_sugerido", "noticia_final"],
+                "properties": {
+                  "titular_sugerido": { "type": "string" },
+                  "noticia_final": { "type": "string" },
+                  "status": { "type": "string", "default": "pendiente_revision" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Nota creada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "nota": { "$ref": "#/components/schemas/Nota" } }
+                }
+              }
+            }
+          },
+          "400": { "description": "Datos obligatorios faltantes" }
+        }
+      }
+    },
+    "/api/notas/{id}": {
+      "get": {
+        "summary": "Obtener Nota por ID",
+        "tags": ["Notas"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" }, "description": "ObjectId de la nota" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nota encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "nota": { "$ref": "#/components/schemas/Nota" } }
+                }
+              }
+            }
+          },
+          "404": { "description": "Nota no encontrada", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      },
+      "put": {
+        "summary": "Actualizar / Aprobar Nota (HitL)",
+        "description": "Permite al editor modificar el titular, auditar el checklist o cambiar el estado a `publicada`.",
+        "tags": ["Notas"],
+        "security": [
+          { "bearerAuth": [] },
+          { "cookieAuth": [] }
+        ],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titular_final": { "type": "string" },
+                  "noticia_final": { "type": "string" },
+                  "status": { "type": "string", "enum": ["pendiente_revision", "aprobada", "rechazada", "publicada"] },
+                  "notas_devola": { "type": "string" },
+                  "devola_checklist": { "type": "array", "items": { "$ref": "#/components/schemas/ChecklistItem" } },
+                  "tags": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Nota actualizada exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "nota": { "$ref": "#/components/schemas/Nota" } }
+                }
+              }
+            }
+          },
+          "401": { "description": "No autorizado", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } },
+          "404": { "description": "Nota no encontrada", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      },
+      "delete": {
+        "summary": "Eliminar Nota",
+        "tags": ["Notas"],
+        "security": [
+          { "bearerAuth": [] },
+          { "cookieAuth": [] }
+        ],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nota eliminada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "message": { "type": "string", "example": "Nota eliminada." } }
+                }
+              }
+            }
+          },
+          "401": { "description": "No autorizado" },
+          "404": { "description": "Nota no encontrada" }
+        }
+      }
+    },
+    "/api/select": {
+      "get": {
+        "summary": "Listar Últimas Notas (Compatibilidad)",
+        "tags": ["Select"],
+        "responses": {
+          "200": {
+            "description": "Lista de notas obtenida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "notas": { "type": "array", "items": { "$ref": "#/components/schemas/Nota" } } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/select/{id}": {
+      "get": {
+        "summary": "Obtener Nota por ID (Compatibilidad)",
+        "tags": ["Select"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nota encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "nota": { "$ref": "#/components/schemas/Nota" } }
+                }
+              }
+            }
+          },
+          "404": { "description": "Nota no encontrada" }
+        }
+      }
+    }
+  }
+}

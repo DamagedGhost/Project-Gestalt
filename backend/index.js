@@ -11,6 +11,8 @@ const app  = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 app.use(cors({
   origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
@@ -20,6 +22,9 @@ app.use(cors({
 // ─── Middleware ───────────────────────────────────────────────────────────────
 app.use(express.json({ limit: '2mb' }));
 app.use(cookieParser());
+
+// ─── Documentación Swagger ────────────────────────────────────────────────────
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ─── Rutas ────────────────────────────────────────────────────────────────────
 app.use('/api/analyze', analyzeRouter);
@@ -43,7 +48,8 @@ async function startServer() {
 
     app.listen(PORT, () => {
       console.log(`[SERVER] Escuchando en http://localhost:${PORT}`);
-      console.log(`[SERVER] Endpoint disponible: POST /api/analyze`);
+      console.log(`[SERVER] Swagger UI: http://localhost:${PORT}/api-docs`);
+      console.log(`[SERVER] Health check: http://localhost:${PORT}/health`);
     });
 
   } catch (err) {

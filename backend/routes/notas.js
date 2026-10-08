@@ -123,7 +123,9 @@ router.put('/:id', requireAuth, async (req, res) => {
         if (!nota.fecha_aprobacion) {
           nota.fecha_aprobacion = new Date();
         }
-        nota.aprobado_por = req.user.sub;
+        if (req.user && req.user.sub && mongoose.Types.ObjectId.isValid(req.user.sub)) {
+          nota.aprobado_por = req.user.sub;
+        }
       }
       if (req.body.status === 'publicada') {
         if (!nota.fecha_publicacion) {

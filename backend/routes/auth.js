@@ -53,6 +53,7 @@ router.post('/login', async (req, res) => {
     res.cookie(COOKIE_NAME, token, buildCookieOptions());
     return res.status(200).json({
       message: 'Login exitoso.',
+      token,
       user: {
         id: usuario._id,
         email: usuario.email,

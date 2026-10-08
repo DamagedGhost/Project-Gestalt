@@ -12,13 +12,17 @@ router.post('/ingest', requireAuth, async (req, res) => {
   console.log(`[EMIL] Nueva petición de ingestión.`);
 
   const { urls } = req.body || {};
-  if (!urls || !Array.isArray(urls) || urls.length === 0) {
-    return res.status(400).json({ error: 'Se requiere un array de URLs.' });
+  const cleanUrls = Array.isArray(urls) 
+    ? urls.filter(u => typeof u === 'string' && u.trim().length > 0).map(u => u.trim()) 
+    : [];
+
+  if (cleanUrls.length === 0) {
+    return res.status(400).json({ error: 'Se requiere un array con al menos una URL válida.' });
   }
 
   try {
-    console.log(`[EMIL] Extrayendo fuentes limpias...`);
-    const { fuentes, fuentesInaccesibles } = await extraerFuentes(urls);
+    console.log(`[EMIL] Extrayendo fuentes limpias (${cleanUrls.length} URLs)...`);
+    const { fuentes, fuentesInaccesibles } = await extraerFuentes(cleanUrls);
 
     if (fuentes.length === 0) {
       return res.status(422).json({
