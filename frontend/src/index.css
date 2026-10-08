@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=Fira+Code:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400&display=swap');
 
 :root {
   color-scheme: dark;
@@ -27,7 +27,7 @@
 body {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Exo 2', 'Chakra Petch', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   min-height: 100vh;
   overflow-x: hidden;
@@ -394,6 +394,7 @@ body::after {
 }
 
 .headline {
+  font-family: 'Chakra Petch', 'Exo 2', sans-serif;
   font-size: 32px;
   line-height: 1.15;
   font-weight: 700;
@@ -459,6 +460,7 @@ body::after {
 
 /* ARTICLE BODY */
 .article-body p {
+  font-family: 'Exo 2', sans-serif;
   font-size: 16px;
   line-height: 1.8;
   color: var(--fg);
